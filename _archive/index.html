@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>RankinAI — Digital marketing for firms that sell expertise</title>
+<meta name="description" content="We build and run the system that keeps new work coming in — with your team, not around them. Every month you see what it brought in, and what each new client cost to win.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,400;1,6..72,400&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link rel="icon" href="images/favicon.png" sizes="any">
+
+<script>
+  /* Pre-hide the first screen only, and only if motion is welcome. A failsafe
+     in script.js removes this class if GSAP has not started within 2 seconds,
+     so a blocked CDN degrades to a static page rather than an empty one. */
+  (function () {
+    var ok = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (ok) document.documentElement.classList.add('anim');
+  })();
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ==========================================================================
+     HEADER
+     Six nav items, one green button. No phone number, no login, no search.
+     "Get found" and "Get booked" open mega panels. "Who we work with" opens
+     three columns. Everything else links straight through.
+     ========================================================================== -->
+<header class="site-header" data-header>
+  <div class="site-header__panel">
+
+    <a class="wordmark" href="/" aria-label="RankinAI home">Rankin<em>AI</em><i>.</i></a>
+
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+
+    <nav class="nav" id="primary-nav" data-nav data-lenis-prevent aria-label="Primary">
+      <ul class="nav__list" role="list">
+
+        <li class="nav__item">
+          <button class="nav__link" type="button" data-panel-trigger aria-expanded="false" aria-controls="panel-found">
+            Get found <span class="nav__chev" aria-hidden="true"></span>
+          </button>
+          <div class="mega" id="panel-found" data-panel>
+            <div class="mega__inner">
+              <div class="mega__col">
+                <p class="label">The services</p>
+                <ul class="mega__list" role="list">
+                  <li><a href="/ai-visibility/"><strong>Search and AI visibility</strong><span>Get named when someone asks for what you do.</span></a></li>
+                  <li><a href="/paid-media/"><strong>Paid media</strong><span>Priced against work you actually won.</span></a></li>
+                  <li><a href="/content/"><strong>Content and creative</strong><span>The words and images that sell before you speak.</span></a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="label">Start here</p>
+                <ul class="mega__list" role="list">
+                  <li><a href="/how-we-work/"><strong>How we work</strong><span>What the first ninety days look like.</span></a></li>
+                  <li><a href="/questions/"><strong>Questions</strong><span>The ones owners ask us most.</span></a></li>
+                  <li><a href="/pricing/"><strong>Pricing</strong><span>What it costs, published.</span></a></li>
+                </ul>
+              </div>
+              <div class="mega__col mega__offer">
+                <p class="label label--clay">Not sure where your work comes from?</p>
+                <p>We&rsquo;ll show you which channels are earning the enquiries, and which are spending.</p>
+                <a class="btn btn--primary" href="/growth-audit/">Get your growth audit</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav__item">
+          <button class="nav__link" type="button" data-panel-trigger aria-expanded="false" aria-controls="panel-booked">
+            Get booked <span class="nav__chev" aria-hidden="true"></span>
+          </button>
+          <div class="mega" id="panel-booked" data-panel>
+            <div class="mega__inner">
+              <div class="mega__col">
+                <p class="label">The services</p>
+                <ul class="mega__list" role="list">
+                  <li><a href="/websites/"><strong>Web and conversion</strong><span>Sites and booking flows built to be measured.</span></a></li>
+                  <li><a href="/reputation/"><strong>Reputation</strong><span>The reviews that decide a call.</span></a></li>
+                  <li><a href="/crm/"><strong>CRM and automation</strong><span>Follow-up, reminders, fewer no-shows.</span></a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="label">Start here</p>
+                <ul class="mega__list" role="list">
+                  <li><a href="/success-stories/"><strong>Success stories</strong><span>Named clients, real numbers, real dates.</span></a></li>
+                  <li><a href="/about/"><strong>About</strong><span>Who runs the work.</span></a></li>
+                  <li><a href="/contact/"><strong>Contact</strong><span>Everything that isn&rsquo;t a new enquiry.</span></a></li>
+                </ul>
+              </div>
+              <div class="mega__col mega__offer">
+                <p class="label label--clay">Losing enquiries after hours?</p>
+                <p>Twenty minutes, and we&rsquo;ll tell you where they&rsquo;re going and what it&rsquo;s costing you.</p>
+                <a class="btn btn--primary" href="/call/">Book a 20-minute call</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav__item">
+          <button class="nav__link" type="button" data-panel-trigger aria-expanded="false" aria-controls="panel-who">
+            Who we work with <span class="nav__chev" aria-hidden="true"></span>
+          </button>
+          <div class="mega" id="panel-who" data-panel>
+            <div class="mega__inner">
+              <div class="mega__col">
+                <p class="label"><a href="/build-and-design/">Build &amp; design</a></p>
+                <ul class="mega__list" role="list">
+                  <li><a href="/interior-design/"><strong>Interior design studios</strong><span>Showrooms, portfolios and the enquiry that follows.</span></a></li>
+                  <li><a href="/construction/"><strong>Construction companies</strong><span>Quote requests worth quoting for.</span></a></li>
+                  <li><a href="/architecture/"><strong>Architecture firms</strong><span>Feasibility conversations, not fee shoppers.</span></a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="label"><a href="/hr-and-recruitment/">HR &amp; recruitment</a></p>
+                <ul class="mega__list" role="list">
+                  <li><a href="/recruitment-agencies/"><strong>Recruitment &amp; staffing</strong><span>Two audiences, one funnel: clients and candidates.</span></a></li>
+                  <li><a href="/hr-outsourcing/"><strong>HR outsourcing &amp; payroll</strong><span>Long cycles, tracked to the signed contract.</span></a></li>
+                </ul>
+              </div>
+              <div class="mega__col">
+                <p class="label"><a href="/professional-services/">Professional services</a></p>
+                <ul class="mega__list" role="list">
+                  <li><a href="/accounting/"><strong>Accounting &amp; tax</strong><span>Seasonal demand, planned a quarter ahead.</span></a></li>
+                  <li><a href="/it-consulting/"><strong>IT consulting &amp; MSPs</strong><span>Retainer enquiries, not break-fix callouts.</span></a></li>
+                  <li><a href="/law-firms/"><strong>Legal &amp; corporate law</strong><span>Practice-area visibility that holds up.</span></a></li>
+                  <li><a href="/consulting/"><strong>Business consulting</strong><span>Authority content that earns the first meeting.</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav__item"><a class="nav__link" href="/success-stories/">Success stories</a></li>
+        <li class="nav__item"><a class="nav__link" href="/pricing/">Pricing</a></li>
+        <li class="nav__item"><a class="nav__link" href="/about/">About</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a class="nav__secondary" href="/call/">Book a 20-minute call</a>
+        <a class="btn btn--cream" href="/growth-audit/">Get your growth audit</a>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+
+<main id="main">
+
+<!-- ==========================================================================
+     01 — HERO                                                    Section type A
+     RULES THAT MUST SURVIVE DESIGN:
+     · The eyebrow is load-bearing. It is the only place the first screen says
+       what we are and who we serve. If it clutters a layout, fix the layout.
+     · The proof bar sits directly beneath. No gap, no section break.
+     · One CTA. No second link beside it. The call lives in the nav.
+     · Two stats, both real. Never padded to three or four to square off a
+       grid — a made-up number sitting beside a true one devalues both.
+     · "Build and run" cannot be shortened.
+     · "with your team, not around them" stays whole.
+     · AI does not appear in the first screen. Deliberate.
+     ========================================================================== -->
+<section class="hero">
+  <div class="hero__inner container">
+
+    <p class="eyebrow"><span>Digital marketing for firms that sell expertise</span></p>
+
+    <h1 class="hero__title">Grow without being the one who finds the work.</h1>
+
+    <div class="hero__meta">
+      <p class="hero__sub">We build and run the system that keeps new work coming in &mdash; with your team, not around them. Every month you see what it brought in, and what each new client cost to win.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="/growth-audit/">Get your growth audit</a>
+        <a class="link-quiet" href="/call/">Book a 20-minute call</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero__proof">
+    <div class="stat">
+      <span class="stat__n">2009</span>
+      <span class="stat__k">Working with businesses since</span>
+    </div>
+    <div class="stat">
+      <span class="stat__n">200+</span>
+      <span class="stat__k">Clients served</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     02 — SUCCESS STORIES
+     ========================================================================== -->
+<section class="stories">
+  <div class="container">
+    <div class="stories__head">
+      <div>
+        <p class="eyebrow eyebrow--light"><span>Success stories</span></p>
+        <h2 class="stories__title">Businesses we&rsquo;ve helped,<br>and what changed.</h2>
+      </div>
+      <a class="link-mono" href="/success-stories/">Read all success stories</a>
+    </div>
+    <div class="stories__grid">
+      <article class="case case--lead">
+        <div class="case__photo"><span>PHOTO &MDASH; FINISHED KITCHEN, DUBAI SHOWROOM</span></div>
+        <div class="case__head">
+          <h3 class="case__name">Pine Tree Lane</h3>
+          <p class="case__meta"><span>DUBAI, UAE</span><span>INTERIOR DESIGN &AMP; BESPOKE JOINERY</span></p>
+        </div>
+        <div class="case__body">
+          <p class="case__metric"><b>4&times;</b><span>organic traffic in three months</span></p>
+          <p class="case__text">A factory, a showroom and a ten-year warranty &mdash; and almost nobody finding them. Now the search results for custom kitchens in Dubai are theirs.</p>
+          <a class="link-quiet link-quiet--bold" href="/success-stories/">Read the full story</a>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case__photo"><span>PHOTO &MDASH; SWEETRUSH TEAM AT WORK</span></div>
+        <div class="case__head">
+          <h3 class="case__name">SweetRush</h3>
+          <p class="case__meta"><span>SAN FRANCISCO, USA</span><span>LEARNING &AMP; DEVELOPMENT CONSULTANCY</span></p>
+        </div>
+        <div class="case__body">
+          <p class="case__metric"><b>3.2&times;</b><span>inbound enquiries in five months</span></p>
+          <p class="case__text">A twenty-year reputation among learning and development buyers, and a website that read like a much smaller firm&rsquo;s brochure.</p>
+          <a class="link-quiet link-quiet--bold" href="/success-stories/">Read the full story</a>
+        </div>
+      </article>
+      <article class="case">
+        <div class="case__photo"><span>PHOTO &MDASH; STUDIO UBIQUE, ZWOLLE</span></div>
+        <div class="case__head">
+          <h3 class="case__name">Studio Ubique</h3>
+          <p class="case__meta"><span>ZWOLLE, NETHERLANDS</span><span>DIGITAL AGENCY &MDASH; OUR PARTNER</span></p>
+        </div>
+        <div class="case__body">
+          <p class="case__metric"><b>+58%</b><span>qualified briefs in four months</span></p>
+          <p class="case__text">Excellent work, invisible outside their own network, and no record of it that a prospect could check.</p>
+          <a class="link-quiet link-quiet--bold" href="/success-stories/">Read the full story</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     03 — WHAT WE DO
+     The left column is pinned while the six services scroll past it. The verb
+     swaps from "Get found." to "Get booked." at service four.
+     ========================================================================== -->
+<section class="services">
+  <div class="container services__head">
+    <p class="eyebrow eyebrow--light"><span>What we do</span></p>
+    <h2 class="services__title">Two jobs. Six services. One team.</h2>
+  </div>
+
+  <div class="container services__band" data-band>
+    <div class="svc-media" data-pin>
+      <div class="svc-media__verbs">
+        <span class="svc-media__verb" data-verb="0">Get found.</span>
+        <span class="svc-media__verb" data-verb="1">Get booked.</span>
+      </div>
+      <div class="svc-media__rule" aria-hidden="true"></div>
+      <div class="svc-media__frame">
+        <div class="svc-media__shot" data-img="0"><span>PHONE IN A HAND, ASSISTANT ANSWER NAMING A REAL CLIENT</span></div>
+        <div class="svc-media__shot" data-img="1"><span>A LIVE SPEND REPORT ON A REAL DESK, AT REAL SCALE</span></div>
+        <div class="svc-media__shot" data-img="2"><span>A SHOOT BEING SET UP IN A CLIENT&RSQUO;S WORKSHOP OR SHOWROOM</span></div>
+        <div class="svc-media__shot" data-img="3"><span>COMPLETING A BOOKING FORM ON A PHONE, THUMB IN SHOT</span></div>
+        <div class="svc-media__shot" data-img="4"><span>AN OWNER READING A REAL REVIEW ON THEIR OWN PHONE</span></div>
+        <div class="svc-media__shot" data-img="5"><span>A WEEK&RSQUO;S DIARY, CLOSE CROP, APPOINTMENTS FILLED IN</span></div>
+      </div>
+    </div>
+    <div class="services__list">
+      <article class="svc" data-svc="0">
+        <p class="svc__n">01</p>
+        <div class="svc__body">
+          <h3 class="svc__title">Search and AI visibility</h3>
+          <p class="svc__lead">When someone needs what you do, they type it into Google or ask an assistant. Both come back with a short list. We work to get your name onto it &mdash; and we show you whether it&rsquo;s there.</p>
+          <ul class="svc__list" role="list">
+              <li>Local SEO</li>
+              <li>Technical SEO</li>
+              <li>On-page SEO</li>
+              <li>Generative Engine Optimisation (GEO)</li>
+              <li>Answer Engine Optimisation (AEO)</li>
+              <li>Google Business Profile management</li>
+              <li>Link building and digital PR</li>
+          </ul>
+        </div>
+      </article>
+      <article class="svc" data-svc="1">
+        <p class="svc__n">02</p>
+        <div class="svc__body">
+          <h3 class="svc__title">Paid media</h3>
+          <p class="svc__lead">Adverts that show up while someone is already looking, on search and on social. We count the ones that turn into an enquiry, and we price the spend against work you actually won.</p>
+          <ul class="svc__list" role="list">
+              <li>Google Search Ads</li>
+              <li>Google Display and YouTube Ads</li>
+              <li>Microsoft (Bing) Ads</li>
+              <li>Meta Ads</li>
+              <li>LinkedIn Ads</li>
+              <li>Remarketing and retargeting</li>
+              <li>Landing page design and testing</li>
+          </ul>
+        </div>
+      </article>
+      <article class="svc" data-svc="2">
+        <p class="svc__n">03</p>
+        <div class="svc__body">
+          <h3 class="svc__title">Content and creative</h3>
+          <p class="svc__lead">The words, photographs and pages that do the selling before anyone speaks to you. Written for the people who buy from you, not for a search engine.</p>
+          <ul class="svc__list" role="list">
+              <li>SEO content writing</li>
+              <li>Website copywriting</li>
+              <li>Case studies and white papers</li>
+              <li>Photography art direction</li>
+              <li>Video production</li>
+              <li>Email marketing</li>
+              <li>Social media content</li>
+          </ul>
+        </div>
+      </article>
+      <article class="svc" data-svc="3">
+        <p class="svc__n">04</p>
+        <div class="svc__body">
+          <h3 class="svc__title">Web and conversion</h3>
+          <p class="svc__lead">Your website has one job: turn a visitor into a booked conversation. We build sites and enquiry flows that do that, and we measure every step so you can see where people drop off.</p>
+          <ul class="svc__list" role="list">
+              <li>Website design and development</li>
+              <li>Landing page development</li>
+              <li>Conversion rate optimisation (CRO)</li>
+              <li>Booking and enquiry flows</li>
+              <li>Page speed and Core Web Vitals</li>
+              <li>Mobile optimisation</li>
+              <li>Analytics and conversion tracking</li>
+          </ul>
+        </div>
+      </article>
+      <article class="svc" data-svc="4">
+        <p class="svc__n">05</p>
+        <div class="svc__body">
+          <h3 class="svc__title">Reputation</h3>
+          <p class="svc__lead">Before anyone calls you, they read about you. We help you collect more reviews, reply to the ones you have, and keep the profiles that decide the call accurate.</p>
+          <ul class="svc__list" role="list">
+              <li>Review generation campaigns</li>
+              <li>Review response and moderation</li>
+              <li>Google, Trustpilot and industry review profiles</li>
+              <li>Local citations and directory listings</li>
+              <li>Reputation monitoring</li>
+          </ul>
+        </div>
+      </article>
+      <article class="svc" data-svc="5">
+        <p class="svc__n">06</p>
+        <div class="svc__body">
+          <h3 class="svc__title">CRM and automation</h3>
+          <p class="svc__lead">Most enquiries are lost between arriving and being answered. We set up the follow-up, the reminders and the reporting, so nothing sits in an inbox and fewer meetings get missed.</p>
+          <ul class="svc__list" role="list">
+              <li>CRM setup and migration</li>
+              <li>Lead capture and routing</li>
+              <li>Automated follow-up sequences</li>
+              <li>Appointment reminders and no-show reduction</li>
+              <li>Email and SMS automation</li>
+              <li>Sales pipeline reporting</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     04 — HOW WE DO IT
+     Steps 01–03 are Foundation Fix, step 04 is the retainer. The bar beneath
+     draws that, which explains the pricing structure without a sentence.
+     ========================================================================== -->
+<section class="method">
+  <div class="container">
+    <div class="method__head">
+      <p class="eyebrow"><span>How we do it</span></p>
+      <h2 class="method__title">The first thing we fix is rarely the advertising.</h2>
+    </div>
+
+    <div class="method__body">
+      <div class="steps">
+        <button class="step" type="button" data-step="0" aria-selected="true">
+          <span class="step__n">01</span>
+          <span class="step__name">Learn.</span>
+          <span class="step__bar" aria-hidden="true"></span>
+        </button>
+        <button class="step" type="button" data-step="1" aria-selected="false">
+          <span class="step__n">02</span>
+          <span class="step__name">Audit.</span>
+          <span class="step__bar" aria-hidden="true"></span>
+        </button>
+        <button class="step" type="button" data-step="2" aria-selected="false">
+          <span class="step__n">03</span>
+          <span class="step__name">Strategy.</span>
+          <span class="step__bar" aria-hidden="true"></span>
+        </button>
+        <button class="step" type="button" data-step="3" aria-selected="false">
+          <span class="step__n">04</span>
+          <span class="step__name">Execute.</span>
+          <span class="step__bar" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="method__panel">
+        <div class="schematic">
+          <div class="sch" data-panel="0">
+            <div class="sch__lines"><span></span><span></span><span class="is-on"></span><span></span></div>
+            <p class="label">The business first</p>
+          </div>
+          <div class="sch sch--grid" data-panel="1" aria-hidden="true">
+            <i></i><i></i><i class="is-on"></i><i></i><i></i><i class="is-on"></i><i></i><i></i>
+            <i></i><i class="is-on"></i><i></i><i></i><i></i><i></i><i class="is-on"></i><i></i>
+          </div>
+          <div class="sch sch--bars" data-panel="2">
+            <p><span class="label">Q1</span><b style="--w:42%"></b></p>
+            <p><span class="label">Q2</span><b style="--w:58%;--c:#2C5540"></b></p>
+            <p><span class="label">Q3</span><b style="--w:74%;--c:var(--green-line)"></b></p>
+            <p><span class="label label--clay">Q4</span><b style="--w:88%;--c:var(--clay)"></b></p>
+          </div>
+          <div class="sch sch--pulse" data-panel="3">
+            <span class="pulse" aria-hidden="true"><i></i><i></i><i></i></span>
+            <p class="label">Measure<br>Revise<br>Report</p>
+          </div>
+        </div>
+
+        <div class="method__copy">
+          <p class="stepcopy" data-copy="0">We start with the business, not the website. Your goals for the year, how you win work today, what a good client looks like, and how much more you could take on.</p>
+          <p class="stepcopy" data-copy="1">Then we look at everything. The site and what&rsquo;s broken under it, how people find you, what the assistants say, and what happens to an enquiry after it lands.</p>
+          <p class="stepcopy" data-copy="2">A plan built around your goals rather than a template. What we&rsquo;ll do, in what order, and what each part should produce.</p>
+          <p class="stepcopy" data-copy="3">We run it, measure it, and revise it every month. The plan changes as the results come in; it doesn&rsquo;t get repeated.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="parts">
+      <div class="part part--one">
+        <div>
+          <p class="label">Part one, one price &middot; Steps 01&ndash;03</p>
+          <p class="part__name">Foundation Fix</p>
+        </div>
+        <p class="part__text">Everything found, everything fixed, and a strategy built for your goals.</p>
+      </div>
+      <div class="part part--two">
+        <p class="label label--clay">Part two, monthly &middot; Step 04</p>
+        <p class="part__name">Ongoing</p>
+        <p class="part__text">The work, tracked and revised.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     05 — OUR TEAM
+     Two rows drifting in opposite directions, paused under the cursor.
+     ========================================================================== -->
+<section class="team">
+  <div class="container team__head">
+    <div>
+      <p class="eyebrow eyebrow--light"><span>Our team</span></p>
+      <h2 class="team__title">The people who do the work.</h2>
+    </div>
+    <p class="team__lead">Specialists in search, paid media, content, web and CRM, working as one group rather than five departments. The same people who plan your quarter are the ones who ship it &mdash; and who sit on the monthly call explaining what moved.</p>
+  </div>
+
+  <div class="marquees">
+    <div class="marquee" data-marquee="left">
+      <div class="marquee__track" data-track>
+          <div class="tile" style="--tile-w:480px"><span>THE STUDIO ON A FRIDAY</span></div>
+          <div class="tile" style="--tile-w:340px"><span>WHITEBOARD, HALF RUBBED OUT</span></div>
+          <div class="tile" style="--tile-w:560px"><span>SHOOT DAY IN A CLIENT WORKSHOP</span></div>
+          <div class="tile" style="--tile-w:400px"><span>REVIEW CALL, MID-SENTENCE</span></div>
+          <div class="tile" style="--tile-w:520px"><span>LUNCH THAT RAN LONG</span></div>
+          <div class="tile" style="--tile-w:480px"><span>THE STUDIO ON A FRIDAY</span></div>
+          <div class="tile" style="--tile-w:340px"><span>WHITEBOARD, HALF RUBBED OUT</span></div>
+          <div class="tile" style="--tile-w:560px"><span>SHOOT DAY IN A CLIENT WORKSHOP</span></div>
+          <div class="tile" style="--tile-w:400px"><span>REVIEW CALL, MID-SENTENCE</span></div>
+          <div class="tile" style="--tile-w:520px"><span>LUNCH THAT RAN LONG</span></div>
+      </div>
+    </div>
+    <div class="marquee" data-marquee="right">
+      <div class="marquee__track" data-track>
+          <div class="tile" style="--tile-w:420px"><span>END OF QUARTER, GLASSES UP</span></div>
+          <div class="tile" style="--tile-w:560px"><span>THE OFFICE DOG, UNPAID</span></div>
+          <div class="tile" style="--tile-w:380px"><span>NEW STARTER, FIRST WEEK</span></div>
+          <div class="tile" style="--tile-w:500px"><span>SUMMER PARTY, SOMEONE&RSQUO;S GARDEN</span></div>
+          <div class="tile" style="--tile-w:440px"><span>LATE PUSH BEFORE A LAUNCH</span></div>
+          <div class="tile" style="--tile-w:420px"><span>END OF QUARTER, GLASSES UP</span></div>
+          <div class="tile" style="--tile-w:560px"><span>THE OFFICE DOG, UNPAID</span></div>
+          <div class="tile" style="--tile-w:380px"><span>NEW STARTER, FIRST WEEK</span></div>
+          <div class="tile" style="--tile-w:500px"><span>SUMMER PARTY, SOMEONE&RSQUO;S GARDEN</span></div>
+          <div class="tile" style="--tile-w:440px"><span>LATE PUSH BEFORE A LAUNCH</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     06 — QUESTIONS
+     The list drives the answer beside it. Every answer stays in the DOM, so
+     assistants can read all eight.
+     ========================================================================== -->
+<section class="questions">
+  <div class="container">
+    <div class="questions__head">
+      <div>
+        <p class="eyebrow"><span>Questions</span></p>
+        <h2 class="questions__title">The awkward ones, answered before you ask.</h2>
+      </div>
+      <a class="link-quiet link-quiet--bold" href="/questions/">Every question, answered in full</a>
+    </div>
+
+    <div class="questions__body">
+      <div class="fqs">
+        <button class="fq" type="button" data-fq="0" aria-selected="true">
+          <span class="fq__n">01</span>
+          <span class="fq__q">How much does it cost?</span>
+        </button>
+        <button class="fq" type="button" data-fq="1" aria-selected="false">
+          <span class="fq__n">02</span>
+          <span class="fq__q">How long am I tied in?</span>
+        </button>
+        <button class="fq" type="button" data-fq="2" aria-selected="false">
+          <span class="fq__n">03</span>
+          <span class="fq__q">Who owns the website, the ads and the data?</span>
+        </button>
+        <button class="fq" type="button" data-fq="3" aria-selected="false">
+          <span class="fq__n">04</span>
+          <span class="fq__q">What if one of the services doesn&rsquo;t work?</span>
+        </button>
+        <button class="fq" type="button" data-fq="4" aria-selected="false">
+          <span class="fq__n">05</span>
+          <span class="fq__q">How soon will I see something?</span>
+        </button>
+        <button class="fq" type="button" data-fq="5" aria-selected="false">
+          <span class="fq__n">06</span>
+          <span class="fq__q">Do I have to buy all six services?</span>
+        </button>
+        <button class="fq" type="button" data-fq="6" aria-selected="false">
+          <span class="fq__n">07</span>
+          <span class="fq__q">Will you work with my competitor?</span>
+        </button>
+        <button class="fq" type="button" data-fq="7" aria-selected="false">
+          <span class="fq__n">08</span>
+          <span class="fq__q">We already have a marketing manager. Where do they fit?</span>
+        </button>
+      </div>
+      <div class="answers">
+        <div class="answer" data-fa="0"><p>Two numbers. Foundation Fix is a one-off price for the audit, the fixes and the first strategy. After that it&rsquo;s monthly. Both are published on the pricing page &mdash; you don&rsquo;t have to sit through a call to find out.</p></div>
+        <div class="answer" data-fa="1"><p class="answer__fact"><span class="label">Notice period</span><b>30 days, either side</b></p><p>You stay because the numbers make sense, not because of a signature.</p></div>
+        <div class="answer" data-fa="2"><p>You do. All of it, on the day you ask for it, whether you&rsquo;re still a client or not.</p></div>
+        <div class="answer" data-fa="3"><p>We remove it and you stop paying for that part. We&rsquo;d rather lose a line item than defend one.</p></div>
+        <div class="answer" data-fa="4"><p>Response times and booking flow in weeks. Search and AI visibility in three to six months. We&rsquo;ll tell you which of your problems is which before you commit to anything.</p></div>
+        <div class="answer" data-fa="5"><p>No. Most clients start with one or two. The point of one team is that nothing falls between them &mdash; not that you have to buy everything at once.</p></div>
+        <div class="answer" data-fa="6"><p>One firm per city, per industry. If the slot for your city has gone, we say so on the first call rather than after you have shared your numbers.</p></div>
+        <div class="answer" data-fa="7"><p>They own the plan. We execute against it and report to them &mdash; with your team, never around them. Most marketing leads come to us for the specialists they can&rsquo;t justify hiring in-house.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     07 — THE CLOSE
+     ========================================================================== -->
+<section class="close">
+  <div class="container close__inner">
+    <div class="close__left">
+      <p class="eyebrow eyebrow--light"><span>One place to start</span></p>
+      <p class="close__tagline">Get found.<br>Get booked<i>.</i></p>
+    </div>
+    <div class="close__card">
+      <p class="close__text">Start with the audit. Free, real work, back within a day &mdash; including which firms the assistants are naming instead of you.</p>
+      <div class="close__rule" aria-hidden="true"></div>
+      <div class="close__actions">
+        <a class="btn btn--cream btn--lg" href="/growth-audit/">Get your growth audit</a>
+        <a class="link-quiet link-quiet--onforest" href="/call/">Book a 20-minute call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     08 — FOOTER
+     All nine industries are linked here, and this is the only place on the
+     home page they are. Category names are links too.
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer__cols">
+      <div class="footer__col">
+        <p class="label label--clay">Get found</p>
+        <ul role="list">
+          <li><a href="/ai-visibility/">Search and AI visibility</a></li>
+          <li><a href="/paid-media/">Paid media</a></li>
+          <li><a href="/content/">Content and creative</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="label label--clay">Get booked</p>
+        <ul role="list">
+          <li><a href="/websites/">Web and conversion</a></li>
+          <li><a href="/reputation/">Reputation</a></li>
+          <li><a href="/crm/">CRM and automation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__col--quiet">
+        <p class="label">Company</p>
+        <ul role="list">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/how-we-work/">How we work</a></li>
+          <li><a href="/questions/">Questions</a></li>
+          <li><a href="/success-stories/">Success stories</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__contact">
+        <p class="label">Talk to us</p>
+        <a class="link-quiet link-quiet--bold" href="mailto:hello@rankinai.com">hello@rankinai.com</a>
+        <p class="footer__pair"><span class="label">Phone</span><b>+971 4 501 8820</b></p>
+        <p class="footer__pair"><span class="label">Offices</span><b>Dubai &middot; Zwolle</b></p>
+      </div>
+    </div>
+
+    <div class="footer__industries">
+      <p class="label">Who we work with</p>
+      <div class="ind">
+        <a class="ind__cat" href="/build-and-design/">Build &amp; design</a>
+        <p class="ind__list"><a href="/interior-design/">Interior design studios</a> &middot; <a href="/construction/">Construction companies</a> &middot; <a href="/architecture/">Architecture firms</a></p>
+      </div>
+      <div class="ind">
+        <a class="ind__cat" href="/hr-and-recruitment/">HR &amp; recruitment</a>
+        <p class="ind__list"><a href="/recruitment-agencies/">Recruitment &amp; staffing agencies</a> &middot; <a href="/hr-outsourcing/">HR outsourcing &amp; payroll</a></p>
+      </div>
+      <div class="ind">
+        <a class="ind__cat" href="/professional-services/">Professional services</a>
+        <p class="ind__list"><a href="/accounting/">Accounting &amp; tax</a> &middot; <a href="/it-consulting/">IT consulting &amp; MSPs</a> &middot; <a href="/law-firms/">Legal &amp; corporate law</a> &middot; <a href="/consulting/">Business consulting</a></p>
+      </div>
+    </div>
+
+    <!-- Build this row last. It only works once an assistant actually names us. -->
+    <div class="footer__ask">
+      <div>
+        <p class="label label--clay">Ask an assistant</p>
+        <p class="footer__ask-line">Don&rsquo;t take our word for any of it. Ask an assistant about us.</p>
+      </div>
+      <ul class="pills" role="list">
+        <li><a class="pill" href="#" rel="noopener">ChatGPT</a></li>
+        <li><a class="pill" href="#" rel="noopener">Claude</a></li>
+        <li><a class="pill" href="#" rel="noopener">Gemini</a></li>
+        <li><a class="pill" href="#" rel="noopener">Perplexity</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__base">
+      <span class="wordmark wordmark--dark">Rankin<em>AI</em><i>.</i></span>
+      <p class="footer__legal">
+        &copy; RankinAI 2026 &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a><br>
+        <span class="label">RankinAI FZ-LLC &middot; Licence 2109-DMCC-4471</span>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+
+<!-- ==========================================================================
+     STRUCTURED DATA
+     Organization and WebSite only, for now.
+
+     The FAQPage node comes back when the questions section is placed — it is
+     the cheapest AI-visibility work on the whole site, and it belongs on the
+     section most likely to be quoted back to a prospect by an assistant.
+     Leaving it in while the questions are not on the page would be marking up
+     content that does not exist.
+     ========================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rankinai.com/#organization",
+      "name": "RankinAI",
+      "url": "https://rankinai.com/",
+      "description": "Digital marketing for firms that sell expertise — build and design, HR and recruitment, and professional services.",
+      "founder": { "@type": "Person", "name": "Kulwant Singh" },
+      "foundingDate": "2026"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rankinai.com/#website",
+      "url": "https://rankinai.com/",
+      "name": "RankinAI",
+      "publisher": { "@id": "https://rankinai.com/#organization" }
+    }
+  ]
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!-- ==========================================================================
+     RankinAI — _sections.html
+     HOLDING FILE. Not a page. Not linked. Not served.
+
+     Sections 02 to 09 of the homepage, with their finished copy and every
+     layout rule kept as comments. Removed from index.html so the header and
+     hero can be styled on their own.
+
+     Paste each block back into index.html, inside <main>, as we style it —
+     in this order: proof row, story, services, process, team, questions,
+     close, footer.
+     ========================================================================== -->
+
+<!-- ==========================================================================
+     02 — PROOF ROW                                               Section type A
+     Three cards. Overviews, not stories. Geography is on every card — for a
+     new brand, three countries is worth more than three case studies from
+     one city.
+     "Our partner" stays on the Studio Ubique card. Non-negotiable.
+
+     >>> TWO OF THESE THREE NUMBERS ARE INVENTED. Do not ship. <<<
+     Pine Tree Lane's 4x is real and publicly stated.
+     ========================================================================== -->
+<section class="proof">
+  <div class="container">
+    <h2 class="section-title">Three firms. Three countries.</h2>
+
+    <ul class="proof__grid" role="list">
+
+      <li class="case">
+        <p class="case__client">Pine Tree Lane</p>
+        <p class="case__where">Dubai, UAE</p>
+        <p class="case__sector">Interior design &amp; bespoke joinery</p>
+        <p class="case__metric">4&times; organic traffic in three months</p>
+        <p class="case__line">A factory, a showroom and a ten-year warranty — and almost nobody finding them. Now the search results for custom kitchens in Dubai are theirs.</p>
+        <a class="case__more" href="/proof/pine-tree-lane/">Read the full story</a>
+      </li>
+
+      <li class="case">
+        <p class="case__client">SweetRush</p>
+        <p class="case__where">San Francisco, USA</p>
+        <p class="case__sector">Learning &amp; development consultancy</p>
+        <!-- PLACEHOLDER METRIC — replace with the real figure and its period -->
+        <p class="case__metric is-placeholder">[ Metric — needs your number ]</p>
+        <p class="case__line">[ Draft — one line on what was wrong when they came to us. ]</p>
+        <a class="case__more" href="/proof/sweetrush/">Read the full story</a>
+      </li>
+
+      <li class="case">
+        <p class="case__client">Studio Ubique</p>
+        <p class="case__where">Zwolle, Netherlands</p>
+        <p class="case__sector">Digital agency — our partner</p>
+        <!-- PLACEHOLDER METRIC — replace with the real figure and its period -->
+        <p class="case__metric is-placeholder">[ Metric — needs your number ]</p>
+        <p class="case__line">[ Draft — one line on what was wrong when they came to us. ]</p>
+        <a class="case__more" href="/proof/studio-ubique/">Read the full story</a>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     03 — THE STORY                                               Section type A
+     RULES:
+     · First person, and only here. Everywhere else is "we" and "you".
+     · Seventy words, and it stays there. The job is credibility, not
+       biography. The full version lives on the About page.
+     · The middle beat is a fact, not a framing device: B2B buyers starting
+       vendor research in an AI chatbot went 29% -> 51% inside a year, and the
+       shortlist averages about 2.5 names.
+     ========================================================================== -->
+<section class="story">
+  <div class="container story__inner">
+    <div class="story__text">
+      <p class="eyebrow">Why RankinAI exists</p>
+      <h2 class="story__title">We built Teqdeft in 2009. We built RankinAI for what happened next.</h2>
+
+      <p>I'm Kulwant Singh. I started Teqdeft in 2009 and have worked with more than a hundred businesses since — most of them selling expertise to other businesses, the same as you.</p>
+      <p>Then search changed. People stopped scrolling through ten results and started asking an assistant, which comes back with about three names.</p>
+      <p>RankinAI is what we built for that. Same people, same accountability, pointed at how clients actually find you now.</p>
+
+      <a class="link-arrow" href="/about/">More about the team</a>
+    </div>
+
+    <figure class="story__figure">
+      <img src="images/founder.svg" alt="Kulwant Singh at his desk" width="800" height="600">
+    </figure>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     04 — WHAT WE DO                                              Section type A
+     RULES:
+     · Two bands, not a grid of six. The headline promises two jobs; a flat
+       3x2 grid throws that away and it becomes a menu.
+     · Never an accordion or tabs. This section proves the word "system" from
+       the hero. Everything visible or the claim stays abstract.
+     · Plain nouns only. No GEO, no AEO, no CRO. The acronym appears once, on
+       the service page, for people searching it.
+     · The "Includes" runs become links to sub-pages as the site grows.
+     ========================================================================== -->
+<section class="services">
+  <div class="container">
+    <p class="eyebrow">What we do</p>
+    <h2 class="section-title">Two jobs. Six services. One team.</h2>
+
+    <div class="band">
+      <div class="band__head">
+        <p class="band__verb">Get found<span class="stop">.</span></p>
+        <p class="band__desc">Before they know you exist</p>
+      </div>
+
+      <ul class="band__grid" role="list">
+        <li class="service">
+          <img class="service__img" src="images/service-search.svg" alt="A phone showing an AI assistant naming a client business" width="800" height="600">
+          <div class="service__body">
+            <h3 class="service__name">Search and AI visibility</h3>
+            <p>When someone needs what you do, they type it into Google or ask an assistant. Both come back with a short list. We work to get your name onto it — and we show you whether it's there.</p>
+            <p class="service__incl-label">Includes</p>
+            <p class="service__incl">Local SEO · Technical SEO · On-page SEO · Generative Engine Optimisation (GEO) · Answer Engine Optimisation (AEO) · Google Business Profile management · Link building and digital PR</p>
+          </div>
+        </li>
+
+        <li class="service">
+          <img class="service__img" src="images/service-paid.svg" alt="A live advertising spend report on a desk" width="800" height="600">
+          <div class="service__body">
+            <h3 class="service__name">Paid media</h3>
+            <p>Adverts that show up while someone is already looking, on search and on social. We count the ones that turn into an enquiry, and we price the spend against work you actually won.</p>
+            <p class="service__incl-label">Includes</p>
+            <p class="service__incl">Google Search Ads · Google Display and YouTube Ads · Microsoft (Bing) Ads · Meta Ads · LinkedIn Ads · Remarketing and retargeting · Landing page design and testing</p>
+          </div>
+        </li>
+
+        <li class="service">
+          <img class="service__img" src="images/service-content.svg" alt="A photography shoot being set up in a client's workshop" width="800" height="600">
+          <div class="service__body">
+            <h3 class="service__name">Content and creative</h3>
+            <p>The words, photographs and pages that do the selling before anyone speaks to you. Written for the people who buy from you, not for a search engine.</p>
+            <p class="service__incl-label">Includes</p>
+            <p class="service__incl">SEO content writing · Website copywriting · Case studies and white papers · Photography art direction · Video production · Email marketing · Social media content</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="band">
+      <div class="band__head">
+        <p class="band__verb">Get booked<span class="stop">.</span></p>
+        <p class="band__desc">Between the click and the diary</p>
+      </div>
+
+      <ul class="band__grid" role="list">
+        <li class="service">
+          <img class="service__img" src="images/service-web.svg" alt="Someone completing a booking form on a phone" width="800" height="600">
+          <div class="service__body">
+            <h3 class="service__name">Web and conversion</h3>
+            <p>Your website has one job: turn a visitor into a booked conversation. We build sites and enquiry flows that do that, and we measure every step so you can see where people drop off.</p>
+            <p class="service__incl-label">Includes</p>
+            <p class="service__incl">Website design and development · Landing page development · Conversion rate optimisation (CRO) · Booking and enquiry flows · Page speed and Core Web Vitals · Mobile optimisation · Analytics and conversion tracking</p>
+          </div>
+        </li>
+
+        <li class="service">
+          <img class="service__img" src="images/service-reputation.svg" alt="A business owner reading a review on their phone" width="800" height="600">
+          <div class="service__body">
+            <h3 class="service__name">Reputation</h3>
+            <p>Before anyone calls you, they read about you. We help you collect more reviews, reply to the ones you have, and keep the profiles that decide the call accurate.</p>
+            <p class="service__incl-label">Includes</p>
+            <p class="service__incl">Review generation campaigns · Review response and moderation · Google, Trustpilot and industry review profiles · Local citations and directory listings · Reputation monitoring</p>
+          </div>
+        </li>
+
+        <li class="service">
+          <img class="service__img" src="images/service-crm.svg" alt="A week's diary with appointments filled in" width="800" height="600">
+          <div class="service__body">
+            <h3 class="service__name">CRM and automation</h3>
+            <p>Most enquiries are lost between arriving and being answered. We set up the follow-up, the reminders and the reporting, so nothing sits in an inbox and fewer meetings get missed.</p>
+            <p class="service__incl-label">Includes</p>
+            <p class="service__incl">CRM setup and migration · Lead capture and routing · Automated follow-up sequences · Appointment reminders and no-show reduction · Email and SMS automation · Sales pipeline reporting</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <p class="kicker">One team owns the whole path — from the question typed into an assistant to the signed contract. Nobody hands you between four suppliers and calls it a strategy.</p>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     05 — HOW WE DO IT                                            Section type A
+     RULES:
+     · Four words, four full stops. Same shape as the tagline.
+     · The spanning bar is the point: Learn, Audit and Strategy are Foundation
+       Fix; Execute is the retainer. It explains the pricing structure without
+       a sentence of explanation.
+     · The compounding paragraph keeps clients past month three. On the page,
+       not buried in the contract.
+     ========================================================================== -->
+<section class="process">
+  <div class="container">
+    <p class="eyebrow">How we do it</p>
+    <h2 class="section-title">The first thing we fix is rarely the advertising.</h2>
+
+    <ol class="flow" role="list">
+      <li class="flow__step">
+        <span class="flow__n">01</span>
+        <h3 class="flow__name">Learn<span class="stop">.</span></h3>
+        <p>We start with the business, not the website. Your goals for the year, how you win work today, what a good client looks like, and how much more you could take on.</p>
+      </li>
+      <li class="flow__step">
+        <span class="flow__n">02</span>
+        <h3 class="flow__name">Audit<span class="stop">.</span></h3>
+        <p>Then we look at everything. The site and what's broken under it, how people find you, what the assistants say, and what happens to an enquiry after it lands.</p>
+      </li>
+      <li class="flow__step">
+        <span class="flow__n">03</span>
+        <h3 class="flow__name">Strategy<span class="stop">.</span></h3>
+        <p>A plan built around your goals rather than a template. What we'll do, in what order, and what each part should produce.</p>
+      </li>
+      <li class="flow__step">
+        <span class="flow__n">04</span>
+        <h3 class="flow__name">Execute<span class="stop">.</span></h3>
+        <p>We run it, measure it, and revise it every month. The plan changes as the results come in; it doesn't get repeated.</p>
+      </li>
+    </ol>
+
+    <!-- Spanning bar: part one covers steps 01-03, part two covers step 04 -->
+    <div class="spans">
+      <div class="span span--one">
+        <p class="label">Part one, one price</p>
+        <p class="span__name">Foundation Fix</p>
+        <p class="span__desc">Everything found, everything fixed, and a strategy built for your goals.</p>
+      </div>
+      <div class="span span--two">
+        <p class="label">Part two, monthly</p>
+        <p class="span__name">Ongoing</p>
+        <p class="span__desc">The work, tracked and revised.</p>
+      </div>
+    </div>
+
+    <p class="process__intro">Every month, before anything else is discussed, we answer the same three questions in writing.</p>
+
+    <ul class="questions-three" role="list">
+      <li>What went well.</li>
+      <li>What went wrong.</li>
+      <li>What we're changing.</li>
+    </ul>
+
+    <p class="kicker">Paid media moves in weeks. Search and AI visibility compound over months — usually three to six before it is obvious. We will tell you which of your problems is which before you spend anything.</p>
+
+    <a class="link-arrow" href="/how-we-work/">The full method, and who we turn away</a>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     06 — THE TEAM                                                Section type A
+     RULES:
+     · Roles are what someone runs, not a job title.
+     · At ten people, no bios. Portrait, name, discipline.
+     · Identical portrait crop across all ten. Shoot in one session.
+     · Last row sitting short is fine. Do not pad it with a stock face or a
+       "we're hiring" tile to square it off.
+
+     >>> NINE NAMES STILL NEEDED. <<<
+     ========================================================================== -->
+<section class="team">
+  <div class="container">
+    <p class="eyebrow">The team</p>
+    <h2 class="section-title">The people who'll actually do the work.</h2>
+
+    <p class="team__intro">No account managers relaying messages between you and someone you never meet. You'll know who runs your search, who runs your ads, who builds the site — and you'll speak to them.</p>
+
+    <ul class="team__grid" role="list">
+      <li class="person">
+        <img class="person__img" src="images/founder.svg" alt="Kulwant Singh" width="800" height="600">
+        <h3 class="person__name">Kulwant Singh</h3>
+        <p class="person__runs">Strategy and your account</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Search and AI visibility</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Technical SEO</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Paid media</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Content</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Design</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Web build</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Reputation and reviews</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">CRM and automation</p>
+      </li>
+      <li class="person">
+        <img class="person__img" src="images/portrait.svg" alt="" width="800" height="600">
+        <h3 class="person__name is-placeholder">[ Name ]</h3>
+        <p class="person__runs">Reporting and analytics</p>
+      </li>
+    </ul>
+
+    <p class="kicker">Every one of them is named on your monthly report, next to the work they did.</p>
+
+    <a class="link-arrow" href="/about/">More about the team</a>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     07 — QUESTIONS                                               Section type A
+     RULES:
+     · No accordion. Every answer visible. Assistants extract answers far more
+       reliably from static text than from collapsed panels — an agency selling
+       AI visibility should build its own FAQ the way it tells clients to.
+     · Ordered the way a buyer asks: money, tie-in, ownership, risk, timing.
+     · One or two sentences per answer. A long answer reads as a defence.
+     · FAQPage schema is in the JSON-LD block at the foot of this file.
+
+     >>> TWO ANSWERS STILL NEEDED: notice period, exclusivity. <<<
+     ========================================================================== -->
+<section class="faqs">
+  <div class="container">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title">The awkward ones, answered before you ask.</h2>
+
+    <dl class="faq-list">
+
+      <div class="faq">
+        <dt class="faq__q">How much does it cost?</dt>
+        <dd class="faq__a">Two numbers. Foundation Fix is a one-off price for the audit, the fixes and the first strategy. After that it's monthly. Both are published on the pricing page — you don't have to sit through a call to find out.</dd>
+      </div>
+
+      <div class="faq">
+        <dt class="faq__q">How long am I tied in?</dt>
+        <dd class="faq__a"><span class="is-placeholder">[ Notice period ]</span> You stay because the numbers make sense, not because of a signature.</dd>
+      </div>
+
+      <div class="faq">
+        <dt class="faq__q">Who owns the website, the ads and the data?</dt>
+        <dd class="faq__a">You do. All of it, on the day you ask for it, whether you're still a client or not.</dd>
+      </div>
+
+      <div class="faq">
+        <dt class="faq__q">What if one of the services doesn't work?</dt>
+        <dd class="faq__a">We remove it and you stop paying for that part. We'd rather lose a line item than defend one.</dd>
+      </div>
+
+      <div class="faq">
+        <dt class="faq__q">How soon will I see something?</dt>
+        <dd class="faq__a">Response times and booking flow in weeks. Search and AI visibility in three to six months. We'll tell you which of your problems is which before you commit to anything.</dd>
+      </div>
+
+      <div class="faq">
+        <dt class="faq__q">Do I have to buy all six services?</dt>
+        <dd class="faq__a">No. Most clients start with one or two. The point of one team is that nothing falls between them — not that you have to buy everything at once.</dd>
+      </div>
+
+      <div class="faq">
+        <dt class="faq__q">Will you work with my competitor?</dt>
+        <dd class="faq__a"><span class="is-placeholder">[ Exclusivity answer — one firm per city, per industry? ]</span></dd>
+      </div>
+
+      <div class="faq">
+        <dt class="faq__q">We already have a marketing manager. Where do they fit?</dt>
+        <dd class="faq__a">They own the plan. We execute against it and report to them — with your team, never around them. Most marketing leads come to us for the specialists they can't justify hiring in-house.</dd>
+      </div>
+
+    </dl>
+
+    <a class="link-arrow" href="/how-we-work/#questions">Every question, answered in full</a>
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     08 — THE CLOSE                                               Section type B
+     THE PAGE'S ONE FOREST SECTION. The brand allows one per page.
+     RULES:
+     · Button is cream on forest, not green. Green on forest has no contrast;
+       cream on forest is the brand's own 10.8:1 AAA pairing.
+     · Both CTAs appear here, unlike the hero. By now the reader has decided.
+     · Nothing else in this section. No badges, no logos, no newsletter, no
+       third link — each is an exit at the moment they're closest to acting.
+     · The tagline appears nowhere else on the page. That's what gives it
+       weight here.
+     ========================================================================== -->
+<section class="close">
+  <div class="container close__inner">
+    <p class="eyebrow">One place to start</p>
+
+    <p class="close__tagline">Get found.<br>Get booked<span class="stop">.</span></p>
+
+    <p class="close__sub">Start with the audit. Free, real work, back within a day — including which firms the assistants are naming instead of you.</p>
+
+    <p class="close__cta">
+      <a class="btn btn--invert btn--lg" href="/growth-audit/">Get your growth audit</a>
+      <a class="close__secondary" href="/call/">Book a 20-minute call</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ==========================================================================
+     09 — FOOTER
+     RULES:
+     · Cream, never forest. The close above is the page's one dark band and
+       two in a row would swallow it.
+     · All nine industries are linked here, and this is the only place on the
+       home page they are. Category names are links too.
+     · Services mirror the navigation exactly. A footer that renames things to
+       save space is where site architecture quietly falls apart.
+     · No newsletter, no social icons, no award badges.
+     · BUILD THE ASSISTANT ROW LAST — it only works once an assistant actually
+       names RankinAI.
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer__cols">
+      <div class="footer__col">
+        <p class="label">Get found</p>
+        <ul role="list">
+          <li><a href="/ai-visibility/">Search and AI visibility</a></li>
+          <li><a href="/paid-media/">Paid media</a></li>
+          <li><a href="/content/">Content and creative</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="label">Get booked</p>
+        <ul role="list">
+          <li><a href="/websites/">Web and conversion</a></li>
+          <li><a href="/reputation/">Reputation</a></li>
+          <li><a href="/crm/">CRM and automation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <p class="label">Company</p>
+        <ul role="list">
+          <li><a href="/about/">About</a></li>
+          <li><a href="/how-we-work/">How we work</a></li>
+          <li><a href="/how-we-work/#questions">Questions</a></li>
+          <li><a href="/proof/">Proof</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col footer__col--contact">
+        <p class="label">Talk to us</p>
+        <address class="footer__contact">
+          <a class="is-placeholder" href="mailto:hello@rankinai.com">[ hello@rankinai.com ]</a>
+          <span class="is-placeholder">[ Phone ]</span>
+          <span class="is-placeholder">[ Office locations ]</span>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__industries">
+      <p class="label">Who we work with</p>
+      <p class="footer__run">
+        <a class="footer__cat" href="/build-and-design/">Build &amp; design</a>
+        <a href="/interior-design/">Interior design studios</a> ·
+        <a href="/construction/">Construction companies</a> ·
+        <a href="/architecture/">Architecture firms</a>
+      </p>
+      <p class="footer__run">
+        <a class="footer__cat" href="/hr-and-recruitment/">HR &amp; recruitment</a>
+        <a href="/recruitment-agencies/">Recruitment &amp; staffing agencies</a> ·
+        <a href="/hr-outsourcing/">HR outsourcing &amp; payroll</a>
+      </p>
+      <p class="footer__run">
+        <a class="footer__cat" href="/professional-services/">Professional services</a>
+        <a href="/accounting/">Accounting &amp; tax</a> ·
+        <a href="/it-consulting/">IT consulting &amp; MSPs</a> ·
+        <a href="/law-firms/">Legal &amp; corporate law</a> ·
+        <a href="/consulting/">Business consulting</a>
+      </p>
+    </div>
+
+    <div class="footer__ask">
+      <p class="footer__ask-line">Don't take our word for any of it. Ask an assistant about us.</p>
+      <ul class="footer__pills" role="list">
+        <!-- Pre-filled prompt links. Build last, after our own AI visibility work. -->
+        <li><a href="#" rel="noopener">ChatGPT</a></li>
+        <li><a href="#" rel="noopener">Claude</a></li>
+        <li><a href="#" rel="noopener">Gemini</a></li>
+        <li><a href="#" rel="noopener">Perplexity</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__base">
+      <span class="wordmark wordmark--lg">Rankin<em>AI</em><span class="wordmark__stop">.</span></span>
+      <p class="footer__legal">
+        &copy; RankinAI 2026 · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a><br>
+        <span class="is-placeholder">[ Registered company name and number ]</span>
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+

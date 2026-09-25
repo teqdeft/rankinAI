@@ -1,0 +1,453 @@
+/* ==========================================================================
+   RankinAI — responsive.css
+   Loaded last.
+
+   Almost everything here is a token override. The component rules in
+   style.css never change — only the values they read. Each block below
+   corresponds to one approved design canvas.
+
+     ≥ 1601      1920 canvas   (the :root values in style.css)
+     1367–1600   1440 canvas
+     1151–1366   1280 canvas
+     901–1150    1024 canvas
+     601–900      768 canvas   — navigation collapses to a sheet here
+     ≤ 600        390 canvas
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1440
+   ========================================================================== */
+@media (max-width: 1600px) {
+  :root {
+    --sec-pad-t: 122px; --sec-pad-b: 90px; --sec-gap: 48px;
+    --card-gap: 24px; --card-pad-x: 27px; --card-pad-y: 24px; --case-photo-h: 195px;
+    --footer-gap: 48px; --ind-col: 255px; --ask-pad: 27px 30px;
+    --svc-head-pad-b: 54px; --svc-col: 390px; --svc-gap: 72px;
+    --svc-verb-h: 72px; --svc-frame-h: 390px; --svc-row-pad: 42px; --svc-num-col: 60px;
+    --method-col: 465px; --sch-h: 225px; --team-col: 465px; --tile-h: 225px;
+    --q-head-col: 390px; --q-col: 615px;
+    --close-pad-t: 140px; --close-pad-b: 108px; --close-col: 495px; --close-card-pad: 42px;
+    --t-section-sm: 60px; --t-case-name: 26px; --t-case-metric: 30px; --t-case-metric-lead: 51px;
+    --t-svc-verb: 63px; --t-svc-title: 35px; --t-step: 39px; --t-part: 27px; --t-part-text: 16px;
+    --t-question: 23px; --t-answer: 18px; --t-close: 96px; --t-close-text: 18px; --t-close-btn: 16px;
+    --t-ind: 20px; --t-ask: 22px; --t-footer-mark: 36px;
+    --t-hero: 80px;   --t-section: 68px;  --t-stat: 48px;
+    --t-nav: 16px;    --t-lead: 18px;     --t-body: 16px;
+    --t-small: 15px;  --t-eyebrow: 11px;  --t-label: 10px;
+    --t-cta: 15px;    --t-cta-header: 14px;
+    --t-menu-item: 16px; --t-menu-desc: 13px; --t-menu-ask: 23px;
+    --t-wordmark: 24px;
+
+    --gutter: 90px;   --header-h: 66px;
+    --nav-gap: 36px;  --nav-list-gap: 22px;
+    --nav-actions-gap: 24px; --nav-pad-y: 20px;
+
+    --hero-pad-top: 72px;  --hero-title-mt: 24px;
+    --hero-meta-col: 480px; --hero-meta-gap: 60px; --hero-meta-mt: 42px;
+    --proof-pad-t: 24px;   --proof-pad-b: 36px;   --stat-gap: 120px;
+
+    --menu-pad-y: 36px;    --menu-gap: 48px;
+
+    --r-control: 12px;     --r-panel: 24px;      --r-section: 40px;
+  }
+  .btn--primary { padding: 15px 27px; }
+  .btn--cream   { padding: 11px 21px; }
+  .mega__offer .btn { padding: 11px 20px; }
+  .hero__title { max-width: 1110px; }
+}
+
+
+/* ==========================================================================
+   1280
+   ========================================================================== */
+@media (max-width: 1366px) {
+  :root {
+    --sec-pad-t: 108px; --sec-pad-b: 80px; --sec-gap: 43px;
+    --card-gap: 21px; --card-pad-x: 24px; --card-pad-y: 21px; --case-photo-h: 173px;
+    --footer-gap: 43px; --ind-col: 227px; --ask-pad: 24px 27px;
+    --svc-head-pad-b: 48px; --svc-col: 347px; --svc-gap: 64px;
+    --svc-verb-h: 64px; --svc-frame-h: 347px; --svc-row-pad: 37px; --svc-num-col: 53px;
+    --method-col: 413px; --sch-h: 200px; --team-col: 413px; --tile-h: 200px;
+    --q-head-col: 347px; --q-col: 547px;
+    --close-pad-t: 124px; --close-pad-b: 96px; --close-col: 440px; --close-card-pad: 37px;
+    --t-section-sm: 53px; --t-case-name: 23px; --t-case-metric: 27px; --t-case-metric-lead: 45px;
+    --t-svc-verb: 56px; --t-svc-title: 31px; --t-step: 35px; --t-part: 24px; --t-part-text: 15px;
+    --t-question: 20px; --t-answer: 17px; --t-close: 82px; --t-close-text: 17px; --t-close-btn: 15px;
+    --t-ind: 18px; --t-ask: 20px; --t-footer-mark: 32px;
+    --t-hero: 68px;   --t-section: 58px;  --t-stat: 42px;
+    --t-nav: 15px;    --t-lead: 17px;     --t-body: 15px;
+    --t-small: 14px;  --t-eyebrow: 10px;  --t-label: 10px;
+    --t-cta: 14px;    --t-cta-header: 13px;
+    --t-menu-item: 15px; --t-menu-desc: 12px; --t-menu-ask: 21px;
+    --t-wordmark: 22px;
+
+    --gutter: 80px;   --header-h: 58px;
+    --nav-gap: 32px;  --nav-list-gap: 20px;
+    --nav-actions-gap: 21px; --nav-pad-y: 18px;
+
+    --hero-pad-top: 64px;  --hero-title-mt: 21px;
+    --hero-meta-col: 427px; --hero-meta-gap: 53px; --hero-meta-mt: 37px;
+    --proof-pad-t: 21px;   --proof-pad-b: 32px;   --stat-gap: 107px;
+
+    --menu-pad-y: 32px;    --menu-gap: 43px;
+
+    --r-control: 10px;     --r-panel: 20px;      --r-section: 36px;
+  }
+  .btn--primary { padding: 13px 24px; }
+  .btn--cream   { padding: 10px 19px; }
+  .mega__offer .btn { padding: 10px 18px; }
+  .hero__title { max-width: 987px; }
+}
+
+
+/* ==========================================================================
+   1024
+   ========================================================================== */
+@media (max-width: 1150px) {
+  :root {
+    --sec-pad-t: 86px; --sec-pad-b: 64px; --sec-gap: 34px;
+    --card-gap: 17px; --card-pad-x: 19px; --card-pad-y: 17px; --case-photo-h: 139px;
+    --footer-gap: 34px; --ind-col: 181px; --ask-pad: 19px 21px;
+    --svc-head-pad-b: 38px; --svc-col: 278px; --svc-gap: 51px;
+    --svc-verb-h: 51px; --svc-frame-h: 278px; --svc-row-pad: 30px; --svc-num-col: 43px;
+    --method-col: 330px; --sch-h: 160px; --team-col: 330px; --tile-h: 170px;
+    --q-head-col: 278px; --q-col: 437px;
+    --close-pad-t: 99px; --close-pad-b: 77px; --close-col: 352px; --close-card-pad: 30px;
+    --t-section-sm: 43px; --t-case-name: 19px; --t-case-metric: 22px; --t-case-metric-lead: 36px;
+    --t-svc-verb: 45px; --t-svc-title: 27px; --t-step: 28px; --t-part: 19px; --t-part-text: 14px;
+    --t-question: 17px; --t-answer: 16px; --t-close: 68px; --t-close-text: 16px; --t-close-btn: 14px;
+    --t-ind: 16px; --t-ask: 18px; --t-footer-mark: 28px;
+    --t-hero: 56px;   --t-section: 48px;  --t-stat: 36px;
+    --t-nav: 14px;    --t-lead: 17px;     --t-body: 15px;
+    --t-small: 13px;  --t-eyebrow: 10px;  --t-label: 10px;
+    --t-cta: 13px;    --t-cta-header: 13px;
+    --t-menu-item: 15px; --t-menu-desc: 12px; --t-menu-ask: 21px;
+    --t-wordmark: 20px;
+
+    --gutter: 64px;   --header-h: 52px;
+    --nav-gap: 26px;  --nav-list-gap: 10px;
+    --nav-actions-gap: 17px; --nav-pad-y: 14px;
+
+    --hero-pad-top: 51px;  --hero-title-mt: 17px;
+    --hero-meta-col: 342px; --hero-meta-gap: 42px; --hero-meta-mt: 30px;
+    --proof-pad-t: 17px;   --proof-pad-b: 26px;   --stat-gap: 86px;
+
+    --menu-pad-y: 26px;    --menu-gap: 34px;
+
+    --r-control: 8px;      --r-panel: 16px;      --r-section: 30px;
+  }
+  .btn--primary { padding: 11px 19px; }
+  .btn--cream   { padding: 8px 15px; }
+  .mega__offer .btn { padding: 8px 14px; }
+  .hero__title { max-width: 790px; }
+  .eyebrow::before { width: 48px; }
+}
+
+
+/* ==========================================================================
+   768 — the navigation becomes a sheet
+   ========================================================================== */
+@media (max-width: 900px) {
+  :root {
+    --sec-pad-t: 64px; --sec-pad-b: 48px; --sec-gap: 28px;
+    --card-gap: 16px; --card-pad-x: 22px; --card-pad-y: 20px; --case-photo-h: 180px;
+    --footer-gap: 32px; --ind-col: 1fr; --ask-pad: 24px;
+    --svc-head-pad-b: 32px; --svc-col: 1fr; --svc-gap: 32px;
+    --svc-verb-h: 44px; --svc-frame-h: 260px; --svc-row-pad: 28px; --svc-num-col: 40px;
+    --method-col: 1fr; --sch-h: 200px; --team-col: 1fr; --tile-h: 190px;
+    --q-head-col: 1fr; --q-col: 1fr;
+    --close-pad-t: 72px; --close-pad-b: 56px; --close-col: 1fr; --close-card-pad: 28px;
+    --t-section-sm: 34px; --t-case-name: 24px; --t-case-metric: 30px; --t-case-metric-lead: 44px;
+    --t-svc-verb: 34px; --t-svc-title: 22px; --t-step: 26px; --t-part: 22px; --t-part-text: 15px;
+    --t-question: 20px; --t-answer: 17px; --t-close: 48px; --t-close-text: 17px; --t-close-btn: 16px;
+    --t-ind: 18px; --t-ask: 20px; --t-footer-mark: 30px;
+    --t-hero: 42px;   --t-section: 36px;  --t-stat: 27px;
+    --t-nav: 20px;    --t-lead: 17px;     --t-body: 15px;
+    --t-small: 13px;  --t-eyebrow: 10px;  --t-label: 10px;
+    --t-cta: 16px;    --t-cta-header: 13px;
+    --t-menu-item: 15px; --t-menu-desc: 12px; --t-menu-ask: 18px;
+    --t-wordmark: 18px;
+
+    --gutter: 48px;   --header-h: 56px;
+    --hero-pad-top: 38px;  --hero-title-mt: 13px;
+    --hero-meta-gap: 32px; --hero-meta-mt: 26px;
+    --proof-pad-t: 13px;   --proof-pad-b: 20px;   --stat-gap: 40px;
+
+    --r-control: 12px;     --r-panel: 13px;      --r-section: 24px;
+  }
+
+  .btn--primary { padding: 15px 26px; }
+  .btn--cream   { padding: 12px 20px; }
+  .eyebrow::before { width: 40px; }
+  .eyebrow { gap: 14px; }
+
+  /* --- Header ----------------------------------------------------------- */
+  .nav-toggle { display: inline-flex; }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--forest);
+    padding: calc(var(--header-h) + 24px) var(--gutter) 32px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .nav.is-open { display: flex; }
+  body.nav-locked { overflow: hidden; }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1px solid var(--green-line);
+  }
+  .nav__item { border-bottom: 1px solid var(--green-line); }
+
+  .nav__link {
+    width: 100%;
+    justify-content: space-between;
+    padding-block: 18px;
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--cream);
+  }
+  .nav__link:hover,
+  .nav__link[aria-expanded="true"] { box-shadow: none; color: var(--clay-light); }
+  .nav__chev { width: 9px; height: 9px; }
+
+  /* Panels become accordions — no mega-menu on a small screen */
+  .mega {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+  }
+  .mega.is-open { display: block; }
+
+  .mega__inner {
+    display: block;
+    padding: 0 0 22px;
+  }
+  .mega__col + .mega__col { margin-top: 22px; }
+  .mega__list strong { color: var(--cream); }
+  .mega__list span   { color: var(--on-forest-faint); }
+  .mega__col > .label { color: var(--on-forest-faint); }
+
+  .mega__offer {
+    background: rgba(247, 244, 238, 0.06);
+    padding: 22px;
+    margin-top: 22px;
+  }
+  .mega__offer p { color: var(--cream); }
+  .mega__offer .label--clay { color: var(--clay-light); }
+
+  /* The primary action is pinned to the foot of the sheet */
+  .nav__actions {
+    margin-top: auto;
+    padding-top: 32px;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .nav__actions .btn { width: 100%; padding-block: 16px; font-size: 16px; }
+  .nav__secondary { text-align: center; border-bottom: 0; }
+
+  /* --- Hero ------------------------------------------------------------- */
+  .hero__title { max-width: 593px; }
+  .hero__meta {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .hero__actions { flex-direction: row; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .hero__proof { gap: var(--stat-gap); }
+  .stat { gap: 14px; }
+  .stat__k { max-width: 150px; font-size: 13px; }
+}
+
+
+/* ==========================================================================
+   Mobile — 390
+   ========================================================================== */
+@media (max-width: 600px) {
+  :root {
+    --sec-pad-t: 44px; --sec-pad-b: 36px; --sec-gap: 22px;
+    --card-gap: 14px; --card-pad-x: 18px; --card-pad-y: 16px; --case-photo-h: 150px;
+    --footer-gap: 24px; --ask-pad: 20px;
+    --svc-head-pad-b: 24px; --svc-gap: 22px;
+    --svc-verb-h: 32px; --svc-frame-h: 200px; --svc-row-pad: 22px; --svc-num-col: 32px;
+    --sch-h: 170px; --tile-h: 150px;
+    --close-pad-t: 52px; --close-pad-b: 40px; --close-card-pad: 22px;
+    --t-section-sm: 26px; --t-case-name: 21px; --t-case-metric: 26px; --t-case-metric-lead: 34px;
+    --t-svc-verb: 26px; --t-svc-title: 19px; --t-step: 22px; --t-part: 19px; --t-part-text: 14px;
+    --t-question: 17px; --t-answer: 16px; --t-close: 34px; --t-close-text: 16px; --t-close-btn: 15px;
+    --t-ind: 16px; --t-ask: 17px; --t-footer-mark: 24px;
+    --t-hero: 31px;   --t-section: 26px;  --t-stat: 21px;
+    --t-nav: 18px;    --t-lead: 16px;     --t-body: 15px;
+    --t-small: 12px;  --t-eyebrow: 10px;  --t-label: 10px;
+    --t-cta: 15px;    --t-cta-header: 15px;
+    --t-menu-item: 14px; --t-menu-desc: 11px; --t-menu-ask: 16px;
+    --t-wordmark: 16px;
+
+    --gutter: 20px;   --header-h: 54px;
+    --hero-pad-top: 20px;  --hero-title-mt: 8px;
+    --hero-meta-gap: 20px; --hero-meta-mt: 20px;
+    --proof-pad-t: 8px;    --proof-pad-b: 12px;  --stat-gap: 24px;
+
+    --r-control: 12px;     --r-panel: 10px;      --r-section: 19px;
+  }
+
+  .eyebrow::before { width: 28px; }
+  .eyebrow { gap: 12px; }
+  .eyebrow span { line-height: 1.4; }
+
+  .hero__title { max-width: 350px; }
+  .hero__actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .hero__actions .btn { width: 100%; padding-block: 15px; }
+  .hero__actions .link-quiet { text-align: center; }
+
+  /* Two stats stacked. They stay two — never padded to three. */
+  .hero__proof { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .stat__k { max-width: none; }
+
+  .nav__link { font-size: 22px; padding-block: 14px; }
+  .nav { padding-top: calc(var(--header-h) + 16px); }
+}
+
+
+/* ==========================================================================
+   Coarse pointers — hover panels need a tap instead
+   ========================================================================== */
+@media (hover: none) {
+  .mega__list a:hover strong { text-decoration-color: transparent; }
+}
+
+
+/* ==========================================================================
+   Sections 02–08 — layout collapses
+   ========================================================================== */
+@media (max-width: 900px) {
+  .stories__head,
+  .team__head,
+  .questions__head { grid-template-columns: 1fr; align-items: start; gap: 24px; }
+
+  .stories__grid { grid-template-columns: 1fr; }
+
+  /* The pinned column stops pinning and sits above the list */
+  .services__band { grid-template-columns: 1fr; }
+  .svc-media { position: static; padding-top: 0; }
+  .svc__list { grid-template-columns: 1fr; gap: 12px; }
+
+  .method__body { grid-template-columns: 1fr; gap: 32px; }
+  .parts { grid-template-columns: 1fr; gap: 24px; }
+  .part--one { grid-template-columns: 1fr; gap: 12px; }
+
+  .questions__body { grid-template-columns: 1fr; gap: 28px; }
+  .close__inner { grid-template-columns: 1fr; gap: 32px; }
+
+  .footer__cols { grid-template-columns: 1fr 1fr; }
+  .ind { grid-template-columns: 1fr; gap: 8px; }
+  .footer__ask { grid-template-columns: 1fr; gap: 20px; }
+  .footer__base { align-items: flex-start; }
+  .footer__legal { text-align: left; }
+}
+
+@media (max-width: 600px) {
+  .footer__cols { grid-template-columns: 1fr; }
+  .close__actions { flex-direction: column; align-items: stretch; gap: 16px; }
+  .close__actions .btn { width: 100%; }
+  .close__actions .link-quiet { text-align: center; }
+  .step { gap: 12px; }
+  .step__bar { display: none; }
+  .fq { grid-template-columns: 32px 1fr; gap: 12px; }
+  .pills { width: 100%; }
+  .pill { flex: 1 1 auto; text-align: center; }
+}
+
+
+/* ==========================================================================
+   Pricing page — token overrides and collapses
+   ========================================================================== */
+@media (max-width: 1600px) {
+  :root {
+    --hero-pad-top-page: 66px; --hero-meta-col-page: 570px; --step-strip-gap: 42px;
+    --mx-label-col: 225px; --close-form-col: 525px; --form-pad: 36px;
+    --t-pk-name: 35px; --t-pk-price: 39px;
+  }
+  .mx { column-gap: 30px; }
+  .deliv__grid { gap: 36px 48px; }
+}
+
+@media (max-width: 1366px) {
+  :root {
+    --hero-pad-top-page: 59px; --hero-meta-col-page: 507px; --step-strip-gap: 37px;
+    --mx-label-col: 200px; --close-form-col: 467px; --form-pad: 32px;
+    --t-pk-name: 31px; --t-pk-price: 35px;
+  }
+  .mx { column-gap: 27px; }
+}
+
+@media (max-width: 1150px) {
+  :root {
+    --hero-pad-top-page: 47px; --hero-meta-col-page: 406px; --step-strip-gap: 30px;
+    --mx-label-col: 160px; --close-form-col: 374px; --form-pad: 26px;
+    --t-pk-name: 27px; --t-pk-price: 30px;
+  }
+  .mx { column-gap: 21px; }
+  .deliv__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --hero-pad-top-page: 38px; --step-strip-gap: 20px;
+    --close-form-col: 1fr; --form-pad: 24px;
+    --t-pk-name: 26px; --t-pk-price: 30px;
+  }
+
+  .hero__meta--page { grid-template-columns: 1fr; }
+  .hero__note { max-width: none; }
+  .steps-strip { flex-direction: column; align-items: flex-start; }
+  .stepline__sep { display: none; }
+
+  /* The matrix stops being a matrix. Four stacked cards, each carrying its
+     own row labels — a five-column grid at 768 would be unreadable, and a
+     horizontally scrolling table is worse. */
+  .mx { display: flex; flex-direction: column; gap: 32px; }
+  .mx__spacer { display: none; }
+  .pk {
+    border-top: 2px solid var(--clay-light);
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+  .mx__label {
+    border-top: 1px solid #33513F;
+    padding-bottom: 0;
+    margin-top: 4px;
+  }
+  .mx__cell { border-top: 0; padding-top: 4px; padding-bottom: 12px; }
+  .mx__cell--featured { border-top: 0; }
+  .mx__label--end { display: none; }
+  .mx__cell--cta { padding-top: 12px; padding-bottom: 24px; }
+
+  .terms__grid { grid-template-columns: 1fr 1fr; }
+  .close__inner--form { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .deliv__grid { grid-template-columns: 1fr; }
+  .terms__grid { grid-template-columns: 1fr; }
+  .auditform__grid { grid-template-columns: 1fr; }
+  .pkg-tabs { gap: 8px; }
+  .pkg-tab { padding: 12px 18px; font-size: 14px; }
+  .auditform .btn { width: 100%; }
+}

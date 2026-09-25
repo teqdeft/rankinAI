@@ -1,0 +1,133 @@
+# =============================================================================
+# RankinAI — Apache configuration (MAMP, and most shared hosts)
+# =============================================================================
+
+DirectoryIndex index.php index.html
+Options +FollowSymLinks -Indexes
+
+
+# -----------------------------------------------------------------------------
+# Keep server-side files out of the browser
+# -----------------------------------------------------------------------------
+RedirectMatch 404 ^(.*)/includes/
+RedirectMatch 404 ^(.*)/_archive/
+RedirectMatch 404 ^(.*)/(README|CLAIMS|CLAUDE|HANDOVER)\.md$
+
+
+# -----------------------------------------------------------------------------
+# Clean URLs
+#
+# Page templates live flat in this folder — pricing.php, call.php and so on —
+# but the site is served on clean paths: /pricing/, /call/. The two are kept
+# apart here rather than by nesting each page in its own folder.
+#
+# Every rule below is written so it works whether the document root is this
+# folder (the site is at /) or its parent (the site is at /final-website/).
+# THE_REQUEST holds the original request line, so the captured group already
+# carries the prefix when there is one.
+#
+# There is exactly one URL per page. Anything else 301s to it:
+#
+#   /pricing.php   ->  /pricing/     canonical, one URL per page
+#   /pricing       ->  /pricing/     trailing slash
+#   /index.php     ->  /             the home page is not called "index"
+#   /pricing/      ->  pricing.php   internal, the address bar keeps /pricing/
+# -----------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 0. Stop immediately on an internal rewrite.
+  #
+  #    In .htaccess, an internal rewrite re-runs this whole ruleset with the
+  #    new path. Without this guard, a URL whose target file does not exist
+  #    goes: /success-stories/pine-tree-lane/ -> success-stories-pine-tree-lane.php
+  #    (missing) -> rule 3 sees a path with no trailing slash that is not a
+  #    file -> redirects -> rule 5 appends .php again -> .php.php.php until
+  #    the browser gives up with ERR_TOO_MANY_REDIRECTS.
+  #
+  #    REDIRECT_STATUS is empty on a real request from outside and set on
+  #    every internal pass, so this runs the rules exactly once. A missing
+  #    file now simply 404s.
+  RewriteCond %{ENV:REDIRECT_STATUS} !^$
+  RewriteRule ^ - [L]
+
+  # 0b. Renamed service URLs, 22 Sep 2026. Two service names were rewritten
+  #     and their paths no longer matched. Permanent, so anything that
+  #     already linked the old address keeps working.
+  #
+  #     /crm/ is NOT in this list. CRM and automation kept its name: it is
+  #     a category buyers recognise and search for, and the service does
+  #     real CRM setup, routing and integration rather than sequences only.
+  # NOTE: written with a leading slash, so they assume the site is at the
+  #       domain root. On a test install in a subfolder (/new-v1/) they would
+  #       throw the visitor out to rankinai.com/website-conversion/. Neither
+  #       old URL was ever public, so they stay switched off until launch.
+  #
+  # RewriteRule ^websites/?$      /website-conversion/ [R=301,L,NE]
+  # RewriteRule ^paid-media/?$    /paid-advertising/   [R=301,L,NE]
+
+  # 1. index.php is never a URL. Send it to the directory itself.
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L,NE]
+
+  # 2. A .php path typed or linked directly becomes the clean one. Matches on
+  #    THE_REQUEST, so it only ever fires for a real request from outside —
+  #    the internal rewrite in rule 4 cannot trip it and cause a loop.
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.php[\s?] [NC]
+  RewriteRule ^ /%1/ [R=301,L,NE]
+
+  # 3. Add the missing trailing slash, but never to a real file or folder —
+  #    assets/ and includes/ are directories and are left alone.
+  #
+  #    The target is %{REQUEST_URI} and not $1/ on purpose. A relative
+  #    substitution in an external redirect gets resolved against the
+  #    filesystem directory, so `$1/` sends the browser to
+  #    /Users/…/final-website/call/ — the server's own path, in the address
+  #    bar, as a 404. %{REQUEST_URI} is already the URL path, and already
+  #    carries the /final-website prefix when there is one.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.+[^/]$ %{REQUEST_URI}/ [R=301,L]
+
+  # 4. And finally the one that does the work: /pricing/ is served by
+  #    pricing.php without the address bar changing.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([^/]+)/$ $1.php [L]
+
+  # 5. Two-segment URLs, for the story pages that hang off /success-stories/.
+  #    /success-stories/pine-tree-lane/ is served by
+  #    success-stories-pine-tree-lane.php — still a flat file.
+  #
+  #    The one thing to avoid: never create a top-level page whose slug is
+  #    the two segments joined, or the same file answers to two URLs.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([^/]+)/([^/]+)/$ $1-$2.php [L]
+</IfModule>
+
+
+# -----------------------------------------------------------------------------
+# Caching. Assets carry a ?v= string from config.php, so they can be cached
+# hard — bump ASSET_VERSION after a deploy to invalidate them.
+# -----------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css               "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml          "access plus 1 year"
+  ExpiresByType image/png              "access plus 1 year"
+  ExpiresByType image/jpeg             "access plus 1 year"
+  ExpiresByType image/webp             "access plus 1 year"
+  ExpiresByType text/html              "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml
+</IfModule>
+
+
+# -----------------------------------------------------------------------------
+# Error pages
+# -----------------------------------------------------------------------------
+# ErrorDocument 404 /404.php
