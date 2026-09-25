@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "rankinai",
+      "runtimeExecutable": "C:\\xampp\\php\\php.exe",
+      "runtimeArgs": ["-S", "localhost:8889", "-t", ".", ".claude/dev-router.php"],
+      "port": 8889
+    }
+  ]
+}
