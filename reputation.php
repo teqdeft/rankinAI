@@ -37,6 +37,9 @@ $SERVICE = [
 
   'label' => 'Reviews and reputation',
   'h1'    => 'Let the clients who know you help the next ones choose you.',
+  /* The service's object for the split hero. Decorative, made for the
+     site in its own palette. See the hero note in service-template.php. */
+  'heroImage' => ['src' => 'images/service-reputation.webp', 'w' => 752, 'h' => 752],
   'sub'   => 'Your team puts care into the work. Your clients experience the difference.',
   'sub2'  => 'We help bring those experiences into public view through genuine reviews, thoughtful responses and accurate business profiles, giving prospective clients more to go on when they&rsquo;re considering your firm.',
 

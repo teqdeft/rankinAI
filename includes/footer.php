@@ -21,16 +21,17 @@
 
 <!-- =============================================================================
      FOOTER
-     All nine industries are linked here, and on the home page this is the only
-     place they are. Category names are links too.
+     Services and company pages. Industries are reached from the header menu.
      ============================================================================= -->
 <footer class="site-footer">
   <div class="container">
 
-    <?php /* Top row: what the company does, and how to reach it. Says who the
-             work is for to a reader who arrived deep in the site and scrolled
-             to the bottom without ever passing the home page. */ ?>
-    <div class="footer__top">
+    <?php /* One row: what the company does, the three link columns, and how
+             to reach it. The about block says who the work is for to a reader
+             who arrived deep in the site and scrolled to the bottom without
+             ever passing the home page. Was two rows, the about and contact
+             over the links, until 28 Sep 2026. */ ?>
+    <div class="footer__cols footer__cols--row">
       <div class="footer__about">
         <?php /* The logo sits with the sentence that says what the company
                  does, rather than on its own above the copyright line.
@@ -48,15 +49,6 @@
         <p class="footer__strap">Get found. Get booked.</p>
       </div>
 
-      <div class="footer__col footer__contact">
-        <p class="label">Talk to us</p>
-        <a class="link-quiet link-quiet--bold" href="mailto:<?= e($SITE['email']) ?>"><?= e($SITE['email']) ?></a>
-        <p class="footer__pair"><span class="label">Phone</span><b><?= e($SITE['phone']) ?></b></p>
-        <p class="footer__pair"><span class="label">Offices</span><b><?= e($SITE['offices']) ?></b></p>
-      </div>
-    </div>
-
-    <div class="footer__cols">
       <div class="footer__col">
         <p class="label label--clay">Getting found</p>
         <ul role="list">
@@ -84,24 +76,19 @@
         </ul>
       </div>
 
+      <div class="footer__col footer__contact">
+        <p class="label">Talk to us</p>
+        <a class="link-quiet link-quiet--bold" href="mailto:<?= e($SITE['email']) ?>"><?= e($SITE['email']) ?></a>
+        <p class="footer__pair"><span class="label">Phone</span><b><?= e($SITE['phone']) ?></b></p>
+        <p class="footer__pair"><span class="label">Offices</span><b><?= e($SITE['offices']) ?></b></p>
+      </div>
+
     </div>
 
-    <div class="footer__industries">
-      <p class="label">Industries</p>
-<?php foreach ($FOOTER['industries'] as [$cat, $catHref, $items]): ?>
-      <?php /* The category name is a heading over the list, not a link.
-               $catHref is left in the data so the hub URL is not lost, but
-               nothing renders it here any more. */ ?>
-      <div class="ind">
-        <p class="ind__cat"><?= $cat ?></p>
-        <p class="ind__list">
-<?php $out = [];
-      foreach ($items as [$label, $href]) { $out[] = '<a href="' . url($href) . '">' . $label . '</a>'; }
-      echo implode(' &middot; ', $out); ?>
-        </p>
-      </div>
-<?php endforeach; ?>
-    </div>
+    <?php /* The industries block that sat here was removed on 28 Sep
+             2026. The industries are still reached from the Industries menu
+             in the header. $FOOTER['industries'] in config.php
+             is left in place in case the block comes back. */ ?>
 
     <?php /* The wordmark moved up to the about block, and the licence line
              is gone, so this is one quiet line now. */ ?>

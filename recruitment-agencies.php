@@ -31,6 +31,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for recruitment and staffing agencies',
   'h1'    => 'Get found by employers who need the people you place.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1519452575417-564c1401ecc0', 'user' => 'nate_dumlao', 'by' => 'Nathan Dumlao',
+                  'alt' => 'Rows of empty chairs'],
   'sub'   => 'Your consultants know the market, understand the roles and have experience solving difficult hiring challenges.',
   'sub2'  => 'We help employers discover that expertise, and see why your agency is worth briefing.',
 

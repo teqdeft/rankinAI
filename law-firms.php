@@ -31,6 +31,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for law firms',
   'h1'    => 'Get found for the matters you want to handle.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1543664644-1658107bb4bb', 'user' => 'jeremymura', 'by' => 'Jeremy Mura',
+                  'alt' => 'Books on a wooden shelf, close up'],
   'sub'   => 'Prospective clients need to understand whether your firm has the experience their situation requires, and who they would be trusting with it.',
   'sub2'  => 'We help make your practice areas, people and relevant expertise easier to discover, understand and choose.',
 

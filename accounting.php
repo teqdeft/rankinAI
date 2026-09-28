@@ -30,6 +30,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for accounting and tax practices',
   'h1'    => 'Grow your practice around the clients you want to keep.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1648201637025-1c77b9be3013', 'user' => 'alefler', 'by' => 'Aaron Lefler',
+                  'alt' => 'A calculator and a pen on a sheet of paper'],
   'sub'   => 'Your best clients value your advice, respect your expertise and see your firm as part of their future.',
   'sub2'  => 'We help more people like them discover your practice, understand where you can help, and feel confident starting a conversation.',
 

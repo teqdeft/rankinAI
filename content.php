@@ -46,6 +46,9 @@ $SERVICE = [
 
   'label' => 'Content for firms that sell expertise',
   'h1'    => 'Turn what you know into reasons to choose you.',
+  /* The service's object for the split hero. Decorative, made for the
+     site in its own palette. See the hero note in service-template.php. */
+  'heroImage' => ['src' => 'images/service-content.webp', 'w' => 1040, 'h' => 1040],
   'sub'   => 'The questions you answer in meetings. The decisions behind your best projects. The experience that helps you spot what others miss.',
   'sub2'  => 'We turn that knowledge into website copy, client stories and useful content that helps prospective clients understand your value before the first conversation.',
   /* No 'heroNote'. The one on /paid-advertising/ listed the channels and came

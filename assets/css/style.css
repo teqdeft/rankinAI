@@ -7697,3 +7697,193 @@ code {
   .amodal[open],
   .amodal[open]::backdrop { animation: none; }
 }
+
+
+/* --------------------------------------------------------------------------
+   The service hero, 28 Sep 2026
+
+   Only the six service pages use it, and only when their data file sets
+   'heroImage'. Every other page on the site opens with the centred hero, so
+   this is what tells a reader they have landed on a service.
+
+   Copy on the left, left-aligned. On the right, the service's object in a
+   square frame, with a forest block offset behind it for depth instead of
+   a shadow (the image brief rules shadows out). A cream card overlaps the
+   frame's lower corner and names the group the service belongs to, with
+   its two siblings as links.
+
+   The headline sits in roughly half the width it has in the centred hero,
+   so it takes a smaller step: min() keeps the scale wherever it is already
+   the smaller of the two.
+   -------------------------------------------------------------------------- */
+.hero--service .hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  column-gap: clamp(48px, 6vw, 112px);
+  align-items: center;
+}
+.svc-hero__copy { min-width: 0; }
+.hero--service .hero__title {
+  font-size: min(var(--fs-h1), calc(12px + 3.4vw));
+  line-height: 1.02;
+}
+.hero--service .hero__meta--home .hero__sub { max-width: 52ch; }
+
+.svc-hero__visual {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  max-width: 540px;
+  justify-self: end;
+  padding-bottom: 56px;
+}
+.svc-hero__visual::before {
+  content: "";
+  position: absolute;
+  inset: 28px -28px 84px 28px;
+  background: var(--forest);
+  border-radius: var(--r-panel);
+}
+.svc-hero__frame {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-panel);
+  overflow: hidden;
+  background: var(--paper);
+}
+.svc-hero__frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.svc-hero__group {
+  position: absolute;
+  left: -32px;
+  bottom: 0;
+  width: min(300px, 78%);
+  padding: 22px 24px;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+}
+.svc-hero__group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-small);
+  line-height: 1.4;
+}
+.svc-hero__group a { color: var(--ink-body); }
+.svc-hero__group a:hover { color: var(--clay); }
+.svc-hero__group .is-current {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--forest);
+}
+.svc-hero__group .is-current::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--clay);
+}
+/* The links line up with the current item's text, past its dot. */
+.svc-hero__group li:not(.is-current) { padding-left: 18px; }
+
+
+/* --------------------------------------------------------------------------
+   The industry hero, 28 Sep 2026
+
+   Only the nine industry pages use it, and only when their data file sets
+   'heroPhoto'. It is built to look unlike the service hero on purpose: that
+   one is a square object beside the copy, this one is a wide photograph under
+   it.
+
+   The head is two columns, the headline on the left and the intro and calls
+   on the right, sitting on a shared baseline. Below, the photograph runs the
+   full measure at a cinema crop, toned down with the same filter the blog
+   photographs use so it sits under the palette. The group card overlaps the
+   photo's lower-left corner.
+   -------------------------------------------------------------------------- */
+.ind-hero__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  column-gap: clamp(40px, 5vw, 96px);
+  align-items: end;
+}
+.ind-hero__lede { min-width: 0; }
+.hero--industry .hero__title {
+  font-size: min(var(--fs-h1), calc(12px + 3.4vw));
+  line-height: 1.02;
+}
+.hero--industry .hero__meta { margin-top: 0; min-width: 0; }
+.hero--industry .hero__meta--home .hero__sub { max-width: 46ch; }
+
+.ind-hero__visual { margin-top: clamp(48px, 5vw, 80px); }
+.ind-hero__stage { position: relative; }
+.ind-hero__photo {
+  margin: 0;
+  aspect-ratio: 21 / 9;
+  border-radius: var(--r-panel);
+  overflow: hidden;
+  background: var(--sand);
+}
+.ind-hero__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.02);
+}
+
+.ind-hero__group {
+  position: absolute;
+  left: 32px;
+  bottom: 32px;
+  width: min(320px, calc(100% - 64px));
+  padding: 22px 24px;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+}
+.ind-hero__group > .label { display: inline-block; }
+.ind-hero__group > .label:hover { color: var(--clay); }
+.ind-hero__group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--t-small);
+  line-height: 1.4;
+}
+.ind-hero__group a { color: var(--ink-body); }
+.ind-hero__group li a:hover { color: var(--clay); }
+.ind-hero__group .is-current {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--forest);
+}
+.ind-hero__group .is-current::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--clay);
+}
+.ind-hero__group li:not(.is-current) { padding-left: 18px; }
+

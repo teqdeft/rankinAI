@@ -38,6 +38,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for interior design studios',
   'h1'    => 'More of the projects you built your studio for.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1633505899118-4ca6bd143043', 'user' => 'spacejoy', 'by' => 'Spacejoy',
+                  'alt' => 'A sunlit living room with a large window'],
   'sub'   => 'The right clients appreciate your approach, understand the investment and want the kind of spaces you love creating.',
   'sub2'  => 'We help them discover your studio, see the value behind your work, and take the first step towards a project.',
 

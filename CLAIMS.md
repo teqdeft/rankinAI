@@ -2118,3 +2118,93 @@ where the browser put it is better than throwing it to the top of the document.
 
 `action="#"`. **The modal is now the primary conversion path on every page of
 the site and it still posts nowhere.**
+
+
+## Service pages get their own hero, with the service images back — 28 Sep 2026
+
+The six service pages no longer open with the centred hero every other page
+uses. They have a split hero: copy on the left, the service's object image on
+the right, and a small card naming the group the service belongs to
+("Getting found" or "Getting booked") with its two siblings as links.
+
+### No new claim
+
+- **The images are the six service objects already in assets/images**, which
+  the 25 Sep rebuild had left unused (see above): service-search, -paid,
+  -content, -web, -reputation, -crm. They are renders of objects in the site's
+  own palette, not photographs of work, clients or people, so they show
+  nothing that could be mistaken for proof. Alt text is empty because they are
+  decorative.
+- **The group card adds no copy.** Its names and links come from `$FOOTER` in
+  config.php, the same lists the footer prints.
+
+### Worth knowing
+
+- The hero is switched on per page by `'heroImage'` in the data file. Remove
+  the key and the page falls back to the centred hero, so the guard rule holds.
+- The images README still describes these six as placeholders for real
+  photography (a phone showing an assistant naming a client, and so on). If
+  that photography is ever shot, replace the files and keep the names.
+
+
+## Industry pages get their own hero, with Unsplash photographs — 28 Sep 2026
+
+The nine industry pages no longer open with the centred hero. They have a
+hero of their own, built to look unlike the new service hero: the headline and
+the intro side by side, then a wide photograph across the full measure, with a
+card over its lower corner naming the industry group and its sibling pages.
+
+### Nine more photographs that are not a client's
+
+Only two industry images existed (the interior design and construction object
+renders), so by decision on 28 Sep 2026 the photographs come from Unsplash, on
+the same terms as the blog: places and materials, no people, no laptops, no
+meeting rooms, nothing on the brand's banned list (no server rooms, which is
+why IT consulting is a circuit board and not a rack).
+
+| Page | Photograph | Photographer |
+| --- | --- | --- |
+| Interior design studios | A sunlit living room | Spacejoy |
+| Construction companies | A building wrapped in scaffolding | Paul Becker |
+| Architecture firms | A curved concrete structure, black and white | Jonny James |
+| Legal and corporate law | Books on a wooden shelf | Jeremy Mura |
+| Accounting and tax | A calculator and a pen on paper | Aaron Lefler |
+| IT consulting and MSPs | A circuit board, close up | Mathew Schwartz |
+| Business consulting | A pen on a blank notebook | Mike Tinnion |
+| Recruitment and staffing | Rows of empty chairs | Nathan Dumlao |
+| HR outsourcing and payroll | An open filing cabinet drawer | Maksym Kaharlytskyi |
+
+Each was checked on 28 Sep 2026 against Unsplash's own data: free licence (not
+Unsplash+), credited to the right photographer, and the photographer has
+accepted Unsplash's current terms. Two first choices failed that last check
+(Clarisse Meyer for law, StellrWeb for accounting) and were replaced, the same
+call the blog made with Rubén García.
+
+### Same handling as the blog
+
+- **Hotlinked** from images.unsplash.com with sizing on the query string, as
+  the guidelines require. If Unsplash is unreachable the hero shows a sand
+  panel where the photo was, and the page still reads.
+- **Credited** under each photo, linking to the photographer and to Unsplash
+  with the referral parameters.
+- **Toned down** with the blog's filter, saturate(0.72) contrast(1.02).
+
+### No new claim
+
+The photographs illustrate a sector. None is presented as a client's project
+or as RankinAI's work. The group card's names and links come from
+`$FOOTER['industries']` in config.php. The two object renders
+(industry-interior-design, industry-construction) are unused again and still
+in assets/images.
+
+The hero is switched on per page by `'heroPhoto'` in the data file. Remove the
+key and the page falls back to the centred hero.
+
+### Update, same day: the on-page credit came off
+
+The "Photograph by … on Unsplash" line under each industry photo was removed
+on request. The Unsplash licence does not require a credit, but Unsplash's
+guidelines for hotlinked images ask for one, and the blog still carries its
+credits. The photographer for each page is still recorded in the table above
+and in each data file (`'by'`, `'user'`), so the credit can go back with one
+line in industry-template.php if it is wanted.

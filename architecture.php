@@ -31,6 +31,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for architecture practices',
   'h1'    => 'Get known for the work you want to do next.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1565768502473-c5dc73b7eb33', 'user' => 'jonnyjames2', 'by' => 'Jonny James',
+                  'alt' => 'A curved concrete structure in black and white'],
   'sub'   => 'Your projects show what you can design. Your marketing should help the right clients understand what you could bring to theirs.',
   'sub2'  => 'We help architecture practices become easier to discover, communicate their expertise and attract enquiries that fit their ambitions.',
 

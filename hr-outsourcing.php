@@ -28,6 +28,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for HR outsourcing and payroll providers',
   'h1'    => 'Give employers the confidence to choose you as their next partner.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1569235186275-626cb53b83ce', 'user' => 'qwitka', 'by' => 'Maksym Kaharlytskyi',
+                  'alt' => 'An open filing cabinet drawer'],
   'sub'   => 'Growing teams. More complex payroll. People questions that need an experienced answer.',
   'sub2'  => 'We help businesses discover your services, understand the support you provide, and feel ready to start a conversation.',
 

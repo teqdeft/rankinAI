@@ -93,14 +93,55 @@ require __DIR__ . '/header.php';
 
      'image' is optional. Interior design and construction set one; the other
      seven render single column until their object render exists.
+
+     Since 28 Sep 2026 the new-shape hero takes 'heroPhoto' instead, and is
+     no longer the same as the service hero. See the note just below.
      ====================================================================== -->
 <?php if ($new): ?>
-<section class="hero hero--centred">
+<?php
+/* THE INDUSTRY HERO, 28 Sep 2026. A page that sets 'heroPhoto' gets it: the
+   headline and the intro side by side, then a wide photograph across the
+   full measure, with the industry's group and its sibling pages on a card
+   over the photo's lower corner. Deliberately unlike the service hero, which
+   is a square object beside the copy, so the two kinds of page read as two
+   kinds of page. A file without 'heroPhoto' keeps the centred hero.
+
+   The photographs are from Unsplash, on the same terms as the blog's: places
+   and materials, no people, no laptops, no meeting rooms. Hotlinked as the
+   Unsplash guidelines require. The on-page credit was removed on request
+   on 28 Sep 2026. The photographer is still recorded in each data file
+   ('by', 'user') and in CLAIMS.md, so it can be put back.
+
+   The group comes from $FOOTER['industries'] in config.php, so the card and
+   the rest of the site cannot disagree about which industries sit together. */
+$heroPhoto = $I['heroPhoto'] ?? null;
+$heroGroup = null;
+if ($heroPhoto) {
+    foreach ($FOOTER['industries'] as [$cat, $catHref, $items]) {
+        foreach ($items as [$label, $href]) {
+            if (is_current($href)) { $heroGroup = [$cat, $catHref, $items]; break 2; }
+        }
+    }
+    $heroSrc = function (int $w, int $h) use ($heroPhoto): string {
+        return 'https://images.unsplash.com/' . $heroPhoto['photo'] . '?' . http_build_query([
+            'ixlib' => 'rb-4.1.0', 'auto' => 'format', 'fit' => 'crop', 'w' => $w, 'h' => $h, 'q' => 70,
+        ]);
+    };
+}
+?>
+<section class="hero <?= $heroPhoto ? 'hero--industry' : 'hero--centred' ?>">
   <div class="hero__inner container">
 
+<?php if ($heroPhoto): ?>
+    <div class="ind-hero__head">
+      <div class="ind-hero__lede">
+<?php endif; ?>
     <p class="eyebrow"><span><?= $I['label'] ?></span></p>
 
     <h1 class="hero__title"><?= $I['h1'] ?></h1>
+<?php if ($heroPhoto): ?>
+      </div>
+<?php endif; ?>
 
     <div class="hero__meta hero__meta--home">
       <p class="hero__sub"><?= $I['sub'] ?><?php if (!empty($I['sub2'])): ?><span class="hero__sub2"><?= $I['sub2'] ?></span><?php endif; ?></p>
@@ -109,6 +150,36 @@ require __DIR__ . '/header.php';
         <a class="link-quiet" href="<?= url('/call/') ?>">Book a 20-minute call</a>
       </div>
     </div>
+<?php if ($heroPhoto): ?>
+    </div>
+
+    <div class="ind-hero__visual">
+      <?php /* The stage holds the photo and the card, so the card is placed
+               against the photo alone. */ ?>
+      <div class="ind-hero__stage">
+      <figure class="ind-hero__photo">
+        <img src="<?= e($heroSrc(1600, 686)) ?>"
+             srcset="<?= e($heroSrc(900, 386)) ?> 900w, <?= e($heroSrc(1600, 686)) ?> 1600w, <?= e($heroSrc(2400, 1029)) ?> 2400w"
+             sizes="(max-width: 1440px) 100vw, 1440px"
+             alt="<?= e($heroPhoto['alt']) ?>" width="1600" height="686" fetchpriority="high" decoding="async">
+      </figure>
+<?php if ($heroGroup): ?>
+      <nav class="ind-hero__group" aria-label="<?= e($heroGroup[0]) ?> industries">
+        <a class="label label--clay" href="<?= url($heroGroup[1]) ?>"><?= $heroGroup[0] ?></a>
+        <ul role="list">
+<?php foreach ($heroGroup[2] as [$label, $href]): ?>
+<?php if (is_current($href)): ?>
+          <li class="is-current" aria-current="page"><?= $label ?></li>
+<?php else: ?>
+          <li><a href="<?= url($href) ?>"><?= $label ?></a></li>
+<?php endif; ?>
+<?php endforeach; ?>
+        </ul>
+      </nav>
+<?php endif; ?>
+      </div>
+    </div>
+<?php endif; ?>
 
   </div>
 </section>

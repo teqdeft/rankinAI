@@ -161,10 +161,10 @@ Shared includes: `config.php` (nav, footer, helpers, `ASSET_VERSION`),
 
 - Team photographs for four people on `/about/`; two team members have
   placeholder years and project counts.
-- Seven industry pages have no hero image.
 - The privacy policy names RankinAI FZ-LLC with no registered address.
-- Blog photographs are hotlinked from Unsplash, so the blog depends on a third
-  party nothing else on the site depends on.
+- Blog and industry hero photographs are hotlinked from Unsplash, so those
+  pages depend on a third party nothing else on the site depends on. See
+  CLAIMS.md for the terms the photographs were chosen and checked against.
 
 ---
 

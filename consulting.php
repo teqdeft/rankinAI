@@ -30,6 +30,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for business consultancies',
   'h1'    => 'Let your thinking open the next client conversation.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1501618669935-18b6ecb13d6d', 'user' => 'm15ky', 'by' => 'Mike Tinnion',
+                  'alt' => 'A pen resting on a blank notebook'],
   'sub'   => 'Your expertise becomes valuable when a client can see how it applies to their situation.',
   'sub2'  => 'We help consultancies make that connection through clear positioning, useful content, credible engagement stories and a stronger presence where prospective clients look for help.',
 

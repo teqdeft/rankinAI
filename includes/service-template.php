@@ -22,10 +22,11 @@
  *     under "is this the right next step", which is where a reader decides.
  *   · the team marquee. Not in the copy. It is still on the home page and on
  *     /about/, and includes/team.php is unchanged if it should come back.
- *   · the hero object image. Every rebuilt page on the site uses the centred
- *     hero, and six service images in assets/images are now unused by these
- *     pages: service-search, service-content, service-paid, service-web,
- *     service-reputation, service-crm.
+ *   · the hero object image. It came back on 28 Sep 2026 in a new split hero,
+ *     'heroImage', so the service pages no longer share the centred hero with
+ *     every other page. Each page sets its own image: service-search,
+ *     service-content, service-paid, service-web, service-reputation,
+ *     service-crm.
  *
  * THE STORY BLOCK IS UNCHANGED, including its rule: 'story' => null renders a
  * pending block rather than an invented client. Only Pine Tree Lane, Studio
@@ -38,10 +39,33 @@ $S = $SERVICE;
 require __DIR__ . '/header.php';
 ?>
 
-<!-- 01 — HERO ============================================================ -->
-<section class="hero hero--centred">
+<!-- 01 — HERO ============================================================
+     Two shapes. A page that sets 'heroImage' gets the service hero: copy on
+     the left, the service's object on the right, and under it the group the
+     service belongs to with its two siblings, so a reader can move sideways
+     between services without going back to the menu. A page without it keeps
+     the centred hero every other page on the site uses.
+
+     The group comes from $FOOTER in config.php, the same "Getting found" and
+     "Getting booked" split the footer prints, so the two never disagree.
+     ====================================================================== -->
+<?php
+$heroImg = $S['heroImage'] ?? null;
+$heroGroup = null;
+if ($heroImg) {
+    foreach (['found' => 'Getting found', 'booked' => 'Getting booked'] as $key => $name) {
+        foreach ($FOOTER[$key] as [$label, $href]) {
+            if (is_current($href)) { $heroGroup = [$name, $FOOTER[$key]]; break 2; }
+        }
+    }
+}
+?>
+<section class="hero <?= $heroImg ? 'hero--service' : 'hero--centred' ?>">
   <div class="hero__inner container">
 
+<?php if ($heroImg): ?>
+    <div class="svc-hero__copy">
+<?php endif; ?>
     <p class="eyebrow"><span><?= $S['label'] ?></span></p>
 
     <h1 class="hero__title"><?= $S['h1'] ?></h1>
@@ -56,6 +80,33 @@ require __DIR__ . '/header.php';
       <p class="hero__note"><?= $S['heroNote'] ?></p>
 <?php endif; ?>
     </div>
+<?php if ($heroImg): ?>
+    </div>
+
+    <?php /* The object is a picture of an idea, not of the work, so it is
+             decorative: empty alt, and the heading does the talking. The
+             forest block behind it stands in for a shadow, which the image
+             brief rules out. */ ?>
+    <div class="svc-hero__visual">
+      <figure class="svc-hero__frame">
+        <img src="<?= asset($heroImg['src']) ?>" alt="" width="<?= (int) $heroImg['w'] ?>" height="<?= (int) $heroImg['h'] ?>" fetchpriority="high">
+      </figure>
+<?php if ($heroGroup): ?>
+      <nav class="svc-hero__group" aria-label="<?= e($heroGroup[0]) ?> services">
+        <p class="label label--clay"><?= $heroGroup[0] ?></p>
+        <ul role="list">
+<?php foreach ($heroGroup[1] as [$label, $href]): ?>
+<?php if (is_current($href)): ?>
+          <li class="is-current" aria-current="page"><?= $label ?></li>
+<?php else: ?>
+          <li><a href="<?= url($href) ?>"><?= $label ?></a></li>
+<?php endif; ?>
+<?php endforeach; ?>
+        </ul>
+      </nav>
+<?php endif; ?>
+    </div>
+<?php endif; ?>
 
   </div>
 </section>

@@ -30,6 +30,9 @@ $SERVICE = [
 
   'label'    => 'SEO, local search and AI visibility',
   'h1'       => 'Get found before the shortlist is made.',
+  /* The service's object for the split hero. Decorative, made for the
+     site in its own palette. See the hero note in service-template.php. */
+  'heroImage' => ['src' => 'images/service-search.webp', 'w' => 1040, 'h' => 1040],
   'sub'      => 'Your next client could be searching Google, checking Maps or asking AI who can help.',
   'sub2'     => 'We help your business become easier to discover for the services you want to grow, and give the people finding you stronger reasons to get in touch.',
   /* 'heroNote' removed 25 Sep 2026 at Kulwant's instruction. The key is still

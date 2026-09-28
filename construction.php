@@ -33,6 +33,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for construction companies',
   'h1'    => 'Make your track record work for your next project.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1636362556682-11231883c01c', 'user' => 'paulbeckergmbh', 'by' => 'Paul Becker',
+                  'alt' => 'A tall building wrapped in scaffolding'],
   'sub'   => 'You have completed projects, practical experience and a team capable of delivering.',
   'sub2'  => 'We help prospective clients, developers and project teams discover those strengths, and understand where your company fits their next build.',
 

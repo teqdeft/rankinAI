@@ -28,6 +28,10 @@ $INDUSTRY = [
 
   'label' => 'Digital marketing for IT consultancies and MSPs',
   'h1'    => 'Be the IT partner they&rsquo;re ready to trust.',
+  /* The hero photograph, from Unsplash. Hotlinked and credited, see the
+     hero note in industry-template.php and CLAIMS.md. */
+  'heroPhoto' => ['photo' => 'photo-1535136104956-115a2cd67fc4', 'user' => 'cadop', 'by' => 'Mathew Schwartz',
+                  'alt' => 'A circuit board, close up'],
   'sub'   => 'Your team understands the systems. Your next client needs to understand the difference you could make to their business.',
   'sub2'  => 'We help IT consultancies and managed service providers become easier to discover, demonstrate their expertise and attract relevant sales conversations.',
 

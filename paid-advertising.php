@@ -36,6 +36,9 @@ $SERVICE = [
 
   'label'    => 'Paid advertising for service businesses',
   'h1'       => 'More of the right enquiries. A clearer view of what they cost.',
+  /* The service's object for the split hero. Decorative, made for the
+     site in its own palette. See the hero note in service-template.php. */
+  'heroImage' => ['src' => 'images/service-paid.webp', 'w' => 752, 'h' => 752],
   'sub'      => 'Put your business in front of people who could become your next clients.',
   /* 'heroNote' removed 25 Sep 2026 at Kulwant's instruction. It listed the
      four channels, which the "where we advertise" section covers properly a
