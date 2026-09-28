@@ -2208,3 +2208,33 @@ guidelines for hotlinked images ask for one, and the blog still carries its
 credits. The photographer for each page is still recorded in the table above
 and in each data file (`'by'`, `'user'`), so the credit can go back with one
 line in industry-template.php if it is wanted.
+
+
+## /blog/: shorter hero, search box removed — 28 Sep 2026
+
+- **The hero is short.** Less padding, a smaller one-line headline, and one
+  line of intro. The three opening questions ("What helps the right clients
+  find you?" and so on) and the two hero buttons came off. The growth audit is
+  still in the header and in the close at the foot of the page. The intro line
+  that stayed is Kulwant's wording, unchanged.
+- **The search box is gone.** The topic chips stay, centred on their own.
+  `?q=` is still read by blog.php, so an old search link still shows results.
+  This also changes a note in CLAUDE.md: blog search is no longer on the page.
+
+
+## /about/: a hero with the team in it — 28 Sep 2026
+
+The about page no longer opens with the centred hero. The copy is unchanged
+and moves to the left. On the right, three of the team's own photographs in a
+stepped collage: the whole team in the office, the office at work, and a Holi
+afternoon. A card names the office.
+
+### No new claim
+
+- **The photographs are the team's own**, the same graded files the marquee
+  further down the page already shows (team-group, team-office, team-talking).
+  Nothing new is published, only shown earlier on the page.
+- **The office card prints `$SITE['offices']`**, "Zirakpur, Punjab, India",
+  the line the footer and the call page already carry.
+- **The headline is no longer held to two lines.** It sits in half the width
+  now, so `hero__title--two` came off it and it wraps to three.

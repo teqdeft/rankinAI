@@ -1082,3 +1082,33 @@
   .ind-hero__photo { aspect-ratio: 4 / 3; }
   .ind-hero__group { position: static; width: auto; margin-top: 20px; }
 }
+
+/* The short hero, 28 Sep 2026. The blog index only. Less padding top and
+   bottom, a smaller headline on one line where it fits, and one line of
+   intro, so the topics and the articles start near the top of the screen. */
+.hero--short .hero__inner {
+  padding-block: calc(var(--hero-pad-top) * 0.6) calc(var(--sec-pad-b) * 0.55);
+}
+.hero--short .hero__title { font-size: min(var(--fs-h1), max(34px, calc(10px + 3vw))); }
+.hero--short .hero__meta { margin-top: 20px; }
+.hero--short .hero__sub { max-width: 60ch; }
+
+/* The topic row on its own, once the search box beside it came off. */
+.finder.finder--solo { grid-template-columns: minmax(0, 1fr); margin-top: 0; }
+.finder--solo .browse { text-align: center; }
+.finder--solo .filters { justify-content: center; }
+
+/* The about hero, 28 Sep 2026. Base rules are at the end of style.css.
+   Below 900px the collage drops under the copy. On a phone the office card
+   comes in from the edge so it cannot push past the gutter. */
+@media (max-width: 900px) {
+  .hero--about .hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .hero--about .hero__title { font-size: var(--fs-h1); }
+  .about-hero__collage { margin-top: 56px; max-width: 560px; }
+  .about-hero__place { left: 16px; }
+}
+@media (max-width: 600px) {
+  .about-hero__collage { gap: 10px; margin-top: 40px; }
+  .about-hero__shot--low { margin-top: 24px; margin-bottom: -24px; }
+  .about-hero__place { left: 12px; bottom: 48px; padding: 14px 18px; }
+}

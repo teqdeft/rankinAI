@@ -75,7 +75,8 @@ personally source is one of those.
 
 ### 4. Nothing important depends on JavaScript
 
-Blog search, topic filtering and paging are query-string state. The growth
+Blog topic filtering and paging are query-string state (the search box came
+off /blog/ on 28 Sep 2026, ?q= still works). The growth
 audit modal intercepts a link that still works without it. The contents list on
 an article is anchors first, highlight second. Keep it that way.
 

@@ -73,15 +73,25 @@ require __DIR__ . '/includes/header.php';
      with the rebuild: the home page hero lost its own, and the new copy does
      not carry it. Both figures are still sourced in CLAIMS.md if it comes back.
      ========================================================================== -->
-<section class="hero hero--centred">
+<?php /* THE ABOUT HERO, 28 Sep 2026. Copy on the left, and on the right a
+         collage of three of the team's own photographs: the whole team in
+         the office across the top, the office at work and a Holi afternoon
+         under it, the second set lower so the pair does not read as a grid.
+         Unlike the service hero (one object) and the industry hero (one wide
+         photograph), this one is people, because on an About page they are
+         what a reader came to see.
+
+         The photos are the same files the team marquee further down uses,
+         graded to one look, see includes/team-marquee.php. The card names
+         the office from $SITE, the same line the footer prints. Nothing
+         here is a claim the page did not already make. */ ?>
+<section class="hero hero--about">
   <div class="hero__inner container">
 
+    <div class="about-hero__copy">
     <p class="eyebrow"><span>About RankinAI</span></p>
 
-    <?php /* --two holds it to a line per sentence. See the note in style.css:
-             the headline is longer than the home page one, so at the full h1
-             step it ran to three lines inside the 1024 measure. */ ?>
-    <h1 class="hero__title hero__title--two">You&rsquo;ve spent years getting good. We help the right people see it.</h1>
+    <h1 class="hero__title">You&rsquo;ve spent years getting good. We help the right people see it.</h1>
 
     <div class="hero__meta hero__meta--home">
       <p class="hero__sub">Your best clients understand the value you bring. They&rsquo;ve worked with you, seen your thinking, and experienced the difference.<span class="hero__sub2">We help that understanding travel further, so people who haven&rsquo;t met you yet have a reason to choose you.</span></p>
@@ -89,6 +99,23 @@ require __DIR__ . '/includes/header.php';
         <a class="btn btn--primary" href="#team">Meet your team <?= btn_arrow() ?></a>
         <a class="link-quiet" href="<?= url('/call/') ?>">Book a 20-minute call</a>
       </div>
+    </div>
+    </div>
+
+    <div class="about-hero__collage">
+      <figure class="about-hero__shot about-hero__shot--wide">
+        <img src="<?= asset('images/team-group.webp') ?>" alt="The RankinAI team together in the office" width="1120" height="600" fetchpriority="high" decoding="async">
+      </figure>
+      <figure class="about-hero__shot">
+        <img src="<?= asset('images/team-office.webp') ?>" alt="The office, people at work at their desks" width="1120" height="600" decoding="async">
+      </figure>
+      <figure class="about-hero__shot about-hero__shot--low">
+        <img src="<?= asset('images/team-talking.webp') ?>" alt="Colleagues talking in the office on Holi, colour on their shirts" width="800" height="600" decoding="async">
+      </figure>
+      <p class="about-hero__place">
+        <span class="label label--clay">Our office</span>
+        <b><?= e($SITE['offices']) ?></b>
+      </p>
     </div>
 
   </div>

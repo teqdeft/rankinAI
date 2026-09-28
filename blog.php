@@ -4,7 +4,8 @@
  * -----------------------------------------------------------------------------
  * Served at /blog/. Rebuilt 25 Sep 2026 to Kulwant's copy.
  *
- * SEARCH, FILTERING AND PAGING ARE ALL SERVER-SIDE, on ?q=, ?topic= and ?page=.
+ * FILTERING AND PAGING ARE ALL SERVER-SIDE, on ?topic= and ?page=. ?q= is
+ * still read, though the search box came off the page on 28 Sep 2026.
  * No JavaScript, so it works on a slow connection and with the script blocked,
  * every view has its own URL that can be linked and shared, and the same
  * behaviour survives the move to WordPress, where the chips become category
@@ -76,8 +77,13 @@ $used = array_unique(array_column($POSTS, 'topic'));
 require __DIR__ . '/includes/header.php';
 ?>
 
-<!-- 01 — HERO ============================================================ -->
-<section class="hero hero--centred">
+<!-- 01 — HERO ============================================================
+     Short since 28 Sep 2026, so the articles start closer to the top. One
+     line of intro under the headline and no buttons: the growth audit is in
+     the header on every page and again in the close at the foot of this one.
+     The three questions that opened the intro came off with the buttons.
+     ====================================================================== -->
+<section class="hero hero--centred hero--short">
   <div class="hero__inner container">
 
     <p class="eyebrow"><span>The RankinAI blog</span></p>
@@ -85,36 +91,25 @@ require __DIR__ . '/includes/header.php';
     <h1 class="hero__title">Make more of your marketing.</h1>
 
     <div class="hero__meta hero__meta--home">
-      <p class="hero__sub">What helps the right clients find you? What gives them confidence to enquire? Where should your next marketing investment go?<span class="hero__sub2">Explore practical guides and perspectives on getting found, getting chosen and turning interest into new business.</span></p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="<?= url('/growth-audit/') ?>">Get your growth audit <?= btn_arrow() ?></a>
-        <a class="link-quiet" href="<?= url('/call/') ?>">Book a 20-minute call</a>
-      </div>
+      <p class="hero__sub">Explore practical guides and perspectives on getting found, getting chosen and turning interest into new business.</p>
     </div>
 
   </div>
 </section>
 
 
-<!-- 02 — SEARCH AND FILTERS ==============================================
-     A real form and real links. Each view has an address, so a reader can send
-     someone straight to the articles about their own problem.
+<!-- 02 — FILTERS =========================================================
+     Real links. Each view has an address, so a reader can send someone
+     straight to the articles about their own problem.
+
+     The search box came off on 28 Sep 2026. ?q= is still read above, so an
+     old search link still returns results, and the box can come back as a
+     form in this block without touching anything else.
      ====================================================================== -->
 <section class="band band--light">
   <div class="container">
 
-    <div class="finder">
-      <form class="bsearch" method="get" action="<?= url('/blog/') ?>" role="search">
-        <label class="label label--clay" for="blog-q">Search articles</label>
-        <div class="bsearch__row">
-          <input class="bsearch__input" type="search" id="blog-q" name="q" value="<?= e($q) ?>" placeholder="Search by topic or question" autocomplete="off">
-<?php if ($active): ?>
-          <input type="hidden" name="topic" value="<?= e($active) ?>">
-<?php endif; ?>
-          <button class="btn btn--primary bsearch__go" type="submit">Search <?= btn_arrow() ?></button>
-        </div>
-      </form>
-
+    <div class="finder finder--solo">
       <nav class="browse" aria-label="Browse articles by topic">
         <p class="label label--clay">Browse by topic</p>
         <div class="filters">
