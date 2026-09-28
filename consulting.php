@@ -112,6 +112,10 @@ $INDUSTRY = [
   'blocks' => [
 
     [
+      /* The photograph for this block's split layout, from Unsplash. See the
+         note on the argument blocks in industry-template.php and CLAIMS.md. */
+      'photo' => ['photo' => 'photo-1669858871612-68d2db085a39', 'user' => 'shionadas', 'by' => 'Shiona Das',
+                  'alt' => 'Reading glasses resting on an open book'],
       'band'    => 'forest',
       'eyebrow' => 'Your point of view',
       'title'   => 'What do you find yourself explaining in every important meeting?',
@@ -178,6 +182,10 @@ $INDUSTRY = [
 
   ],
 
+  /* The photograph for the how-we-start band, from Unsplash. See the note
+     on that band in industry-template.php and CLAIMS.md. */
+  'movesPhoto' => ['photo' => 'photo-1585692614056-d0bbd2d5069b', 'user' => 'nate_dumlao', 'by' => 'Nathan Dumlao',
+                   'alt' => 'Yellow sticky notes in a grid on a white wall'],
   'movesEyebrow' => 'How we start',
   'movesTitle'   => 'Find the substance. Make it clear. Put it in front of the right people.',
   'moves' => [

@@ -111,6 +111,10 @@ $INDUSTRY = [
   'blocks' => [
 
     [
+      /* The photograph for this block's split layout, from Unsplash. See the
+         note on the argument blocks in industry-template.php and CLAIMS.md. */
+      'photo' => ['photo' => 'photo-1562240020-ce31ccb0fa7d', 'user' => 'sharonmccutcheon', 'by' => 'Alexander Grey',
+                  'alt' => 'A tall stack of paperwork'],
       'band'    => 'forest',
       'eyebrow' => 'The switching question',
       'title'   => '&ldquo;This looks right for us.&rdquo; &ldquo;But what would changing involve?&rdquo;',
@@ -145,6 +149,10 @@ $INDUSTRY = [
 
   ],
 
+  /* The photograph for the how-we-start band, from Unsplash. See the note
+     on that band in industry-template.php and CLAIMS.md. */
+  'movesPhoto' => ['photo' => 'photo-1529651737248-dad5e287768e', 'user' => 'renataadrienn', 'by' => 'Renáta-Adrienn',
+                   'alt' => 'A ring planner open with a pen'],
   'movesEyebrow' => 'How we start',
   'movesTitle'   => 'Understand the offer. Answer the questions. Support the decision.',
   'moves' => [

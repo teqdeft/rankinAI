@@ -338,12 +338,23 @@ if ($heroPhoto) {
 <!-- 06 — THE ARGUMENT BLOCKS =============================================
      Each block picks its own ground and prints only the parts it has: prose,
      a set of cards, a labelled strip, a closing line.
+
+     A block that sets 'photo' (28 Sep 2026, the first block on each page)
+     takes the split layout: the heading and prose on the left, a tall
+     photograph on the right, and its points as a row of cards underneath.
+     The photographs are from Unsplash on the same terms as the hero ones.
+     Every other block renders as it always has.
      ====================================================================== -->
 <?php foreach (($I['blocks'] ?? []) as $B):
-  $dark = ($B['band'] ?? 'light') === 'forest'; ?>
+  $dark = ($B['band'] ?? 'light') === 'forest';
+  $bp = $B['photo'] ?? null; ?>
 <section class="band band--<?= $dark ? 'forest' : 'light' ?>">
   <div class="container">
 
+<?php if ($bp): ?>
+    <div class="split">
+      <div class="split__copy">
+<?php endif; ?>
     <div class="<?= $dark ? 'stories__head' : 'questions__head' ?>">
       <div>
         <p class="eyebrow<?= $dark ? ' eyebrow--light' : '' ?>"><span><?= $B['eyebrow'] ?></span></p>
@@ -374,10 +385,22 @@ if ($heroPhoto) {
 <?php endforeach; ?>
     </div>
 <?php endif; ?>
+<?php if ($bp):
+      $bu = function (int $w, int $h) use ($bp): string {
+          return 'https://images.unsplash.com/' . $bp['photo'] . '?' . http_build_query([
+              'ixlib' => 'rb-4.1.0', 'auto' => 'format', 'fit' => 'crop', 'w' => $w, 'h' => $h, 'q' => 70,
+          ]);
+      }; ?>
+      </div>
+      <figure class="split__photo">
+        <img src="<?= e($bu(800, 1000)) ?>" srcset="<?= e($bu(560, 700)) ?> 560w, <?= e($bu(800, 1000)) ?> 800w, <?= e($bu(1120, 1400)) ?> 1120w" sizes="(max-width: 900px) 100vw, 520px" alt="<?= e($bp['alt']) ?>" width="800" height="1000" loading="lazy" decoding="async">
+      </figure>
+    </div>
+<?php endif; ?>
 
 <?php if (!empty($B['items'])):
       $bc = ['two', 'two', 'three', 'four', 'five'][min(count($B['items']), 5) - 1]; ?>
-    <div class="hows hows--<?= $bc ?><?= $dark ? ' hows--onforest' : '' ?>">
+    <div class="hows hows--<?= $bc ?><?= $dark ? ' hows--onforest' : '' ?><?= $bp ? ' hows--cards' : '' ?>">
 <?php foreach ($B['items'] as $bi => [$n, $t]): ?>
       <div class="how">
         <p class="label label--clay"><?= sprintf('%02d', $bi + 1) ?></p>
@@ -408,8 +431,55 @@ if ($heroPhoto) {
 <?php endforeach; ?>
 
 
-<!-- 07 — HOW WE START ==================================================== -->
-<?php if (!empty($I['moves'])): ?>
+<!-- 07 — HOW WE START ====================================================
+     A page that sets 'movesPhoto' (28 Sep 2026) gets this on a third ground,
+     tan, with a tall photograph on the left and the steps as a list on the
+     right. It sits between the last argument block and "proof in practice",
+     and the argument blocks alternate from forest, so on a page with an odd
+     number of them it was a second forest band in a row. Tan reads as its
+     own ground next to either. Without 'movesPhoto' it is the forest band it
+     always was.
+     ====================================================================== -->
+<?php if (!empty($I['moves'])):
+  $mp = $I['movesPhoto'] ?? null;
+  if ($mp):
+    $mu = function (int $w, int $h) use ($mp): string {
+        return 'https://images.unsplash.com/' . $mp['photo'] . '?' . http_build_query([
+            'ixlib' => 'rb-4.1.0', 'auto' => 'format', 'fit' => 'crop', 'w' => $w, 'h' => $h, 'q' => 70,
+        ]);
+    }; ?>
+<section class="band band--tan">
+  <div class="container">
+    <div class="start">
+      <figure class="start__photo">
+        <img src="<?= e($mu(800, 1000)) ?>" srcset="<?= e($mu(560, 700)) ?> 560w, <?= e($mu(800, 1000)) ?> 800w, <?= e($mu(1120, 1400)) ?> 1120w" sizes="(max-width: 900px) 100vw, 480px" alt="<?= e($mp['alt']) ?>" width="800" height="1000" loading="lazy" decoding="async">
+      </figure>
+      <div class="start__copy">
+        <div class="questions__head">
+          <div>
+            <p class="eyebrow"><span><?= $I['movesEyebrow'] ?></span></p>
+            <h2 class="questions__title"><?= $I['movesTitle'] ?></h2>
+          </div>
+        </div>
+        <ol class="start__steps" role="list">
+<?php foreach ($I['moves'] as $mi => [$n, $t]): ?>
+          <li class="start__step">
+            <p class="label label--clay"><?= sprintf('%02d', $mi + 1) ?></p>
+            <div>
+              <h3 class="start__name"><?= $n ?></h3>
+              <p class="start__text"><?= $t ?></p>
+            </div>
+          </li>
+<?php endforeach; ?>
+        </ol>
+<?php if (!empty($I['movesTail'])): ?>
+        <p class="aftercards"><?= $I['movesTail'] ?></p>
+<?php endif; ?>
+      </div>
+    </div>
+  </div>
+</section>
+<?php else: ?>
 <section class="band band--forest">
   <div class="container">
 
@@ -436,6 +506,7 @@ if ($heroPhoto) {
 
   </div>
 </section>
+<?php endif; ?>
 <?php endif; ?>
 <?php else: ?>
 <section class="hero hero--page<?= !empty($I['image']) ? ' hero--object' : '' ?>">

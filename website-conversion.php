@@ -40,9 +40,10 @@ $SERVICE = [
 
   'label' => 'Website design, development and conversion',
   'h1'    => 'Make your website as convincing as your first conversation.',
-  /* The service's object for the split hero. Decorative, made for the
-     site in its own palette. See the hero note in service-template.php. */
-  'heroImage' => ['src' => 'images/service-web.webp', 'w' => 1040, 'h' => 1040],
+  /* The service's photograph for the split hero, from Unsplash. Hotlinked,
+     see the hero note in service-template.php and CLAIMS.md. */
+  'heroImage' => ['photo' => 'photo-1676843509045-96c4786ecfdc', 'user' => 'jackandgracephotoco', 'by' => 'Suzanne Skeen',
+                  'alt' => 'A letter board reading shop now open'],
   'sub'   => 'In a conversation, you can explain your approach, answer questions and show someone why your firm is a good fit. Your website needs to do some of that work before you meet.',
   'sub2'  => 'We design, build and improve websites that help prospective clients understand your value, and feel confident getting in touch.',
   /* No 'heroNote'. The two before this one listed the service names and came

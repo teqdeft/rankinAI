@@ -83,13 +83,27 @@ if ($heroImg) {
 <?php if ($heroImg): ?>
     </div>
 
-    <?php /* The object is a picture of an idea, not of the work, so it is
-             decorative: empty alt, and the heading does the talking. The
-             forest block behind it stands in for a shadow, which the image
-             brief rules out. */ ?>
+    <?php /* Since 28 Sep 2026 each service shows an Unsplash photograph
+             chosen for that service ('photo' in heroImage), on the same terms
+             as the industry and blog photographs: no people, no laptops, no
+             meeting rooms, hotlinked as the Unsplash guidelines require. See
+             CLAIMS.md. A heroImage with 'src' instead still serves a local
+             file, so the object renders in assets/images can come back.
+
+             The forest block behind it stands in for a shadow, which the
+             image brief rules out. */ ?>
     <div class="svc-hero__visual">
       <figure class="svc-hero__frame">
+<?php if (!empty($heroImg['photo'])):
+        $u = function (int $px) use ($heroImg): string {
+            return 'https://images.unsplash.com/' . $heroImg['photo'] . '?' . http_build_query([
+                'ixlib' => 'rb-4.1.0', 'auto' => 'format', 'fit' => 'crop', 'w' => $px, 'h' => $px, 'q' => 70,
+            ]);
+        }; ?>
+        <img src="<?= e($u(1000)) ?>" srcset="<?= e($u(600)) ?> 600w, <?= e($u(1000)) ?> 1000w, <?= e($u(1400)) ?> 1400w" sizes="(max-width: 900px) 480px, 540px" alt="<?= e($heroImg['alt']) ?>" width="1000" height="1000" fetchpriority="high" decoding="async">
+<?php else: ?>
         <img src="<?= asset($heroImg['src']) ?>" alt="" width="<?= (int) $heroImg['w'] ?>" height="<?= (int) $heroImg['h'] ?>" fetchpriority="high">
+<?php endif; ?>
       </figure>
 <?php if ($heroGroup): ?>
       <nav class="svc-hero__group" aria-label="<?= e($heroGroup[0]) ?> services">

@@ -2256,3 +2256,88 @@ sentence still goes out as the page's meta description (`$page_desc`).
 
 - **The eyebrow above it now carries the site strap**, "Get found. Get
   booked.", on request, the line the footer already prints.
+
+
+## Service heroes switch to Unsplash photographs — 28 Sep 2026
+
+The six service heroes no longer show the object renders. Each shows an
+Unsplash photograph chosen for its service, on request, under the same rules
+as the industry and blog photographs: no people, no laptops, no meeting rooms,
+free licence (not Unsplash+), and a photographer who has accepted Unsplash's
+current terms. All six checked against Unsplash's own data on 28 Sep 2026.
+
+| Service | Photograph | Photographer |
+| --- | --- | --- |
+| AI and search visibility | A smartphone on a pale table, screen lit | John Cameron |
+| Paid advertising | A blank billboard on a city street | personalgraphic.com |
+| Content | An old typewriter with a sheet of paper in it | Maggie Isley |
+| Website and conversion | A letter board reading "shop now open" | Suzanne Skeen |
+| Reviews and reputation | A neon "thank you" on a green wall | Morvanic Lee |
+| CRM and automation | A monthly calendar on a clipboard | Emiliana Hall |
+
+- **Hotlinked and toned down** exactly like the industry photos
+  (saturate(0.72) contrast(1.02)), square-cropped by Unsplash's own URL
+  parameters. No on-page credit, matching the industry pages after the credit
+  came off there. The photographer is recorded here and in each data file.
+- **No new claim.** The phone screen in the search photo is a generic app, not
+  a client's result, and none of the six is presented as RankinAI's work.
+- **The six object renders are unused again** and still in assets/images. A
+  heroImage with `'src'` in place of `'photo'` still serves a local file.
+
+
+## Industry pages: the first argument block goes split, with a photograph — 28 Sep 2026
+
+On each industry page the first argument block (the one after "What we do")
+has a new layout: the heading and prose on the left, a tall photograph on the
+right, and its points as a row of cards underneath. A different photograph for
+each industry, and none repeats its hero photograph. The other blocks keep the
+old layout. Switched on per block by `'photo'` in the data file.
+
+Same rules and checks as the hero photographs: Unsplash, free licence (not
+Unsplash+), photographer has accepted current terms, no people, no laptops, no
+meeting rooms, no server racks. Checked 28 Sep 2026. Hotlinked, toned down with
+the same filter, no on-page credit.
+
+| Page | Block | Photograph | Photographer |
+| --- | --- | --- | --- |
+| Interior design | Your portfolio | Neutral fabric samples | Victor Volkov |
+| Construction | Your project experience | Drawings spread out | Marina Zvada |
+| Architecture | Your project stories | A white scale model | Lorenzo Gerosa |
+| Law | Your people | A fountain pen on paper | Tony Chen |
+| Accounting | Show your specialism | Tax forms beside a mug | Kelly Sikkema |
+| IT and MSPs | Show the work | A keyboard, one key in red | Devang Saklani |
+| Consulting | Your point of view | Glasses on an open book | Shiona Das |
+| Recruitment | Show your specialism | A document on a clipboard | Worshae |
+| HR and payroll | The switching question | A tall stack of paperwork | Alexander Grey |
+
+No new claim. The copy in each block is unchanged, and no photograph is
+presented as a client's work or as RankinAI's.
+
+
+## Industry pages: "How we start" on a tan ground, with a photograph — 28 Sep 2026
+
+On four pages (law, accounting, IT, recruitment) the argument blocks end on a
+forest band, and "How we start" was forest too, so two forest bands ran
+together. Flipping colours only moved the clash down the page, because the
+close fixes the order of the last four sections. So "How we start" now sits on
+a third ground, tan (a deeper, warmer tone than the light band), with a tall
+photograph on the left and the steps as a numbered list on the right. Checked
+on all nine pages: no two neighbouring sections share a ground.
+
+Switched on per page by `'movesPhoto'`. Same photograph rules and checks as
+the hero and the split block (Unsplash, free licence, terms accepted, no
+people, no laptops, no meeting rooms, no server racks), checked 28 Sep 2026.
+
+| Page | Photograph | Photographer |
+| --- | --- | --- |
+| Interior design | Small pots of colour from above | Anshu A |
+| Construction | A steel square on herringbone wood | Jonathan Taylor |
+| Architecture | A wooden ruler and pencils in a pot | Viktor Ritsvall |
+| Law | A brass balance scale | Nellie Adamyan |
+| Accounting | A quill on an old handwritten ledger | camera obscura |
+| IT and MSPs | A router on a pegboard | Maarten Wijnants |
+| Consulting | Yellow sticky notes in a grid | Nathan Dumlao |
+| Recruitment | A single chair in a sunlit doorway | Andrea De Santis |
+| HR and payroll | A ring planner with a pen | Renáta-Adrienn |
+
+No new claim. The steps and their wording are unchanged.

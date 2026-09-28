@@ -109,6 +109,10 @@ $INDUSTRY = [
   'blocks' => [
 
     [
+      /* The photograph for this block's split layout, from Unsplash. See the
+         note on the argument blocks in industry-template.php and CLAIMS.md. */
+      'photo' => ['photo' => 'photo-1648822145238-16e13a1591da', 'user' => 'worshae', 'by' => 'Worshae',
+                  'alt' => 'A document on a clipboard with a pen'],
       'band'    => 'forest',
       'eyebrow' => 'Show your specialism',
       'title'   => '&ldquo;We understand your sector&rdquo; is the starting point. Show employers what that understanding looks like.',
@@ -158,6 +162,10 @@ $INDUSTRY = [
 
   ],
 
+  /* The photograph for the how-we-start band, from Unsplash. See the note
+     on that band in industry-template.php and CLAIMS.md. */
+  'movesPhoto' => ['photo' => 'photo-1632429966927-12c46c16f130', 'user' => 'santesson89', 'by' => 'Andrea De Santis',
+                   'alt' => 'A single chair in a sunlit doorway'],
   'movesEyebrow' => 'How we start',
   'movesTitle'   => 'Choose the market. Make the expertise visible. Follow the right opportunities.',
   'moves' => [

@@ -7955,3 +7955,109 @@ code {
   font-size: var(--t-small);
   color: var(--forest);
 }
+
+
+/* --------------------------------------------------------------------------
+   The split argument block, 28 Sep 2026
+
+   The first argument block on each industry page. The heading and the prose
+   sit on the left, a tall photograph on the right, level with them, and the
+   block's points run underneath as a row of cards (.hows--cards, which
+   already existed for the light ground and gains a forest version below).
+   -------------------------------------------------------------------------- */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  column-gap: clamp(40px, 6vw, 112px);
+  align-items: center;
+}
+.split__copy { min-width: 0; }
+.split__copy .prose { max-width: 60ch; }
+.split__photo {
+  margin: 0;
+  min-width: 0;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-panel);
+  overflow: hidden;
+  background: var(--sand);
+}
+.band--forest .split__photo { background: var(--forest-deep); }
+.split__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.02);
+}
+
+/* The cards on the forest ground. A faint lift off the band instead of the
+   paper panel, and the hairline in clay so it reads on the dark. */
+.hows--onforest.hows--cards .how {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(216, 155, 114, 0.28);
+}
+.hows--onforest.hows--cards .how:hover { border-color: var(--clay-light); }
+.hows--onforest.hows--cards .how::after { background: var(--clay-light); }
+
+
+/* --------------------------------------------------------------------------
+   How we start, on tan, 28 Sep 2026
+
+   A third ground for one band. The light band fades from a pale sand, so
+   this is set deeper and warmer to read as its own section next to light
+   and next to forest. A tall photograph on the left, the heading and the
+   steps as a numbered list on the right, a hairline between steps.
+   -------------------------------------------------------------------------- */
+.band--tan {
+  background: linear-gradient(180deg, #E4D3BB 0%, #E9DBC6 55%, #E2D0B6 100%);
+}
+.start {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  column-gap: clamp(40px, 6vw, 112px);
+  align-items: center;
+}
+.start__photo {
+  margin: 0;
+  min-width: 0;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-panel);
+  overflow: hidden;
+  background: #D8C5A8;
+}
+.start__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.02);
+}
+.start__copy { min-width: 0; }
+.start__steps {
+  margin: var(--sec-gap) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(30, 58, 43, 0.18);
+}
+.start__step {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(30, 58, 43, 0.18);
+}
+.start__step .label { padding-top: 6px; }
+.start__name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  line-height: 1.2;
+  color: var(--ink);
+}
+.start__text {
+  margin-top: 6px;
+  font-size: var(--t-body);
+  line-height: 1.65;
+  color: var(--ink-body);
+}
+.band--tan .aftercards { margin-top: 28px; }

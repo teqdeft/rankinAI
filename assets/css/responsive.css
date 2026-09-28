@@ -1118,3 +1118,33 @@ main > section.band--topics + section.band:not(:first-of-type) { margin-top: 0; 
   .about-hero__shot--low { margin-top: 24px; margin-bottom: -24px; }
   .about-hero__place { left: 12px; bottom: 48px; padding: 14px 18px; }
 }
+
+/* The service photographs, from Unsplash since 28 Sep 2026, take the same
+   tone-down as the industry and blog photographs so they sit under the
+   palette. */
+.svc-hero__frame img { filter: saturate(0.72) contrast(1.02); }
+
+/* The split argument block, 28 Sep 2026. Base rules at the end of style.css.
+   Below 900px the photograph drops under the prose at a wider crop, and the
+   cards fall to two across, then one. */
+@media (max-width: 900px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .split__photo { aspect-ratio: 16 / 10; margin-top: var(--sec-gap); }
+  .hows--cards.hows--four,
+  .hows--cards.hows--three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .hows--cards.hows--four,
+  .hows--cards.hows--three,
+  .hows--cards.hows--two { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* How we start on tan, 28 Sep 2026. Below 900px the photograph goes above
+   the heading at a wider crop. */
+@media (max-width: 900px) {
+  .start { grid-template-columns: minmax(0, 1fr); }
+  .start__photo { aspect-ratio: 16 / 10; margin-bottom: var(--sec-gap); }
+}
+@media (max-width: 600px) {
+  .start__step { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 18px 0; }
+}

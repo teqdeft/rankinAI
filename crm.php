@@ -34,9 +34,10 @@ $SERVICE = [
 
   'label' => 'CRM and automation',
   'h1'    => 'Give every good enquiry a clear next step.',
-  /* The service's object for the split hero. Decorative, made for the
-     site in its own palette. See the hero note in service-template.php. */
-  'heroImage' => ['src' => 'images/service-crm.webp', 'w' => 752, 'h' => 752],
+  /* The service's photograph for the split hero, from Unsplash. Hotlinked,
+     see the hero note in service-template.php and CLAIMS.md. */
+  'heroImage' => ['photo' => 'photo-1577950248429-7530424d9682', 'user' => 'emilianatmbg', 'by' => 'Emiliana Hall',
+                  'alt' => 'A monthly calendar on a clipboard with a pen'],
   'sub'   => 'An enquiry arrives. A proposal goes out. A promising conversation pauses while someone considers their options.',
   'sub2'  => 'We connect your CRM, lead routing, reminders and follow-up so your team can see what needs attention, and keep useful conversations moving.',
 

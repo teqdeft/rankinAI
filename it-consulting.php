@@ -105,6 +105,10 @@ $INDUSTRY = [
   'blocks' => [
 
     [
+      /* The photograph for this block's split layout, from Unsplash. See the
+         note on the argument blocks in industry-template.php and CLAIMS.md. */
+      'photo' => ['photo' => 'photo-1722681983721-4f582f785e30', 'user' => 'devang47', 'by' => 'Devang Saklani',
+                  'alt' => 'A keyboard close up, one key in red'],
       'band'    => 'forest',
       'eyebrow' => 'Show the work',
       'title'   => 'Explain what your team made possible.',
@@ -161,6 +165,10 @@ $INDUSTRY = [
 
   ],
 
+  /* The photograph for the how-we-start band, from Unsplash. See the note
+     on that band in industry-template.php and CLAIMS.md. */
+  'movesPhoto' => ['photo' => 'photo-1598639581410-11b5d2457575', 'user' => 'maartenwijnants', 'by' => 'Maarten Wijnants',
+                   'alt' => 'A router and small devices mounted on a pegboard'],
   'movesEyebrow' => 'How we start',
   'movesTitle'   => 'Understand the services. Clarify the value. Reach the right buyers.',
   'moves' => [
