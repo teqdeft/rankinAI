@@ -2238,3 +2238,21 @@ afternoon. A card names the office.
   the line the footer and the call page already carry.
 - **The headline is no longer held to two lines.** It sits in half the width
   now, so `hero__title--two` came off it and it wraps to three.
+
+## /blog/: intro line removed, spacing tightened — 28 Sep 2026
+
+The blog hero is now the eyebrow and the headline only. The remaining intro
+sentence came off on request, and the space between the hero, the topic chips
+and the first article was tightened to about 64px each on a wide screen. The
+sentence still goes out as the page's meta description (`$page_desc`).
+
+- **The headline changed too.** The eyebrow now reads "Blog" and the h1
+  "Guides on getting found and getting booked.", on request, so the hero says
+  what the page holds. It replaces Kulwant's "Make more of your marketing."
+  and borrows the site strap. The browser title is unchanged.
+
+- **Then changed again, same day, to "Blogs"**, on request. The eyebrow
+  above it still reads "Blog".
+
+- **The eyebrow above it now carries the site strap**, "Get found. Get
+  booked.", on request, the line the footer already prints.

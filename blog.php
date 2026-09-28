@@ -78,21 +78,21 @@ require __DIR__ . '/includes/header.php';
 ?>
 
 <!-- 01 — HERO ============================================================
-     Short since 28 Sep 2026, so the articles start closer to the top. One
-     line of intro under the headline and no buttons: the growth audit is in
-     the header on every page and again in the close at the foot of this one.
-     The three questions that opened the intro came off with the buttons.
+     Short since 28 Sep 2026, so the articles start closer to the top. The
+     eyebrow and the headline only: the intro paragraph, the three questions
+     and the buttons all came off. The growth audit is in the header on every
+     page and again in the close at the foot of this one. The description
+     still goes out as the meta description, see $page_desc above.
      ====================================================================== -->
 <section class="hero hero--centred hero--short">
   <div class="hero__inner container">
 
-    <p class="eyebrow"><span>The RankinAI blog</span></p>
+    <p class="eyebrow"><span>Get found. Get booked.</span></p>
 
-    <h1 class="hero__title">Make more of your marketing.</h1>
-
-    <div class="hero__meta hero__meta--home">
-      <p class="hero__sub">Explore practical guides and perspectives on getting found, getting chosen and turning interest into new business.</p>
-    </div>
+    <?php /* Was "Make more of your marketing." from Kulwant's copy, changed to
+             "Blogs" on request on 28 Sep 2026, so the hero says plainly what
+             the page is. */ ?>
+    <h1 class="hero__title">Blogs</h1>
 
   </div>
 </section>
@@ -106,7 +106,7 @@ require __DIR__ . '/includes/header.php';
      old search link still returns results, and the box can come back as a
      form in this block without touching anything else.
      ====================================================================== -->
-<section class="band band--light">
+<section class="band band--light band--topics">
   <div class="container">
 
     <div class="finder finder--solo">

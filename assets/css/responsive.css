@@ -1084,17 +1084,23 @@
 }
 
 /* The short hero, 28 Sep 2026. The blog index only. Less padding top and
-   bottom, a smaller headline on one line where it fits, and one line of
-   intro, so the topics and the articles start near the top of the screen. */
+   bottom and a smaller headline on one line where it fits, with no intro
+   under it, so the topics and the articles start near the top of the screen. */
 .hero--short .hero__inner {
-  padding-block: calc(var(--hero-pad-top) * 0.6) calc(var(--sec-pad-b) * 0.55);
+  padding-block: calc(var(--hero-pad-top) * 1.4) calc(var(--sec-pad-b) * 1.3);
 }
 .hero--short .hero__title { font-size: min(var(--fs-h1), max(34px, calc(10px + 3vw))); }
-.hero--short .hero__meta { margin-top: 20px; }
-.hero--short .hero__sub { max-width: 60ch; }
 
 /* The topic row on its own, once the search box beside it came off. */
 .finder.finder--solo { grid-template-columns: minmax(0, 1fr); margin-top: 0; }
+.finder--solo .filters { margin-top: 0; }
+
+/* The topics band sits tight between the short hero and the first articles.
+   Its top keeps the --r-section the band is pulled up under the hero's foot,
+   plus a little. The band after it is the same light ground, so it drops the
+   pull-up and most of its top padding: there is no edge to clear. */
+main > section.band.band--topics:not(:first-of-type) { padding-top: calc(var(--r-section) + 28px); padding-bottom: 24px; }
+main > section.band--topics + section.band:not(:first-of-type) { margin-top: 0; padding-top: 40px; }
 .finder--solo .browse { text-align: center; }
 .finder--solo .filters { justify-content: center; }
 
