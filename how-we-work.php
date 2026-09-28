@@ -32,9 +32,68 @@ require __DIR__ . '/includes/header.php';
 <!-- ==========================================================================
      01 — HERO
      ========================================================================== -->
-<section class="hero hero--centred">
+<?php /* The four steps are defined here, above the hero, because the hero now
+         lists their names in order and the process section further down
+         prints them in full. One list, so the two cannot drift apart. It
+         used to sit inside the process section. */ ?>
+<?php
+$STEPS = [
+    ['chat', '01', 'Understand', 'Define the work you want to win.',
+     'We begin with a conversation about your goals, services and ideal clients. We want to understand what makes your business valuable, how buyers make their decisions, and what happens between an enquiry arriving and a client saying yes.',
+     'We also look at your capacity. A plan to attract larger projects can require different work from a plan to increase enquiry volume.',
+     'We agree', [
+       'The services and markets to prioritise.',
+       'What makes an enquiry relevant.',
+       'Your commercial goals and delivery capacity.',
+       'Who needs to be involved on your side.',
+     ]],
+    ['search', '02', 'Investigate', 'Find where the opportunity is being lost.',
+     'If we work together, we build on the initial audit with the access and information needed for a deeper review. That may include your analytics, search performance, advertising, website content and follow-up process, depending on the agreed scope.',
+     'We trace the journey from discovery to enquiry, and, where your data allows, through to the work won.',
+     'You get', [
+       'A baseline of the available performance data.',
+       'The gaps affecting visibility, trust or conversion.',
+       'Tracking issues that need attention.',
+       'A prioritised view of what to improve.',
+     ]],
+    ['clipboard', '03', 'Plan', 'Give every activity a reason to be there.',
+     'We turn the findings into a delivery plan. It explains what we recommend, the order of work, who is responsible, and how progress will be assessed. You can see how the activities connect to your goals.',
+     'Some priorities may be straightforward: a clearer service page, a better enquiry form, or more consistent follow-up. Others require sustained work, such as building visibility in a competitive market.',
+     'Before delivery begins, we agree', [
+       'The scope, fees and separate costs.',
+       'The initial priorities and delivery schedule.',
+       'The information and approvals we need.',
+       'The measures and review points.',
+     ]],
+    ['sliders', '04', 'Deliver', 'Put the plan to work. Learn from what happens.',
+     'Our specialists carry out the agreed work across search, content, advertising, your website, reputation and follow-up. The mix depends on your plan and priorities.',
+     'We review performance, bring you the findings, and recommend the next actions. As the evidence develops, we refine where the effort goes.',
+     'You stay informed through', [
+       'Updates on completed and upcoming work.',
+       'Clear requests for input or approval.',
+       'Reports at the cadence included in your plan.',
+       'Reviews that lead to decisions.',
+     ]],
+];
+?>
+<?php /* THE HOW WE WORK HERO, 28 Sep 2026. Copy on the left. On the right a
+         tall photograph of stepping stones that runs out to the edge of the
+         window, and over its lower-left corner a card with the four steps
+         in order, linking down to the process section. The page's promise
+         is "the right order", so the hero shows the order.
+
+         The photograph is from Unsplash, on the same terms as the others on
+         the site: no people, hotlinked, no on-page credit. See CLAIMS.md. */
+$hwP = 'photo-1722232934077-9c188cefef16';
+$hwU = function (int $w, int $h) use ($hwP): string {
+    return 'https://images.unsplash.com/' . $hwP . '?' . http_build_query([
+        'ixlib' => 'rb-4.1.0', 'auto' => 'format', 'fit' => 'crop', 'w' => $w, 'h' => $h, 'q' => 70,
+    ]);
+}; ?>
+<section class="hero hero--work">
   <div class="hero__inner container">
 
+    <div class="work-hero__copy">
     <p class="eyebrow"><span>How we work</span></p>
 
     <h1 class="hero__title">The right work. In the right order.</h1>
@@ -45,6 +104,18 @@ require __DIR__ . '/includes/header.php';
         <a class="btn btn--primary" href="<?= url('/growth-audit/') ?>">Get your growth audit <?= btn_arrow() ?></a>
         <a class="link-quiet" href="<?= url('/call/') ?>">Book a 20-minute call</a>
       </div>
+    </div>
+    </div>
+
+    <div class="work-hero__visual">
+      <figure class="work-hero__photo">
+        <img src="<?= e($hwU(900, 1200)) ?>" srcset="<?= e($hwU(600, 800)) ?> 600w, <?= e($hwU(900, 1200)) ?> 900w, <?= e($hwU(1200, 1600)) ?> 1200w" sizes="(max-width: 900px) 100vw, 50vw" alt="Stepping stones crossing still water" width="900" height="1200" fetchpriority="high" decoding="async">
+      </figure>
+      <ol class="work-hero__steps" role="list">
+<?php foreach ($STEPS as [$icon, $n, $name, $lead]): ?>
+        <li><a href="#process"><span class="label label--clay"><?= $n ?></span><b><?= $name ?></b><span class="work-hero__lead"><?= $lead ?></span></a></li>
+<?php endforeach; ?>
+      </ol>
     </div>
 
   </div>
@@ -130,7 +201,7 @@ require __DIR__ . '/includes/header.php';
      Each card names what the step decides or produces. A process section that
      only describes activity gives a reader nothing to hold anyone to.
      ========================================================================== -->
-<section class="band band--light pslider">
+<section class="band band--light pslider" id="process">
   <div class="container">
 
     <div class="questions__head">
@@ -142,46 +213,6 @@ require __DIR__ . '/includes/header.php';
 
   </div>
 
-  <?php
-  $STEPS = [
-    ['chat', '01', 'Understand', 'Define the work you want to win.',
-     'We begin with a conversation about your goals, services and ideal clients. We want to understand what makes your business valuable, how buyers make their decisions, and what happens between an enquiry arriving and a client saying yes.',
-     'We also look at your capacity. A plan to attract larger projects can require different work from a plan to increase enquiry volume.',
-     'We agree', [
-       'The services and markets to prioritise.',
-       'What makes an enquiry relevant.',
-       'Your commercial goals and delivery capacity.',
-       'Who needs to be involved on your side.',
-     ]],
-    ['search', '02', 'Investigate', 'Find where the opportunity is being lost.',
-     'If we work together, we build on the initial audit with the access and information needed for a deeper review. That may include your analytics, search performance, advertising, website content and follow-up process, depending on the agreed scope.',
-     'We trace the journey from discovery to enquiry, and, where your data allows, through to the work won.',
-     'You get', [
-       'A baseline of the available performance data.',
-       'The gaps affecting visibility, trust or conversion.',
-       'Tracking issues that need attention.',
-       'A prioritised view of what to improve.',
-     ]],
-    ['clipboard', '03', 'Plan', 'Give every activity a reason to be there.',
-     'We turn the findings into a delivery plan. It explains what we recommend, the order of work, who is responsible, and how progress will be assessed. You can see how the activities connect to your goals.',
-     'Some priorities may be straightforward: a clearer service page, a better enquiry form, or more consistent follow-up. Others require sustained work, such as building visibility in a competitive market.',
-     'Before delivery begins, we agree', [
-       'The scope, fees and separate costs.',
-       'The initial priorities and delivery schedule.',
-       'The information and approvals we need.',
-       'The measures and review points.',
-     ]],
-    ['sliders', '04', 'Deliver', 'Put the plan to work. Learn from what happens.',
-     'Our specialists carry out the agreed work across search, content, advertising, your website, reputation and follow-up. The mix depends on your plan and priorities.',
-     'We review performance, bring you the findings, and recommend the next actions. As the evidence develops, we refine where the effort goes.',
-     'You stay informed through', [
-       'Updates on completed and upcoming work.',
-       'Clear requests for input or approval.',
-       'Reports at the cadence included in your plan.',
-       'Reviews that lead to decisions.',
-     ]],
-  ];
-  ?>
   <div class="pslider__rail" data-slider>
     <ul class="ptrack" role="list" data-slider-track>
 <?php foreach ($STEPS as [$icon, $n, $name, $lead, $text, $more, $getsLabel, $gets]): ?>
@@ -323,7 +354,7 @@ require __DIR__ . '/includes/header.php';
       ?>
       <div class="qa qa--wide">
 <?php foreach ($FAQ as $i => [$q, $a]): ?>
-        <details class="qi">
+        <details class="qi" name="faq">
           <summary class="qi__q">
             <span class="qi__n"><?= sprintf('%02d', $i + 1) ?></span>
             <span class="qi__text"><?= $q ?></span>

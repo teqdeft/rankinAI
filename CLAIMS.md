@@ -2341,3 +2341,35 @@ people, no laptops, no meeting rooms, no server racks), checked 28 Sep 2026.
 | HR and payroll | A ring planner with a pen | Renáta-Adrienn |
 
 No new claim. The steps and their wording are unchanged.
+
+
+## /how-we-work/: a hero that shows the order — 28 Sep 2026
+
+The copy moves left, unchanged. On the right, a tall photograph of stepping
+stones crossing still water runs out to the edge of the window, and a card over
+it lists the four steps in order (Understand, Investigate, Plan, Deliver), each
+with its one-line lead and a link to the process section, which now carries
+`id="process"`.
+
+- **The step names and leads are not new copy.** `$STEPS` moved from inside
+  the process section to above the hero, so both read the same list.
+- **The photograph** is Arthur Tseng's, from Unsplash, checked 28 Sep 2026 on
+  the same terms as the others: free licence, terms accepted, no people.
+  Hotlinked, toned down, no on-page credit.
+
+
+## /contact/: images in three sections — 28 Sep 2026
+
+- **Choose your next step.** Each route card opens with a picture. The audit
+  card uses `audit-report.webp`, the illustrative report render already in
+  assets/images: its figures are not legible and it is not presented as a
+  client's report or results. The call card uses `team-desk.webp`, one of the
+  team's own photographs. It does not say this is the person who takes the call.
+- **Send us a message.** Now split: the invitation and `team-desks.webp` on the
+  left, the form on the right.
+- **You can reach us directly.** The email, phone and office details stack on
+  the left beside `team-office.webp`, the team's photograph of their office.
+
+No new claim and no stock photography: every image is either the team's own
+(the same files the marquee shows) or the site's own illustration. Copy
+unchanged.

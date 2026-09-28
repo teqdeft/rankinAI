@@ -259,7 +259,7 @@ require __DIR__ . '/includes/header.php';
 
       <div class="qa">
 <?php foreach ($g['qs'] as $i => [$q, $answer]): ?>
-        <details class="qi">
+        <details class="qi" name="faq-<?= e($g['id']) ?>">
           <summary class="qi__q">
             <span class="qi__n"><?= sprintf('%02d', $i + 1) ?></span>
             <span class="qi__text"><?= $q ?></span>

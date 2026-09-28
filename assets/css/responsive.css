@@ -1148,3 +1148,27 @@ main > section.band--topics + section.band:not(:first-of-type) { margin-top: 0; 
 @media (max-width: 600px) {
   .start__step { grid-template-columns: 36px minmax(0, 1fr); gap: 12px; padding: 18px 0; }
 }
+
+/* The how-we-work hero, 28 Sep 2026. Below 900px the photograph goes under
+   the copy, still bleeding to the right edge, and the steps card comes out
+   from over it to sit beneath, back inside the gutter. */
+@media (max-width: 900px) {
+  .hero--work .hero__inner { grid-template-columns: minmax(0, 1fr); }
+  .hero--work .hero__title { font-size: var(--fs-h1); }
+  .work-hero__visual { margin-top: 48px; }
+  .work-hero__photo { height: clamp(300px, 56vw, 460px); }
+  .work-hero__steps { position: static; width: auto; margin: 16px var(--gutter) 0 0; }
+}
+
+/* Contact page images, 28 Sep 2026. Below 900px the message form drops under
+   the photograph and the office photograph under the details. These come
+   last so they beat the older .direct rules at the same widths. */
+@media (max-width: 900px) {
+  .msg { grid-template-columns: minmax(0, 1fr); }
+  .msg > .auditform { margin-top: var(--sec-gap); }
+  .reach { grid-template-columns: minmax(0, 1fr); row-gap: var(--sec-gap); }
+  .reach .direct { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .reach .direct { grid-template-columns: minmax(0, 1fr); }
+}

@@ -1560,3 +1560,30 @@
     });
   });
 })();
+
+/* ==========================================================================
+   One FAQ answer open at a time, 28 Sep 2026
+
+   The markup does this on its own: every .qi in a group shares a name
+   attribute, and a browser that supports exclusive <details> closes the
+   others when one opens, with no script at all. This is only the fallback
+   for a browser that ignores the name. It closes any other open details
+   with the same name when one opens, and does nothing where the browser
+   has already done it. Without script, and without support, answers simply
+   stay open, which is the old behaviour and still works.
+   ========================================================================== */
+(function () {
+  'use strict';
+  document.addEventListener('toggle', function (e) {
+    var d = e.target;
+    if (!d || d.tagName !== 'DETAILS' || !d.open) return;
+    var name = d.getAttribute('name');
+    if (!name) return;
+    var all = document.querySelectorAll('details[name]');
+    for (var i = 0; i < all.length; i++) {
+      if (all[i] !== d && all[i].open && all[i].getAttribute('name') === name) {
+        all[i].open = false;
+      }
+    }
+  }, true);
+})();

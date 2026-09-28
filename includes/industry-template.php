@@ -924,7 +924,7 @@ foreach ($cols as [$doing, $title, $items]):
 
     <div class="qa qa--wide">
 <?php foreach ($I['qs'] as $i => [$q, $a]): ?>
-      <details class="qi">
+      <details class="qi" name="faq">
         <summary class="qi__q">
           <span class="qi__n"><?= sprintf('%02d', $i + 1) ?></span>
           <span class="qi__text"><?= $q ?></span>

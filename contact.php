@@ -74,6 +74,10 @@ require __DIR__ . '/includes/header.php';
     <div class="routes">
 
       <article class="route">
+        <?php /* Images added 28 Sep 2026. This one is the illustrative audit
+                 render in assets/images, not a real client's report: its figures
+                 are not legible and it is not presented as anyone's results. */ ?>
+        <figure class="route__img"><img src="<?= asset('images/audit-report.webp') ?>" alt="A printed report with charts and a table, beside a pencil" width="1600" height="1067" loading="lazy" decoding="async"></figure>
         <p class="route__said">&ldquo;I&rsquo;d like to see what needs improving.&rdquo;</p>
         <h3 class="route__name">Get your growth audit</h3>
         <p class="route__text">Share your website and what you&rsquo;d like to achieve. We&rsquo;ll review your public presence and enquiry journey, then send the clearest opportunities and suggested priorities in writing.</p>
@@ -82,6 +86,9 @@ require __DIR__ . '/includes/header.php';
       </article>
 
       <article class="route">
+        <?php /* One of the team's own photographs, the same file the team
+                 marquee uses. It does not say this is who takes the call. */ ?>
+        <figure class="route__img"><img src="<?= asset('images/team-desk.webp') ?>" alt="A member of the RankinAI team at a desk in the office" width="840" height="600" loading="lazy" decoding="async"></figure>
         <p class="route__said">&ldquo;I&rsquo;d rather talk it through.&rdquo;</p>
         <h3 class="route__name">Book a 20-minute call</h3>
         <p class="route__text">Bring the question, challenge or goal on your mind. We&rsquo;ll discuss your situation, share an initial perspective, and see whether our support could be useful.</p>
@@ -106,12 +113,19 @@ require __DIR__ . '/includes/header.php';
 <section class="band band--light" id="message">
   <div class="container">
 
+    <?php /* Split since 28 Sep 2026: the invitation and a photograph of the
+             office at work on the left, the form on the right. The photograph
+             is the team's own, the same file the marquee uses. */ ?>
+    <div class="msg">
+    <div class="msg__side">
     <div class="questions__head">
       <div>
         <p class="eyebrow"><span>Send us a message</span></p>
         <h2 class="questions__title">A question first? Go ahead.</h2>
         <p class="stories__note">You don&rsquo;t need a finished brief. A few details about your business and what you&rsquo;re considering are enough to start.</p>
       </div>
+    </div>
+    <figure class="msg__photo"><img src="<?= asset('images/team-desks.webp') ?>" alt="Colleagues working at their desks in the RankinAI office" width="1000" height="600" loading="lazy" decoding="async"></figure>
     </div>
 
     <?php /* data-auditform wires the validation and the in-place confirmation
@@ -150,6 +164,7 @@ require __DIR__ . '/includes/header.php';
       <button class="btn btn--primary" type="submit">Send your message <?= btn_arrow() ?></button>
       <p class="auditform__note">We&rsquo;ll review your message and reply by email. Sending an enquiry creates no obligation to proceed.</p>
     </form>
+    </div>
 
   </div>
 </section>
@@ -174,6 +189,10 @@ require __DIR__ . '/includes/header.php';
       </div>
     </div>
 
+    <?php /* The details stack on the left and the office sits beside them,
+             since 28 Sep 2026. The photograph is the team's own, of the office
+             at work (team-office.webp, as in the marquee). */ ?>
+    <div class="reach">
     <div class="direct">
       <div class="direct__item">
         <p class="label label--clay">Email</p>
@@ -190,6 +209,8 @@ require __DIR__ . '/includes/header.php';
         <p class="label label--clay">Office</p>
         <p class="direct__addr"><?= e($SITE['address']) ?></p>
       </div>
+    </div>
+    <figure class="reach__photo"><img src="<?= asset('images/team-office.webp') ?>" alt="The RankinAI office, rows of desks and people at work" width="1120" height="600" loading="lazy" decoding="async"></figure>
     </div>
 
     <?php
