@@ -347,13 +347,26 @@ if ($heroPhoto) {
      ====================================================================== -->
 <?php foreach (($I['blocks'] ?? []) as $B):
   $dark = ($B['band'] ?? 'light') === 'forest';
-  $bp = $B['photo'] ?? null; ?>
+  $bp = $B['photo'] ?? null;
+  /* A prose-only block (a heading, paragraphs and a closing line, nothing
+     else) takes the brief layout, 29 Sep 2026: heading left, paragraphs
+     right, the closing line as a callout under them. It used to run as one
+     long column at full width with the closing line loose underneath. */
+  $brief = !$bp && !empty($B['paras']) && empty($B['items']) && empty($B['list'])
+         && empty($B['quotes']) && empty($B['lead']); ?>
 <section class="band band--<?= $dark ? 'forest' : 'light' ?>">
   <div class="container">
 
 <?php if ($bp): ?>
-    <div class="split">
+<?php /* A block that also carries a numbered list (29 Sep 2026) flips the
+         split, photograph on the left, so a page with two photo blocks does
+         not show the same shape twice, and its list becomes cards below. */ ?>
+    <div class="split<?= !empty($B['list']) ? ' split--flip' : '' ?>">
       <div class="split__copy">
+<?php endif; ?>
+<?php if ($brief): ?>
+    <div class="brief<?= $dark ? ' brief--onforest' : '' ?>">
+      <div class="brief__head">
 <?php endif; ?>
     <div class="<?= $dark ? 'stories__head' : 'questions__head' ?>">
       <div>
@@ -361,6 +374,10 @@ if ($heroPhoto) {
         <h2 class="<?= $dark ? 'stories__title' : 'questions__title' ?>"><?= $B['title'] ?></h2>
       </div>
     </div>
+<?php if ($brief): ?>
+      </div>
+      <div class="brief__body">
+<?php endif; ?>
 
 <?php /* A line that has to come before the questions rather than after them,
          because it is what the questions are about. */ ?>
@@ -385,6 +402,13 @@ if ($heroPhoto) {
 <?php endforeach; ?>
     </div>
 <?php endif; ?>
+<?php if ($brief): ?>
+<?php if (!empty($B['tail'])): ?>
+        <p class="brief__note"><?= $B['tail'] ?></p>
+<?php endif; ?>
+      </div>
+    </div>
+<?php endif; ?>
 <?php if ($bp):
       $bu = function (int $w, int $h) use ($bp): string {
           return 'https://images.unsplash.com/' . $bp['photo'] . '?' . http_build_query([
@@ -393,7 +417,7 @@ if ($heroPhoto) {
       }; ?>
       </div>
       <figure class="split__photo">
-        <img src="<?= e($bu(800, 1000)) ?>" srcset="<?= e($bu(560, 700)) ?> 560w, <?= e($bu(800, 1000)) ?> 800w, <?= e($bu(1120, 1400)) ?> 1120w" sizes="(max-width: 900px) 100vw, 520px" alt="<?= e($bp['alt']) ?>" width="800" height="1000" loading="lazy" decoding="async">
+        <img src="<?= e(!empty($B['list']) ? $bu(800, 600) : $bu(800, 1000)) ?>" srcset="<?= e(!empty($B['list']) ? $bu(560, 420) . ' 560w, ' . $bu(800, 600) . ' 800w, ' . $bu(1120, 840) . ' 1120w' : $bu(560, 700) . ' 560w, ' . $bu(800, 1000) . ' 800w, ' . $bu(1120, 1400) . ' 1120w') ?>" sizes="(max-width: 900px) 100vw, 520px" alt="<?= e($bp['alt']) ?>" width="800" height="<?= !empty($B['list']) ? 600 : 1000 ?>" loading="lazy" decoding="async">
       </figure>
     </div>
 <?php endif; ?>
@@ -412,7 +436,7 @@ if ($heroPhoto) {
 <?php endif; ?>
 
 <?php if (!empty($B['list'])): ?>
-    <div class="needs">
+    <div class="needs<?= $bp ? ' needs--cards' : '' ?>">
       <p class="label label--clay"><?= $B['listLead'] ?></p>
       <ol class="needs__list<?= $strip($B['list']) ?>" role="list">
 <?php foreach ($B['list'] as $li => $item): ?>
@@ -422,7 +446,7 @@ if ($heroPhoto) {
     </div>
 <?php endif; ?>
 
-<?php if (!empty($B['tail'])): ?>
+<?php if (!empty($B['tail']) && !$brief): ?>
     <p class="aftercards<?= $dark ? ' aftercards--onforest' : '' ?>"><?= $B['tail'] ?></p>
 <?php endif; ?>
 

@@ -29,13 +29,21 @@ require __DIR__ . '/includes/config.php';
 $page_title = 'Contact RankinAI, tell us what you would like to change | RankinAI';
 $page_desc  = 'Ask a question, request a free growth audit, or book a 20-minute call. Tell us where you are and what you want to achieve.';
 
+/* No shared close at the foot of this page, since 29 Sep 2026. Its two asks
+   (the audit and the call) are the two route cards this page opens with, so
+   it was the same choice twice and a long page's last 700px. */
+$no_close = true;
+
 require __DIR__ . '/includes/header.php';
 ?>
 
 <!-- ==========================================================================
      01 — HERO
      ========================================================================== -->
-<section class="hero hero--centred">
+<?php /* Shorter since 29 Sep 2026: tighter padding and no buttons. The same two
+         asks are the route cards directly below, so the hero no longer
+         repeats them. */ ?>
+<section class="hero hero--centred hero--compact">
   <div class="hero__inner container">
 
     <p class="eyebrow"><span>Contact RankinAI</span></p>
@@ -44,10 +52,6 @@ require __DIR__ . '/includes/header.php';
 
     <div class="hero__meta hero__meta--home">
       <p class="hero__sub">More enquiries for a particular service? Better-fit clients? A marketing plan you can finally see working together?<span class="hero__sub2">Tell us where you are and what you want to achieve. We&rsquo;ll help you identify a useful next step.</span></p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href="<?= url('/growth-audit/') ?>">Get your growth audit <?= btn_arrow() ?></a>
-        <a class="link-quiet" href="<?= url('/call/') ?>">Book a 20-minute call</a>
-      </div>
     </div>
 
   </div>

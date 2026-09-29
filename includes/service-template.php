@@ -339,6 +339,73 @@ if ($heroImg) {
      reporting shows as a strip. Three horizontal rows rather than a column of
      prose with a list beside it.
      ====================================================================== -->
+<?php $cp = $S['compare']['photo'] ?? null;
+if ($cp):
+  /* THE PHOTO VERSION, 29 Sep 2026. Heading and lead on the left with a
+     small photograph of an old brick mill beside them (the detailed search
+     asks about converting older buildings into offices). Then the two
+     searches as a row, then the rest of the prose beside the reporting
+     points as a numbered card. The photograph was first a full-width band
+     under the heading with the searches over it, and was too large.
+     The photograph is from Unsplash on the site's usual terms, see
+     CLAIMS.md. Without 'photo' the section renders as it did before. */
+  $cu = function (int $w, int $h) use ($cp): string {
+      return 'https://images.unsplash.com/' . $cp['photo'] . '?' . http_build_query([
+          'ixlib' => 'rb-4.1.0', 'auto' => 'format', 'fit' => 'crop', 'w' => $w, 'h' => $h, 'q' => 70,
+      ]);
+  };
+  $cParas = $S['compare']['paras']; ?>
+<section class="band band--light">
+  <div class="container">
+
+    <div class="cmp__head">
+      <div>
+        <p class="eyebrow"><span><?= $S['compare']['eyebrow'] ?></span></p>
+        <h2 class="says__title"><?= $S['compare']['title'] ?></h2>
+        <p class="says__lead"><?= array_shift($cParas) ?></p>
+      </div>
+      <figure class="cmp__photo">
+        <img src="<?= e($cu(720, 540)) ?>" srcset="<?= e($cu(480, 360)) ?> 480w, <?= e($cu(720, 540)) ?> 720w, <?= e($cu(960, 720)) ?> 960w" sizes="(max-width: 900px) 100vw, 420px" alt="<?= e($cp['alt']) ?>" width="720" height="540" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="cmp__stage">
+      <div class="asks cmp__asks">
+<?php foreach ($S['compare']['quotes'] as [$icon, $kind, $q]): ?>
+        <figure class="ask">
+          <figcaption class="label label--clay"><?= $kind ?></figcaption>
+          <blockquote class="ask__field">
+            <span class="ask__icon" aria-hidden="true"><?= svc_icon_svg($icon) ?></span>
+            <span class="ask__t"><?= $q ?></span>
+            <span class="ask__caret" aria-hidden="true"></span>
+          </blockquote>
+        </figure>
+<?php endforeach; ?>
+      </div>
+    </div>
+
+    <div class="cmp__body">
+      <div class="cmp__text">
+<?php foreach ($cParas as $p): ?>
+        <p class="says__text"><?= $p ?></p>
+<?php endforeach; ?>
+      </div>
+      <div class="cmp__report">
+        <p class="label label--clay"><?= $S['compare']['listTitle'] ?></p>
+        <ol class="cmp__list" role="list">
+<?php foreach ($S['compare']['list'] as $i => $item): ?>
+          <li><span class="needs__n"><?= sprintf('%02d', $i + 1) ?></span><span><?= $item ?></span></li>
+<?php endforeach; ?>
+        </ol>
+<?php if (!empty($S['compare']['tail'])): ?>
+        <p class="needs__tail"><?= $S['compare']['tail'] ?></p>
+<?php endif; ?>
+      </div>
+    </div>
+
+  </div>
+</section>
+<?php else: ?>
 <section class="band band--light">
   <div class="container">
 
@@ -380,6 +447,7 @@ if ($heroImg) {
 
   </div>
 </section>
+<?php endif; ?>
 <?php endif; ?>
 
 

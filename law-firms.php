@@ -139,6 +139,10 @@ $INDUSTRY = [
     ],
 
     [
+      /* The photograph for this block's split layout, from Unsplash. See the
+         note on the argument blocks in industry-template.php and CLAIMS.md. */
+      'photo' => ['photo' => 'photo-1743207820696-6ea16d63177f', 'user' => 'cesttse', 'by' => 'T. Selin Erkan',
+                  'alt' => 'Shelves of labelled archive boxes'],
       'eyebrow' => 'Demonstrating experience',
       'title'   => 'Show the substance of the work you can discuss.',
       'paras' => [

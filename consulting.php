@@ -154,6 +154,10 @@ $INDUSTRY = [
 
     [
       'band'    => 'forest',
+      /* The photograph for this block's split layout, from Unsplash. See the
+         note on the argument blocks in industry-template.php and CLAIMS.md. */
+      'photo' => ['photo' => 'photo-1568150497174-3ce4af7b5b92', 'user' => 'marissacristina', 'by' => 'Marissa Grootes',
+                  'alt' => 'A black planner on a wooden table beside a chair'],
       'eyebrow' => 'Supporting the buying decision',
       'title'   => 'Give your contact something useful to take into the next meeting.',
       'paras' => [

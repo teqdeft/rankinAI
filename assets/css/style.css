@@ -8202,3 +8202,151 @@ code {
   overflow: hidden;
   background: var(--forest-deep);
 }
+
+
+/* --------------------------------------------------------------------------
+   The compare section with a photograph, 29 Sep 2026
+
+   Heading and lead on the left, a small photograph on the right. Below, the
+   two search boxes as a row (the existing .ask styles). Below that, the
+   remaining prose beside the reporting points, which sit in a paper card as
+   a numbered list rather than a five-across strip. The photograph started
+   as a full-width band with the searches floating over it, and was cut down
+   to this on 29 Sep 2026 as too large.
+   -------------------------------------------------------------------------- */
+.cmp__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  column-gap: var(--why-gap);
+  align-items: center;
+}
+.cmp__head > div { min-width: 0; }
+.cmp__head .cmp__photo { justify-self: end; width: 100%; max-width: 420px; }
+.cmp__head .says__lead { margin: 24px 0 0; max-width: 44ch; }
+.cmp__photo {
+  margin: 0;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-panel);
+  overflow: hidden;
+  background: var(--sand);
+}
+.cmp__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.02);
+}
+.cmp__stage { margin-top: var(--sec-gap); }
+.cmp__asks { margin-top: 0; }
+.cmp__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--why-gap);
+  align-items: start;
+  margin-top: var(--sec-gap);
+}
+.cmp__text { min-width: 0; max-width: 56ch; }
+.cmp__report {
+  min-width: 0;
+  padding: clamp(24px, 2.4vw, 36px);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-panel);
+}
+.cmp__list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.cmp__list li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  line-height: 1.3;
+  color: var(--ink);
+}
+.cmp__list li:last-child { border-bottom: 0; }
+.cmp__list .needs__n { padding-top: 4px; }
+.cmp__report .needs__tail { margin-top: 18px; }
+
+
+/* --------------------------------------------------------------------------
+   The numbered strip on a forest band, 29 Sep 2026
+
+   .needs was only ever drawn for the light ground, so on forest its items
+   printed in dark ink on dark green and could not be read. These give it
+   the on-forest colours the other components use.
+   -------------------------------------------------------------------------- */
+.band--forest .needs > .label { color: var(--clay-light); }
+.band--forest .needs__list li { border-top-color: var(--clay-light); }
+.band--forest .needs__n { color: var(--clay-light); }
+.band--forest .needs__t { color: var(--cream); }
+.band--forest .needs__tail { color: var(--on-forest-faint); }
+
+/* The split with a list, flipped: photograph left, copy right. */
+.split--flip { grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); }
+.split--flip .split__photo { order: -1; }
+
+/* The list under a split block, as cards. Three across, so five or six
+   items sit in two even rows rather than one cramped strip. */
+.needs--cards .needs__list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.needs--cards .needs__list li {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 24px;
+  border-top: 0;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+}
+.needs--cards .needs__n { padding-top: 4px; flex: none; }
+.needs--cards .needs__t { font-size: var(--fs-h4); line-height: 1.3; }
+.band--forest .needs--cards .needs__list li {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(216, 155, 114, 0.28);
+}
+
+
+/* --------------------------------------------------------------------------
+   The brief block, 29 Sep 2026
+
+   A prose-only argument block: heading on the left, the paragraphs on the
+   right, and the closing line as a callout card under them with a clay rule
+   down its edge. Shorter than the single full-width column it replaces, and
+   a different shape from the photograph blocks around it.
+   -------------------------------------------------------------------------- */
+.brief {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  column-gap: var(--why-gap);
+  align-items: start;
+}
+.brief__head,
+.brief__body { min-width: 0; }
+.brief__body .prose { margin-top: 0; max-width: 60ch; }
+.brief__note {
+  margin-top: 28px;
+  max-width: 60ch;
+  padding: 22px 26px;
+  border-left: 3px solid var(--clay);
+  border-radius: 0 20px 20px 0;
+  background: var(--paper);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--ink-body);
+}
+.brief--onforest .brief__note {
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--clay-light);
+  color: var(--on-forest-body);
+}

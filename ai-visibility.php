@@ -103,6 +103,10 @@ $SERVICE = [
 
   'compare' => [
     'eyebrow' => 'Google and AI search',
+    /* The photograph for this section, from Unsplash. See the note on the
+       compare section in service-template.php and CLAIMS.md. */
+    'photo' => ['photo' => 'photo-1583058778521-6722c3b87f4c', 'user' => 'groovelanddesigns',
+                'by' => 'Grooveland Designs', 'alt' => 'An old red brick mill building under a blue sky'],
     'title'   => 'Different ways of searching. The same need to understand who can help.',
     'paras' => [
       'Both describe an opportunity to be discovered. They also reveal different information needs.',

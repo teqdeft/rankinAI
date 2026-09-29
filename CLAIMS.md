@@ -2373,3 +2373,72 @@ with its one-line lead and a link to the process section, which now carries
 No new claim and no stock photography: every image is either the team's own
 (the same files the marquee shows) or the site's own illustration. Copy
 unchanged.
+
+
+## /ai-visibility/: the "Google and AI search" section redesigned — 29 Sep 2026
+
+The heading now comes first with the lead sentence beside it. Below, a wide
+photograph of an old red brick mill, with the two example searches floating
+over its lower edge (the detailed one asks about converting older buildings
+into office space). Then the remaining prose beside the reporting points, now
+a numbered card instead of a five-across strip. Copy unchanged.
+
+The photograph is Grooveland Designs', from Unsplash, checked 29 Sep 2026 on
+the site's usual terms: free licence, terms accepted, no people. Hotlinked,
+toned down, no on-page credit. It illustrates the example search. It is not a
+client's building and is not presented as one. Switched on by `'photo'` in the
+compare data, and the old layout still renders without it.
+
+### Update, same day: the photograph made small
+
+The full-width photograph was too large. It is now a small 4:3 picture (at
+most 420px wide) beside the heading and lead, and the two searches sit in
+their own row beneath, no longer over the photograph.
+
+### Update, 29 Sep 2026: the page shortened
+
+About a fifth shorter at 1440 (4910px to 3891px) and 1200px shorter on a
+phone. The shared close came off this page (`$no_close`), because its two asks
+are the route cards the page opens with. The hero lost its two buttons for the
+same reason and got tighter padding. The three photographs take flatter crops,
+and the message photograph is hidden on phones. No copy changed.
+
+
+## Industry pages: argument blocks with a list, fixed and given a photograph — 29 Sep 2026
+
+**The bug.** The numbered strip (`.needs`) was only styled for the light
+ground. On consulting ("Supporting the buying decision") and accounting ("Your
+team's expertise") it sat on forest, and its items printed dark on dark green,
+unreadable. It now has on-forest colours everywhere it can appear.
+
+**The redesign.** Every argument block that ends in a numbered list takes the
+split layout, flipped (photograph left, copy right) so it does not repeat the
+shape of the first split block on the same page, and its list becomes a grid of
+cards. Seven pages. Same photograph rules and checks as the others (Unsplash,
+free licence, terms accepted, no people, laptops, meeting rooms or server
+racks), checked 29 Sep 2026.
+
+| Page | Block | Photograph | Photographer |
+| --- | --- | --- | --- |
+| Consulting | Supporting the buying decision | A planner on a wooden table | Marissa Grootes |
+| Accounting | Your team's expertise | A lamp on a stack of books | Katya Azimova |
+| Architecture | A more useful first conversation | A sketchbook, an arched window drawn | Shivani Chougula |
+| Construction | Better enquiries | Hard hats and safety vests on a wall | Tanya Paquet |
+| Interior design | Better-fit enquiries | A vase and a small bust before a mirror | Katie Luka |
+| IT and MSPs | The switching question | A green light switch | Lunyon |
+| Law | Demonstrating experience | Shelves of labelled archive boxes | T. Selin Erkan |
+
+The first choice for construction was dropped: Unsplash's own description of it
+was "a lemon and a lemon on a table", and it could not be confirmed as a hard
+hat. No copy changed.
+
+
+## Industry pages: prose-only argument blocks get the brief layout — 29 Sep 2026
+
+A block that is only a heading, paragraphs and a closing line now sets the
+heading on the left and the paragraphs on the right, with the closing line as a
+callout card (clay rule down its edge) instead of a loose note under a
+full-width column. No photograph, on purpose: those pages already carry four.
+Applied automatically to consulting ("Make the first step clear"), HR outsourcing
+("Show the expertise") and recruitment ("Supporting business development"). Copy
+unchanged.

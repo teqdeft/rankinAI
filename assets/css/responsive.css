@@ -1172,3 +1172,63 @@ main > section.band--topics + section.band:not(:first-of-type) { margin-top: 0; 
 @media (max-width: 600px) {
   .reach .direct { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* The compare section with a photograph, 29 Sep 2026. Below 900px the head
+   and body stack, the photograph under the heading at a capped width. */
+@media (max-width: 900px) {
+  .cmp__head,
+  .cmp__body { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+  .cmp__photo { max-width: 480px; }
+}
+
+/* The contact page, shortened 29 Sep 2026. A compact centred hero, and
+   flatter crops on the three contact photographs. Here at the end so these
+   beat the base rules for the same selectors. */
+.hero--compact .hero__inner {
+  padding-block: calc(var(--hero-pad-top) * 0.7) calc(var(--sec-pad-b) * 0.7);
+}
+.hero--compact .hero__title { font-size: min(var(--fs-h1), max(34px, calc(10px + 3.4vw))); }
+.hero--compact .hero__meta { margin-top: 24px; }
+.route__img { aspect-ratio: 21 / 9; }
+.msg__photo { aspect-ratio: 16 / 10; }
+.reach__photo { aspect-ratio: 2 / 1; }
+
+/* On a phone the message photograph pushes the form a full screen down the
+   page. It is decorative, so it goes, and the form follows the invitation. */
+@media (max-width: 600px) {
+  .msg__photo { display: none; }
+}
+
+/* The flipped split and the list cards, 29 Sep 2026. Below 900px the photo
+   goes back under the copy like the plain split, and the cards run two
+   across, then one. */
+@media (max-width: 900px) {
+  .split--flip { grid-template-columns: minmax(0, 1fr); }
+  .split--flip .split__photo { order: 0; }
+  .needs--cards .needs__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .needs--cards .needs__list { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Four list cards sit two by two rather than three and an orphan. */
+.needs--cards .needs__list--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 600px) {
+  .needs--cards .needs__list--four { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* The flipped split carries a short copy column (a heading and one line), so
+   a tall 4:5 photograph left it floating in empty space. Landscape here, in a
+   slightly narrower column, 29 Sep 2026. */
+.split--flip { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
+.split--flip .split__photo { aspect-ratio: 4 / 3; }
+@media (max-width: 900px) {
+  .split--flip { grid-template-columns: minmax(0, 1fr); }
+  .split--flip .split__photo { aspect-ratio: 16 / 10; }
+}
+.split--flip .split__photo { width: 100%; max-width: 520px; }
+
+/* The brief block, 29 Sep 2026. One column below 900px. */
+@media (max-width: 900px) {
+  .brief { grid-template-columns: minmax(0, 1fr); row-gap: var(--sec-gap); }
+}
