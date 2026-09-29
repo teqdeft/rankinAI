@@ -171,6 +171,11 @@ Started 29 Sep 2026, on the Sokkies pattern. `SETUP.md` has the setup steps.
   - Every one-off page (about, pricing, how we work, questions, contact,
     growth audit, call, success stories, blog, privacy, terms, the three
     hubs) is a page using its own template in `page-templates/`.
+- **The /call/ page is a draft (29 Sep 2026).** Every "Book a 20-minute
+  call" link is still written as `/call/`, and `url()` sends it to the
+  "Call booking link" on Website settings (Calendly) while that page is
+  unpublished. Publish the page and they go back to it. Keep writing new
+  call links as `/call/`.
 - **Images live in the Media Library.** The seed imports the site's own
   images once each (15 of them) and stores them in ACF image fields. Unsplash
   photographs stay hotlinked in `photo` fields. The team marquee's ten photos
