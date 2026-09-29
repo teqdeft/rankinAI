@@ -1,0 +1,14 @@
+# Local WordPress config (secrets and local DB details), see wp-config.example.php
+rankinai-local/wp-config.php
+
+# Local admin login for the dev install, never committed
+rankinai-local/LOCAL-LOGIN.txt
+
+# Media uploads are content, not code
+rankinai-local/wp-content/uploads/
+
+# Logs and system files
+*.log
+rankinai-local/wp-content/debug.log
+.DS_Store
+Thumbs.db

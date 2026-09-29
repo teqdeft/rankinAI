@@ -9,7 +9,7 @@ $root = dirname(__DIR__);
 $path = rawurldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 
 // Server-side files stay out of the browser.
-if (preg_match('#^/(includes|_archive|\.claude)/|^/(README|CLAIMS|CLAUDE|HANDOVER)\.md$#', $path)) {
+if (preg_match('#^/(includes|_archive|\.claude)/|^/(README|CLAIMS|CLAUDE|HANDOVER|SETUP)\.md$#', $path)) {
     http_response_code(404);
     exit('Not found');
 }

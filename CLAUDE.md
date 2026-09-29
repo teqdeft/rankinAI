@@ -128,13 +128,94 @@ Shared includes: `config.php` (nav, footer, helpers, `ASSET_VERSION`),
 
 ---
 
+## The WordPress theme
+
+Started 29 Sep 2026, on the Sokkies pattern. `SETUP.md` has the setup steps.
+
+- WordPress is its own repo (github.com/teqdeft/rankinai-m), checked out
+  beside this one at `../rankinai-wp/rankinai-m/`. The theme is in its
+  `wp-content/themes/rankinai/`. Local URL `http://localhost:8890`, served
+  by this repo's `.claude/wp-router.php`. The helper scripts here
+  (`wp-router`, `wp-install`, `wp-seed`) find it by that relative path, and
+  the theme finds this repo, for the seed, by `RANKINAI_FLAT_DIR` in its
+  `wp-config.php`. Move either folder and those three scripts and that
+  constant move with it.
+- Every page is a stack of sections: one ACF Flexible Content field
+  (`sections`), one layout per section type, one partial per layout in
+  `template-parts/sections/section-{layout}.php`. Fields are registered in
+  code in `inc/acf-fields.php`, never in the ACF admin.
+- **Every field falls back to the original copy.** A partial calls
+  `rf( 'name', $default )` or `rf_rows( 'name', $defaults )`, and the default
+  is the flat build's text, word for word. A figure field left empty renders
+  the pending state, never a guess. House rule 1 applies to defaults too.
+- The flat build's helpers keep their names in `inc/helpers.php` (`url()`,
+  `asset()`, `e()`, `btn_arrow()`, `svc_icon_svg()`), so markup ports
+  across unchanged. Site details come from the "Website settings" options
+  page, falling back to the flat build's values.
+- Asset versions are the files' modified times, so the theme needs no
+  `ASSET_VERSION` bump. The flat build still does.
+- **Every other page is a "model"**: one file in `inc/models/` (read the
+  header of `inc/model-engine.php` first). A model's schema generates its ACF
+  fields, seeds them from the flat build's content, and rebuilds the array
+  its template reads, so the three cannot drift. Empty = absent (the
+  templates' guards skip it), not a fallback.
+  - Custom post types: services and industries (`/{slug}/`, flat, and
+    `/services/x/`, `/industries/x/` 301 to it), success stories
+    (`/success-stories/{slug}/`), and team members (`rankinai_team`, no
+    URL of their own: each is a card in "Meet the team" on `/about/`, in
+    their Order). Team is `'sortable'`: drag the rows in its admin list to
+    reorder, and a new member starts at the end.
+  - Blog articles are WordPress posts at `/blog/{slug}/` (permalink
+    structure `/blog/%postname%/`). `inc/models/_blog.php` rebuilds the flat
+    `$POSTS` from them so the flat helpers and templates work unchanged.
+  - Every one-off page (about, pricing, how we work, questions, contact,
+    growth audit, call, success stories, blog, privacy, terms, the three
+    hubs) is a page using its own template in `page-templates/`.
+- **Images live in the Media Library.** The seed imports the site's own
+  images once each (15 of them) and stores them in ACF image fields. Unsplash
+  photographs stay hotlinked in `photo` fields. The team marquee's ten photos
+  are still theme files, not fields.
+- `php .claude/wp-seed.php` creates anything missing; `--force` refills
+  everything from the flat build (overwriting WordPress edits); `--only=name`
+  does one model. `php .claude/wp-compare.php /path/ ...` compares a page on
+  both builds (run it with `MSYS_NO_PATHCONV=1` in Git Bash).
+- **Converted: every page.** All 42 URLs checked against the flat build by
+  text, links, images, sections and title (identical), and page heights at
+  1440 (identical). Not converted: `sitemap.php`, the QA page.
+- **The header and footer are edited on Website settings** (the Header and
+  Footer groups, `inc/chrome.php`): the menu and its drop-down panels, the
+  two header links, the footer text, link columns and legal links. An empty
+  field shows the original. `$FOOTER` in `inc/site.php` is still data,
+  because the service and industry templates group their pages by it, so
+  editing a footer column changes the footer only.
+- **Forms are Contact Form 7** (read the header of `inc/forms.php`). Two
+  forms, "Growth audit request" (the modal and `/growth-audit/`) and "Contact
+  message" (`/contact/`), created by `wp-seed.php --only=forms` and chosen on
+  Website settings. Their templates carry the flat build's field markup, and
+  each `<form>` gets `data-auditform`, so `script.js` still validates in place
+  and shows the same confirmation. Without JavaScript, CF7 posts normally.
+  - The contact form's name field is `your-name`. A field called `name`
+    sends a no-JS submission to a 404, because WordPress reads it as a query
+    variable.
+  - CF7 wraps each control in a span and the form in `div.wpcf7`. A CSS rule
+    that selects a form or a control as a direct child will miss. Page heights
+    at 1440 and 375 are identical to the flat build.
+  - Mail goes to the site email (Website settings) with `Reply-To` set to the
+    sender. `RANKINAI_FORMS_SKIP_MAIL` in `wp-config.php` logs submissions
+    to `debug.log` instead of mailing. It is for local only and must not be
+    defined on the live site, which needs working mail (SMTP) set up.
+
+---
+
 ## What is not finished
 
 **Blocking launch:**
 
-1. **No form handler anywhere.** Every form posts to `action="#"`. The growth
-   audit modal is now the primary conversion path on every page and it silently
-   does nothing. This is the single most important outstanding item.
+1. **Forms need live mail.** In WordPress, both forms are handled by Contact
+   Form 7 (see above), but nothing has been emailed yet: locally mail is
+   skipped. On the live server, set up SMTP, confirm the recipient on Website
+   settings, and send a test of each form. The flat build's forms still post
+   to `action="#"` and do nothing, so the flat build must not go live.
 2. **Two success story pages carry invented results tables.**
    `/success-stories/sweetrush/` and `/success-stories/studio-ubique/` each have
    a results table their own file marks `PLACEHOLDER DATA` — six invented

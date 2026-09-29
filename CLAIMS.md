@@ -830,6 +830,10 @@ about.php so the template can find them. **Neither figure may go live as it
 stands.** Replace both, or clear the fields: the card renders fine without
 them, it simply loses two lines.
 
+In WordPress (29 Sep 2026) the four are Team members, their own post type,
+and the flag came with them: Abhishek's and Rahul's have "Placeholder
+figures" switched on. Switch it off only once the figures are real.
+
 The LinkedIn row is deliberately still empty on those two. A made-up profile
 URL is a worse placeholder than a missing one, because it either dead-ends or
 lands on a stranger with the same name. Send the two URLs and they go in.

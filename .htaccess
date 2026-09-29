@@ -11,7 +11,9 @@ Options +FollowSymLinks -Indexes
 # -----------------------------------------------------------------------------
 RedirectMatch 404 ^(.*)/includes/
 RedirectMatch 404 ^(.*)/_archive/
-RedirectMatch 404 ^(.*)/(README|CLAIMS|CLAUDE|HANDOVER)\.md$
+RedirectMatch 404 ^(.*)/(README|CLAIMS|CLAUDE|HANDOVER|SETUP)\.md$
+# The WordPress install's local-only files. Its own .htaccess handles the rest.
+RedirectMatch 404 ^(.*)/rankinai-local/(wp-config\.php|LOCAL-LOGIN\.txt)$
 
 
 # -----------------------------------------------------------------------------

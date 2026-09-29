@@ -55,7 +55,7 @@ if (!defined('BASE')) {
 define('SITE_NOINDEX', true);
 
 /** A versioned asset URL. Bump ASSET_VERSION to bust caches after a deploy. */
-define('ASSET_VERSION', '7.12.0');
+define('ASSET_VERSION', '7.12.4');
 
 function asset(string $path): string {
     // WordPress: return get_template_directory_uri() . '/assets/' . $path;
