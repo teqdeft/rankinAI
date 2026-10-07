@@ -187,8 +187,9 @@ Started 29 Sep 2026, on the Sokkies pattern. `SETUP.md` has the setup steps.
 - **Converted: every page.** All 42 URLs checked against the flat build by
   text, links, images, sections and title (identical), and page heights at
   1440 (identical). Not converted: `sitemap.php`, the QA page.
-- **The header and footer are edited on Website settings** (the Header and
-  Footer groups, `inc/chrome.php`): the menu and its drop-down panels, the
+- **The header and footer are edited on Website settings** (its Header and
+  Footer tabs, either side of Site details. Fields in `inc/chrome.php`, the
+  one tabbed group in `inc/acf-fields.php`): the menu and its drop-down panels, the
   two header links, the footer text, link columns and legal links. An empty
   field shows the original. `$FOOTER` in `inc/site.php` is still data,
   because the service and industry templates group their pages by it, so
