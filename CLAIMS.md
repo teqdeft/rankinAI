@@ -2446,3 +2446,28 @@ full-width column. No photograph, on purpose: those pages already carry four.
 Applied automatically to consulting ("Make the first step clear"), HR outsourcing
 ("Show the expertise") and recruitment ("Supporting business development"). Copy
 unchanged.
+
+
+## The placeholder results came off both story pages — 8 Oct 2026
+
+Before the live site was opened to search engines, the six dummy results
+figures and the two "Headline result" facts came off the SweetRush and Studio
+Ubique pages, at Kulwant's instruction ("clear the figures first").
+
+| Page | Removed | Now |
+| --- | --- | --- |
+| SweetRush | 3.2× inbound enquiries, 27 pages on page one, 64% of enquiries citing a page, and the headline fact "3.2× inbound enquiries in five months" | The three measures listed under "Also being measured", no figures. The headline fact is gone |
+| Studio Ubique | +58% qualified briefs, 19 keywords in the top three, 2.4× direct traffic, and the headline fact "+58% qualified briefs in four months" | As above |
+
+None of the six was ever a real number: each file marked its block
+`PLACEHOLDER DATA`. They came off the flat build's data files and, through a
+one-off in the theme (`inc/placeholder-sweep.php`), off every WordPress
+database, the live one included, which had them. The sweep empties a figure
+only while it still holds its invented value, so a real number typed in since
+would have been kept. **A figure goes back only with the client's sign-off.**
+
+Not touched: the team cards on `/about/`. Abhishek's and Rahul's figures were
+placeholders when the team became a post type (above, 29 Sep), but they and
+all fifteen cards on the live site have since been filled in through
+WordPress. Their "Placeholder figures" switch is still on in the admin: switch
+it off once the numbers are confirmed, or clear them.

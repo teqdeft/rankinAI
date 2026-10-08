@@ -39,7 +39,6 @@ $STORY = [
     ['Location', 'San Francisco, USA'],
     ['Sector',   'Learning and development consultancy'],
     ['Started',  'Work is ongoing, reported monthly'],
-    ['Headline result', '3.2&times; inbound enquiries in five months'],
   ],
   'services' => [
     ['AI and search visibility', '/ai-visibility/'],
@@ -74,14 +73,14 @@ $STORY = [
   ],
 
   'resultHead' => ['Results'],
-  /* PLACEHOLDER DATA. These are realistic dummy figures so the template can
-     be built and reviewed against a finished-looking page. Real numbers come
-     in through the CMS, and nothing goes live without the client's sign-off.
-     See CLAIMS.md. */
+  /* All pending (8 Oct 2026). These three rows were PLACEHOLDER DATA, dummy
+     figures for building the template (3.2x, 27, 64%), and came off before
+     the site was indexed. A figure goes in only when the client has signed
+     it off. See CLAIMS.md. */
   'metrics' => [
-    ['3.2&times;', 'Inbound enquiries', 'Five months', 'Client CRM'],
-    ['27',         'Pages ranking on page one', 'Six months', 'Ahrefs'],
-    ['64%',        'Enquiries that cited a published page', 'Six months', 'Client CRM'],
+    [null, 'Inbound enquiries', 'Five months', 'Client CRM'],
+    [null, 'Pages ranking on page one', 'Six months', 'Ahrefs'],
+    [null, 'Enquiries that cited a published page', 'Six months', 'Client CRM'],
   ],
 
   'quote' => null,

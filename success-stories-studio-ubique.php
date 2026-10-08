@@ -39,7 +39,6 @@ $STORY = [
     ['Location', 'Zwolle, Netherlands'],
     ['Sector',   'Digital agency'],
     ['Relationship', 'Related party. Our founder is a partner in the business'],
-    ['Headline result', '+58% qualified briefs in four months'],
   ],
   'services' => [
     ['AI and search visibility', '/ai-visibility/'],
@@ -75,14 +74,14 @@ $STORY = [
   ],
 
   'resultHead' => ['Results'],
-  /* PLACEHOLDER DATA. These are realistic dummy figures so the template can
-     be built and reviewed against a finished-looking page. Real numbers come
-     in through the CMS, and nothing goes live without the client's sign-off.
-     See CLAIMS.md. */
+  /* All pending (8 Oct 2026). These three rows were PLACEHOLDER DATA, dummy
+     figures for building the template (+58%, 19, 2.4x), and came off before
+     the site was indexed. A figure goes in only when Studio Ubique have
+     signed it off. See CLAIMS.md. */
   'metrics' => [
-    ['+58%',     'Qualified briefs', 'Four months', 'Client CRM'],
-    ['19',       'Keywords ranking in the top three', 'Five months', 'Ahrefs'],
-    ['2.4&times;', 'Direct traffic', 'Six months', 'Google Analytics'],
+    [null, 'Qualified briefs', 'Four months', 'Client CRM'],
+    [null, 'Keywords ranking in the top three', 'Five months', 'Ahrefs'],
+    [null, 'Direct traffic', 'Six months', 'Google Analytics'],
   ],
 
   'quote' => null,

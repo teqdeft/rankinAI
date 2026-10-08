@@ -222,11 +222,12 @@ Started 29 Sep 2026, on the Sokkies pattern. `SETUP.md` has the setup steps.
    skipped. On the live server, set up SMTP, confirm the recipient on Website
    settings, and send a test of each form. The flat build's forms still post
    to `action="#"` and do nothing, so the flat build must not go live.
-2. **Two success story pages carry invented results tables.**
-   `/success-stories/sweetrush/` and `/success-stories/studio-ubique/` each have
-   a results table their own file marks `PLACEHOLDER DATA` — six invented
-   numbers between them, plus figures in the overview and facts rows. They need
-   the clients' real numbers or a rebuild without a results section.
+2. **The two story pages' results are pending, not real.** The six dummy
+   figures on `/success-stories/sweetrush/` and `/success-stories/studio-ubique/`
+   and their "Headline result" facts came off on 8 Oct 2026 (CLAIMS.md), in
+   the flat data files and, through the one-off `inc/placeholder-sweep.php`,
+   in every WordPress database. Each page now lists its measures under "Also
+   being measured". Only the clients' signed-off numbers go back.
 3. **Six of seven blog articles are placeholder bodies** under real titles.
    Only `/blog/website-visitors-not-clients/` is a real article.
 4. **Client permissions.** The three case photographs were taken from the
