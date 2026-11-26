@@ -70,7 +70,7 @@ require __DIR__ . '/includes/header.php';
              description, so without it the category is never stated. */ ?>
     <p class="eyebrow"><span>Digital marketing for firms that sell expertise</span></p>
 
-    <h1 class="hero__title">Be the firm they find. And the one they choose.</h1>
+    <h1 class="hero__title hero__title--home">Be the firm they find. And the one they choose.</h1>
 
     <div class="hero__meta hero__meta--home">
       <p class="hero__sub">You&rsquo;ve built a business on doing good work. We help more of the right people discover it, understand why you&rsquo;re worth choosing, and get in touch.<span class="hero__sub2">Search, content, advertising, your website and follow-up, working together to bring you better business.</span></p>
