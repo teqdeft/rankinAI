@@ -2480,8 +2480,14 @@ enquiries rose 3.2 times over five months" on SweetRush and "Qualified briefs
 rose 58% over four months" on Studio Ubique.
 
 The flat build's two data files were edited on 8 Oct to drop the sentence but
-never committed. They are committed now. WordPress still has both:
-`inc/placeholder-sweep.php` did not reach the overview field, so the local
-database and the live site at rankinai.com still print both sentences, in the
-overview and in each page's structured data (checked 26 Nov 2026). They come
-off there next, the same way: only the clients' signed-off numbers go back.
+never committed. They were committed on 26 Nov (5d3858f). The same day a
+one-off pass in the theme removed both sentences from WordPress and from the
+live site at rankinai.com, which had them in the overview and in each page's
+structured data. That pass was reverted (47c72db, reverted by c29a77e), and on
+instruction the same day both sentences were put back on WordPress and the
+live site by a second one-off (31c3a50, taken out again in 20d0cc4).
+
+Both sentences are still invented figures, and they are live again. The flat
+build and WordPress now differ on this: the flat build's two overviews end
+without the sentence, WordPress's end with it. A `wp-seed.php --force` would
+take them off WordPress again.
