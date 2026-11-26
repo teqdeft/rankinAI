@@ -52,6 +52,7 @@
   --clay:          #B5744F;   /* accents on light grounds */
   --clay-light:    #D89B72;   /* accents on forest grounds */
   --clay-ink:      #A6603C;   /* clay darkened for small text on light grounds */
+  --red:           #B42318;   /* the home headline only. About 6:1 on --cream, so it holds at any size */
 
   --cream:         #F7F4EE;
   --paper:         #FFFDF9;
@@ -1034,7 +1035,7 @@ main > .band--forest + .band--forest {
   font-size: var(--t-hero);
   line-height: 0.98;
   letter-spacing: -0.015em;
-  color: var(--ink);
+  color: var(--red);
   /* No max-width here: the measure is --head-w, set with the other headings
      further down this file. This carried 1480px, which nothing ever saw. */
   margin-top: var(--hero-title-mt);
