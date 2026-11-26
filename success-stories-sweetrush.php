@@ -32,7 +32,7 @@ $STORY = [
   'heroPhoto'    => 'case-sweetrush',
   'heroPhotoAlt' => 'Two SweetRush colleagues working through a problem on a laptop',
 
-  'overview' => 'SweetRush are a learning and development consultancy in San Francisco with twenty years of work behind them. The buyers who had already worked with them knew exactly how good they were; to everyone else the website read like a much smaller firm&rsquo;s brochure. RankinAI built the searchable record that was missing, writing up the sectors and problems they know best and getting them into the answers assistants give. Inbound enquiries rose 3.2 times over five months.',
+  'overview' => 'SweetRush are a learning and development consultancy in San Francisco with twenty years of work behind them. The buyers who had already worked with them knew exactly how good they were; to everyone else the website read like a much smaller firm&rsquo;s brochure. RankinAI built the searchable record that was missing, writing up the sectors and problems they know best and getting them into the answers assistants give.',
 
   'facts' => [
     ['Client',   'SweetRush'],

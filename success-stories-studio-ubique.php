@@ -32,7 +32,7 @@ $STORY = [
 
   /* The partnership is in the overview paragraph, not only in the body copy,
      so that a summary lifted from this page carries the disclosure with it. */
-  'overview' => 'Studio Ubique are a digital agency in Zwolle, the Netherlands, and RankinAI&rsquo;s founder is a partner in the business, which makes this a related party rather than an arm&rsquo;s-length client. Their work was known inside their own network and almost nowhere else, so new business arrived by recommendation and nothing else. RankinAI built a searchable record of the work and the visibility to go with it. Qualified briefs rose 58% over four months.',
+  'overview' => 'Studio Ubique are a digital agency in Zwolle, the Netherlands, and RankinAI&rsquo;s founder is a partner in the business, which makes this a related party rather than an arm&rsquo;s-length client. Their work was known inside their own network and almost nowhere else, so new business arrived by recommendation and nothing else. RankinAI built a searchable record of the work and the visibility to go with it.',
 
   'facts' => [
     ['Client',   'Studio Ubique'],

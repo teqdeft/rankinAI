@@ -2471,3 +2471,17 @@ placeholders when the team became a post type (above, 29 Sep), but they and
 all fifteen cards on the live site have since been filled in through
 WordPress. Their "Placeholder figures" switch is still on in the admin: switch
 it off once the numbers are confirmed, or clear them.
+
+### Update, 26 Nov 2026: the overview sentences were missed
+
+The table above missed one place each figure was printed. Both overview
+paragraphs ended on the invented result as a sentence of its own: "Inbound
+enquiries rose 3.2 times over five months" on SweetRush and "Qualified briefs
+rose 58% over four months" on Studio Ubique.
+
+The flat build's two data files were edited on 8 Oct to drop the sentence but
+never committed. They are committed now. WordPress still has both:
+`inc/placeholder-sweep.php` did not reach the overview field, so the local
+database and the live site at rankinai.com still print both sentences, in the
+overview and in each page's structured data (checked 26 Nov 2026). They come
+off there next, the same way: only the clients' signed-off numbers go back.
